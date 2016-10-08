@@ -1,0 +1,49 @@
+# -*- mode: gitignore; -*-
+# not dotfiles
+[a-zA-Z0-9]*
+
+# cache
+.*cache*
+.*.elc
+
+# history
+.*_history
+.lesshst
+
+# local
+.emacs.d
+.face.icon
+.git-completion.sh
+.gtkrc-*
+.kde*
+.java
+.pulse-cookie
+.rbenv
+.steam*
+.themes
+.vim
+.viminfo
+.virtualenvs
+.wine
+
+# logs
+.xsession-errors
+
+# secrets
+.dockercfg
+.gitconfig
+.git-credentials
+.gnupg
+.lastpass
+.netrc
+.pypirc
+.vault-token
+.webtask
+.Xauthority*
+
+# zsh
+.oh-my-zsh
+.z
+.zcompdump*
+.zsh_history
+.zsh-update

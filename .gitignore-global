@@ -1,0 +1,16 @@
+# -*- mode: gitignore; -*-
+# Common
+*~
+
+# Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.\#*
+
+# flymake-mode
+*_flymake.*
