@@ -47,6 +47,10 @@
   :config
   (add-hook 'coffee-mode-hook (lambda () (coffee-cos-mode 0)) t))
 
+(use-package company-quickhelp
+  :config
+  (company-quickhelp-mode 1))
+
 (use-package elpy
   :config
   (elpy-enable))
