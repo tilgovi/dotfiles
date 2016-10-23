@@ -25,6 +25,7 @@
 .viminfo
 .virtualenvs
 .wine
+.yarn
 
 # logs
 .xsession-errors
