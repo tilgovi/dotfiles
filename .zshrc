@@ -93,4 +93,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias code="emacs &>/dev/null &!"
-alias agud="sudo apt-get update && sudo apt-get dist-upgrade"
+alias agud="sudo apt update && sudo apt full-upgrade"
