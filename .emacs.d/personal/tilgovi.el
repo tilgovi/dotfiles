@@ -5,8 +5,6 @@
 ;;; Code:
 (eval-when-compile (require 'use-package))
 
-(setq desktop-dirname default-directory)
-(setq desktop-path (list desktop-dirname))
 (setq frame-title-format (list "%b - " invocation-name "@" system-name))
 
 ;; Day / Night themes
