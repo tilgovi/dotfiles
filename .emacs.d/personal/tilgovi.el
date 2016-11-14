@@ -41,10 +41,6 @@
  (lambda ()
    (walk-windows 'center-window 'f)))
 
-(use-package coffee-mode
-  :config
-  (add-hook 'coffee-mode-hook (lambda () (coffee-cos-mode 0)) t))
-
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode 1))
@@ -100,17 +96,6 @@ See URL `http://prospector.readthedocs.org/en/latest/index.html'."
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this)))
-
-(use-package purescript-mode
-  :config
-  (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation))
-
-;; (use-package psc-ide
-;;   :config
-;;   (add-hook 'purescript-mode-hook
-;;             (lambda ()
-;;               (psc-ide-mode)
-;;               (company-mode))))
 
 ;; (use-package py-yapf
 ;;   :config
