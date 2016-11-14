@@ -19,21 +19,19 @@
   (defun set-night-theme () (load-theme 'solarized-dark))
   (change-theme 'set-day-theme 'set-night-theme))
 
-;; center all windows on 79 character wide columns
 (defun center-window (window)
-  "Tile and center buffers in WINDOW at 79 columns."
+  "Tile and center buffers in WINDOW at 80 columns."
   (let* ((margins (window-margins window))
          (edges (window-edges window))
          (left (car edges))
          (right (nth 2 edges))
          (width (- right left))
-         (excess (- width 79)))
+         (excess (- width 80)))
     (if (> excess 0)
         (progn
           (setq truncate-lines t)
-          (set-window-fringes window 2 nil)
+          ;(set-window-fringes window 2 nil)
           (set-window-margins window (floor (/ (float excess) 2.0))))
-      (set-window-fringes window 0 nil)
       (set-window-margins window 0))
     (unless (equal margins (window-margins window))
       (balance-windows (window-frame window)))))
