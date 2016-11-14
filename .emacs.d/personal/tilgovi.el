@@ -55,19 +55,6 @@
   :config
   (elpy-enable))
 
-(use-package fill-column-indicator
-  :config
-  (define-globalized-minor-mode global-fci-mode fci-mode
-    (lambda () (fci-mode t)))
-  (global-fci-mode t)
-  (setq fci-style 'rule)
-  (setq-default fill-column 80)
-  (use-package web-mode
-    :config
-    (add-hook 'after-change-major-mode-hook
-              (lambda () (if (string= major-mode "web-mode")
-                             (turn-off-fci-mode) (turn-on-fci-mode))))))
-
 (use-package flycheck
   :config
   (flycheck-define-checker python-prospector
