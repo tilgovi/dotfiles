@@ -118,6 +118,17 @@ See URL `http://prospector.readthedocs.org/en/latest/index.html'."
 ;;   :config
 ;;   (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
 
+(use-package rust-mode
+  :config
+  (add-hook 'rust-mode-hook #'(lambda ()
+                                (whitespace-mode 0)
+                                (setq whitespace-line-column 100)
+                                (whitespace-mode 1)))
+  (setq-default rust-format-on-save t)
+  (use-package racer
+    :config
+    (add-hook 'rust-mode-hook 'racer-mode)))
+
 (use-package toml-mode)
 
 (use-package yasnippet)
