@@ -72,6 +72,11 @@ if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
 fi
 
+if [ -d "$HOME/.multirust" ]; then
+  local rust_root=$(rustc --print sysroot)
+  export RUST_SRC_PATH="$rust_root/lib/rustlib/src/rust/src"
+fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
