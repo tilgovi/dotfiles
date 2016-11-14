@@ -49,7 +49,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws colorize command-not-found common-aliases cp docker extract gitfast github golang gulp httpie npm pip sudo terraform vault virtualenvwrapper z zsh-syntax-highlighting)
+plugins=(aws cargo colorize command-not-found common-aliases cp docker extract gitfast github golang gulp httpie npm pip rust sudo terraform vault virtualenvwrapper z zsh-syntax-highlighting)
 
 # User configuration
 
@@ -67,6 +67,10 @@ export WORKON_HOME="/home/tilgovi/.virtualenvs"
 export npm_config_userconfig="$HOME/.config/npmrc"
 
 source $ZSH/oh-my-zsh.sh
+
+if [ -f "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
