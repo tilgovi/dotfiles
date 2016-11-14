@@ -11,6 +11,7 @@
 .lesshst
 
 # local
+.cargo
 .emacs.d
 .face.icon
 .git-completion.sh
