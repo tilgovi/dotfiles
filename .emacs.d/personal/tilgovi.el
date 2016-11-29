@@ -81,6 +81,8 @@ See URL `http://prospector.readthedocs.org/en/latest/index.html'."
     :config
     (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))))
 
+(use-package jsx-mode)
+
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
