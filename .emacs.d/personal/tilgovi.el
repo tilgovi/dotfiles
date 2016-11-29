@@ -5,18 +5,9 @@
 ;;; Code:
 (eval-when-compile (require 'use-package))
 
-(setq frame-title-format (list "%b - " invocation-name "@" system-name))
+;;(setq frame-title-format (list "%b - " invocation-name "@" system-name))
 
-;; Day / Night themes
-(use-package theme-changer
-  :config
-  (setq calendar-location-name "Oakland, CA")
-  (setq calendar-latitude 37.80)
-  (setq calendar-longitude -122.27)
-  (defun set-day-theme () (load-theme 'solarized-light))
-  (defun set-night-theme () (load-theme 'solarized-dark))
-  (change-theme 'set-day-theme 'set-night-theme))
-
+;; This definition and the hook below auto-balance and -center windows.
 (defun center-window (window)
   "Tile and center buffers in WINDOW at 80 columns."
   (let* ((margins (window-margins window))
@@ -109,6 +100,16 @@ See URL `http://prospector.readthedocs.org/en/latest/index.html'."
   (use-package racer
     :config
     (add-hook 'rust-mode-hook 'racer-mode)))
+
+(use-package theme-changer
+  :config
+  ;; Day / Night themes
+  (setq calendar-location-name "Oakland, CA")
+  (setq calendar-latitude 37.80)
+  (setq calendar-longitude -122.27)
+  (defun set-day-theme () (load-theme 'solarized-light))
+  (defun set-night-theme () (load-theme 'solarized-dark))
+  (change-theme 'set-day-theme 'set-night-theme))
 
 (use-package toml-mode)
 
