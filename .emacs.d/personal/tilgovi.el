@@ -49,9 +49,9 @@
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this)))
 
-;; (use-package py-yapf
-;;   :config
-;;   (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
+(use-package py-yapf
+  :config
+  (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
 
 (use-package rust-mode
   :config
