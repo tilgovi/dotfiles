@@ -40,46 +40,7 @@
 
 (use-package flycheck
   :config
-  (flycheck-define-checker python-prospector
-    "A Python syntax and style checker using Prospector.
-
-See URL `http://prospector.readthedocs.org/en/latest/index.html'."
-    :command ("prospector" "-s" "high" "-M" "-0" "-o" "emacs" source-inplace)
-    :error-patterns
-    ((error line-start
-            (file-name) ":" line ":" column ":\n"
-            (one-or-more blank) "L"
-            (minimal-match (one-or-more not-newline)) "- "
-            (id "E" (one-or-more digit)) "\n"
-            (message) "\n"
-            line-end)
-     (error line-start
-            (file-name) ":" line ":" column ":\n"
-            (one-or-more blank) "L"
-            (minimal-match (one-or-more not-newline)) "- "
-            (id (one-or-more not-newline) "error") "\n"
-            (message) "\n"
-            line-end)
-     (warning line-start
-              (file-name) ":" line ":" column ":\n"
-              (one-or-more blank) "L"
-              (minimal-match (one-or-more not-newline)) "- "
-              (id "W" (one-or-more digit)) "\n"
-              (message) "\n"
-              line-end)
-     (warning line-start
-              (file-name) ":" line ":" column ":\n"
-              (one-or-more blank) "L"
-              (minimal-match (one-or-more not-newline)) "- "
-              (id (one-or-more (not blank))) "\n"
-              (message) "\n"
-              line-end))
-    :modes python-mode)
-  (add-to-list 'flycheck-checkers 'python-prospector)
-  (global-flycheck-mode)
-  (use-package elpy
-    :config
-    (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))))
+  (global-flycheck-mode))
 
 (use-package jsx-mode)
 
