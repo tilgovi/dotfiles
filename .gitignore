@@ -18,6 +18,7 @@
 .gtkrc-*
 .kde*
 .java
+.multirust
 .pulse-cookie
 .rbenv
 .steam*
