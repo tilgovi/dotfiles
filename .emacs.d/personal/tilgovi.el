@@ -83,6 +83,8 @@
 
 (use-package yasnippet)
 
+(use-package virtualenvwrapper)
+
 ;; indentation and syntax stuff
 (setq-default c-basic-offset 4)
 (setq-default tab-width 2)
