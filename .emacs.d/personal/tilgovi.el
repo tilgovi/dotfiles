@@ -34,11 +34,6 @@
   :config
   (company-quickhelp-mode 1))
 
-(use-package editorconfig
-  :ensure t
-  :config
-  (editorconfig-mode 1))
-
 (use-package elpy
   :config
   (elpy-enable))
