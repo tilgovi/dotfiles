@@ -82,17 +82,6 @@
 
 (use-package virtualenvwrapper)
 
-;; indentation and syntax stuff
-(setq-default c-basic-offset 4)
-(setq-default tab-width 2)
-(setq-default indent-tabs-mode nil)
-(defvaralias 'js-indent-level 'tab-width)
-(defvaralias 'coffee-tab-width 'tab-width)
-(defvaralias 'css-indent-offset 'tab-width)
-(defvaralias 'markup-indent-offset 'tab-width)
-(defvaralias 'web-mode-markup-indent-offset 'tab-width)
-(defvaralias 'ruby-indent-level 'tab-width)
-
 (prelude-fullscreen)
 
 (provide 'tilgovi)
