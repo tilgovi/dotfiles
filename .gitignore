@@ -28,6 +28,7 @@
 .virtualenvs
 .wine
 .yarn
+.yarnrc
 
 # logs
 .xsession-errors
