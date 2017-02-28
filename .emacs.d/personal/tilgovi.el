@@ -64,6 +64,10 @@
     :config
     (add-hook 'rust-mode-hook 'racer-mode)))
 
+(use-package smartparens
+  :config
+  (smartparens-global-mode))
+
 (use-package theme-changer
   :config
   ;; Day / Night themes
