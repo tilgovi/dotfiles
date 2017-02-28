@@ -74,9 +74,7 @@
   (setq calendar-location-name "Oakland, CA")
   (setq calendar-latitude 37.80)
   (setq calendar-longitude -122.27)
-  (defun set-day-theme () (load-theme 'solarized-light))
-  (defun set-night-theme () (load-theme 'solarized-dark))
-  (change-theme 'set-day-theme 'set-night-theme))
+  (change-theme 'solarized-light 'solarized-dark))
 
 (use-package toml-mode)
 
