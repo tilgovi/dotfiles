@@ -54,9 +54,8 @@ plugins=(aws cargo colorize command-not-found common-aliases cp docker extract g
 # User configuration
 
 export EDITOR="vim"
-
-export PATH="$HOME/.local/bin:$PATH"
-export GOPATH="$HOME/.local"
+export GOPATH="$HOME/src/golang"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 
 export SSH_ASKPASS="ssh-askpass"
 
