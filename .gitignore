@@ -9,6 +9,7 @@
 # history
 .*_history
 .lesshst
+.recently-used
 
 # local
 .cargo
