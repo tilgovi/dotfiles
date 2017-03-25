@@ -5,6 +5,7 @@
 ;;; Code:
 (eval-when-compile (require 'use-package))
 
+(prelude-fullscreen)
 ;;(setq frame-title-format (list "%b - " invocation-name "@" system-name))
 
 ;; This definition and the hook below auto-balance and -center windows.
@@ -80,7 +81,6 @@
 
 (use-package virtualenvwrapper)
 
-(prelude-fullscreen)
 
 (provide 'tilgovi)
 ;;; tilgovi.el ends here
