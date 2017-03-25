@@ -81,6 +81,10 @@
 
 (use-package virtualenvwrapper)
 
+(use-package whitespace-cleanup-mode
+  :config
+  (setq prelude-clean-whitespace-on-save nil)
+  (global-whitespace-cleanup-mode))
 
 (provide 'tilgovi)
 ;;; tilgovi.el ends here
