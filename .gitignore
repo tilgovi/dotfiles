@@ -14,6 +14,7 @@
 # local
 .cargo
 .emacs.d
+.emscripten
 .face.icon
 .git-completion.sh
 .gtkrc-*
