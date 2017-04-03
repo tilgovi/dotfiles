@@ -1,6 +1,7 @@
 # -*- mode: gitignore; -*-
 # Common
 *~
+.DS_Store
 
 # Vim
 [._]*.s[a-w][a-z]
