@@ -60,7 +60,6 @@ export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 export SSH_ASKPASS="ssh-askpass"
 
 export URBIT_HOME=$HOME/src/urbit/urb
-export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
 export WORKON_HOME="$HOME/.virtualenvs"
 
 export npm_config_userconfig="$HOME/.config/npmrc"
