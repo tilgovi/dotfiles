@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/tilgovi/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -61,7 +61,7 @@ export SSH_ASKPASS="ssh-askpass"
 
 export URBIT_HOME=$HOME/src/urbit/urb
 export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
-export WORKON_HOME="/home/tilgovi/.virtualenvs"
+export WORKON_HOME="$HOME/.virtualenvs"
 
 export npm_config_userconfig="$HOME/.config/npmrc"
 
