@@ -12,6 +12,7 @@
 .recently-used
 
 # local
+.CFUserTextEncoding
 .cargo
 .emacs.d
 .emscripten
