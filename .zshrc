@@ -99,5 +99,13 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias code="emacs &>/dev/null &!"
-alias agud="sudo apt update && sudo apt full-upgrade"
+local unamestr=`uname`
+case $OSTYPE in
+  darwin*)
+    alias code="open /Applications/Emacs.app"
+    ;;
+  linux*)
+    alias code="emacs &>/dev/null &!"
+    alias agud="sudo apt update && sudo apt full-upgrade"
+  ;;
+esac
