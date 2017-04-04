@@ -49,7 +49,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws cargo colorize command-not-found common-aliases cp docker extract gitfast github golang gulp httpie npm pip rbenv rust sudo terraform vault virtualenvwrapper z zsh-syntax-highlighting)
+plugins=(aws cargo chruby colorize command-not-found common-aliases cp docker extract gitfast github golang gulp httpie npm pip rust sudo terraform vault z zsh-syntax-highlighting)
 
 # User configuration
 
