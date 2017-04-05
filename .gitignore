@@ -5,6 +5,7 @@
 # cache
 .*cache*
 .*.elc
+.wget-hsts
 
 # history
 .*_history
