@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="kennethreitz"
 HYPHEN_INSENSITIVE="true"
 
-plugins=(cargo colorize cp docker extract gitfast github golang gulp npm pip rust sudo terraform vault z zsh-syntax-highlighting)
+plugins=(cargo colorize cp docker extract gitfast github golang gulp npm pip rust sudo terraform vault virtualenv z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
