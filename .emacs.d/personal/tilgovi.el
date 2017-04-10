@@ -31,6 +31,9 @@
  (lambda ()
    (walk-windows 'center-window 'f)))
 
+;; Enable jsx mode everywhere
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
+
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode 1))
