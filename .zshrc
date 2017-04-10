@@ -55,7 +55,7 @@ plugins=(aws cargo chruby colorize command-not-found common-aliases cp docker ex
 
 POWERLEVEL9K_COLOR_SCHEME='light'
 POWERLEVEL9K_MODE="awesome-fontconfig"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time background_jobs status dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(background_jobs dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv)
 
 export EDITOR="vim"
