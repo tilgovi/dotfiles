@@ -9,7 +9,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 HYPHEN_INSENSITIVE="true"
 
-plugins=(aws cargo chruby colorize command-not-found common-aliases cp docker extract gitfast github golang gulp httpie npm pip rust sudo terraform vault z zsh-syntax-highlighting)
+plugins=(cargo colorize cp docker extract gitfast github golang gulp npm pip rust sudo terraform vault z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
