@@ -1,12 +1,6 @@
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="kennethreitz"
-
 HYPHEN_INSENSITIVE="true"
 
 plugins=(cargo colorize cp docker extract gitfast github golang gulp npm pip rust sudo terraform vault z zsh-syntax-highlighting)
