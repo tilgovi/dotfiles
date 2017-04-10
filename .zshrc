@@ -51,6 +51,8 @@ HYPHEN_INSENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(aws cargo chruby colorize command-not-found common-aliases cp docker extract gitfast github golang gulp httpie npm pip rust sudo terraform vault z zsh-syntax-highlighting)
 
+source $ZSH/oh-my-zsh.sh
+
 # User configuration
 
 POWERLEVEL9K_COLOR_SCHEME='light'
@@ -68,8 +70,6 @@ export URBIT_HOME=$HOME/src/urbit/urb
 export WORKON_HOME="$HOME/.virtualenvs"
 
 export npm_config_userconfig="$HOME/.config/npmrc"
-
-source $ZSH/oh-my-zsh.sh
 
 if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
