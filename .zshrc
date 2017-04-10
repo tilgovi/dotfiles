@@ -5,7 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="kennethreitz"
 
 HYPHEN_INSENSITIVE="true"
 
@@ -14,11 +14,6 @@ plugins=(cargo colorize cp docker extract gitfast github golang gulp npm pip rus
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-POWERLEVEL9K_COLOR_SCHEME='light'
-POWERLEVEL9K_MODE="awesome-fontconfig"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(background_jobs dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv)
 
 export EDITOR="vim"
 export GOPATH="$HOME/src/golang"
