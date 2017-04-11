@@ -20,6 +20,11 @@ export WORKON_HOME="$HOME/.virtualenvs"
 
 export npm_config_userconfig="$HOME/.config/npmrc"
 
+if [ -d "/usr/local/share/chruby" ]; then
+  source "/usr/local/share/chruby/chruby.sh"
+  source "/usr/local/share/chruby/auto.sh"
+fi
+
 if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
 fi
