@@ -10,6 +10,7 @@
  '(package-selected-packages
    (quote
     (zencoding-mode yasnippet yaml-mode whitespace-cleanup-mode web-mode virtualenvwrapper use-package undo-tree toml-mode theme-changer terraform-mode solarized-theme smex smartparens smart-mode-line rustfmt rust-mode rainbow-mode rainbow-delimiters racer python pylint py-yapf nginx-mode multiple-cursors markdown-mode magit less-css-mode json-mode jedi gotest google-c-style gitignore-mode gitconfig-mode flycheck-rust flycheck-mypy flycheck erlang elpy editorconfig dockerfile-mode company-quickhelp company-jedi company-go company-anaconda color-theme-solarized cargo)))
+ '(prelude-whitespace nil)
  '(python-shell-extra-pythonpaths (quote ("~/.local/venvs")))
  '(replace-char-fold t)
  '(save-place-mode t nil (saveplace))
@@ -22,7 +23,8 @@
  '(web-mode-css-indent-offset 2)
  '(web-mode-markup-indent-offset 2)
  '(web-mode-script-padding 2)
- '(web-mode-style-padding 2))
+ '(web-mode-style-padding 2)
+ '(whitespace-line-column nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -46,6 +46,12 @@
   :config
   (global-flycheck-mode))
 
+(use-package editorconfig
+  :config
+  (add-hook
+   'editorconfig-custom-hooks
+   (lambda (props) (whitespace-mode))))
+
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
@@ -57,10 +63,6 @@
 
 (use-package rust-mode
   :config
-  (add-hook 'rust-mode-hook #'(lambda ()
-                                (whitespace-mode 0)
-                                (setq whitespace-line-column 100)
-                                (whitespace-mode 1)))
   (setq-default rust-format-on-save t)
   (use-package racer
     :config
@@ -86,7 +88,6 @@
 
 (use-package whitespace-cleanup-mode
   :config
-  (setq prelude-clean-whitespace-on-save nil)
   (global-whitespace-cleanup-mode))
 
 (provide 'tilgovi)
