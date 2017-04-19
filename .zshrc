@@ -34,6 +34,10 @@ if [ -d "$HOME/.multirust" ]; then
   export RUST_SRC_PATH="$rust_root/lib/rustlib/src/rust/src"
 fi
 
+if whence yarn > /dev/null; then
+  export PATH="`yarn global bin`:$PATH"
+fi
+
 case $OSTYPE in
   darwin*)
     alias code="open /Applications/Emacs.app"
