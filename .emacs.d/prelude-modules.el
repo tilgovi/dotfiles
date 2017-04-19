@@ -20,7 +20,7 @@
 (require 'prelude-erlang)
 (require 'prelude-go)
 ;; (require 'prelude-haskell)
-;; (require 'prelude-js)
+(require 'prelude-js)
 ;; (require 'prelude-latex)
 ;; (require 'prelude-lisp)
 ;; (require 'prelude-ocaml)

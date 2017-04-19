@@ -31,16 +31,30 @@
  (lambda ()
    (walk-windows 'center-window 'f)))
 
-;; Enable jsx mode everywhere
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
+(use-package add-node-modules-path
+  :config
+  (eval-after-load 'js2-mode
+    '(add-hook 'js2-mode-hook #'add-node-modules-path)))
+
+(use-package company-flow
+  :config
+  (add-to-list 'company-backends 'company-flow))
 
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode 1))
 
+(use-package company-tern
+  :config
+  (add-to-list 'company-backends 'company-tern))
+
 (use-package elpy
   :config
   (elpy-enable))
+
+(use-package flow-mode
+  :config
+  (add-hook 'js-mode-hook 'flow-enable-automatically))
 
 (use-package flycheck
   :config
@@ -61,6 +75,8 @@
   :config
   (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
 
+(use-package rjsx-mode :mode "components\\/.*\\.js\\'")
+
 (use-package rust-mode
   :config
   (setq-default rust-format-on-save t)
@@ -71,6 +87,10 @@
 (use-package smartparens
   :config
   (smartparens-global-mode))
+
+(use-package tern
+  :config
+  (add-hook 'js2-mode-hook (lambda () (tern-mode t))))
 
 (use-package theme-changer
   :config
