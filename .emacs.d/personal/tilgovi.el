@@ -36,6 +36,10 @@
   (eval-after-load 'js2-mode
     '(add-hook 'js2-mode-hook #'add-node-modules-path)))
 
+(use-package chruby
+  :config
+  (add-hook 'ruby-mode-hook 'chruby-use-corresponding))
+
 (use-package company-flow
   :config
   (eval-after-load 'company
@@ -78,6 +82,16 @@
   (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
 
 (use-package rjsx-mode :mode "components\\/.*\\.js\\'")
+
+(use-package robe
+  :config
+  (eval-after-load 'chruby
+    '(defadvice inf-ruby-console-auto
+         (before activate-rvm-for-robe activate)
+       (chruby-use-corresponding)))
+  (eval-after-load 'company
+    '(add-to-list 'company-backends 'robe-mode))
+  (add-hook 'ruby-mode-hook 'robe-mode))
 
 (use-package rust-mode
   :config
