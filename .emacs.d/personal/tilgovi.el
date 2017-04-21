@@ -38,7 +38,8 @@
 
 (use-package company-flow
   :config
-  (add-to-list 'company-backends 'company-flow))
+  (eval-after-load 'company
+    '(add-to-list 'company-backends 'company-flow)))
 
 (use-package company-quickhelp
   :config
@@ -46,7 +47,8 @@
 
 (use-package company-tern
   :config
-  (add-to-list 'company-backends 'company-tern))
+  (eval-after-load 'company
+    '(add-to-list 'company-backends 'company-tern)))
 
 (use-package elpy
   :config
