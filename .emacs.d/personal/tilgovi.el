@@ -107,7 +107,8 @@
 (use-package tern
   :config
   (setq tern-command (append tern-command '("--no-port-file")))
-  (add-hook 'js2-mode-hook (lambda () (tern-mode t))))
+  (eval-after-load 'js2-mode
+    '(add-hook 'js2-mode-hook (lambda () (tern-mode t)))))
 
 (use-package theme-changer
   :config
