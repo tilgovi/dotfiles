@@ -38,6 +38,10 @@
   (eval-after-load 'js2-mode
     '(add-hook 'js2-mode-hook #'add-node-modules-path)))
 
+(use-package auto-virtualenv
+  :config
+  (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv))
+
 (use-package chruby
   :config
   (add-hook 'ruby-mode-hook 'chruby-use-corresponding))
