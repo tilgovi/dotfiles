@@ -127,8 +127,6 @@
 
 (use-package yasnippet)
 
-(use-package virtualenvwrapper)
-
 (use-package whitespace-cleanup-mode
   :config
   (global-whitespace-cleanup-mode))
