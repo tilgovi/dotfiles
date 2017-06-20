@@ -66,6 +66,7 @@
 
 (use-package flycheck
   :config
+  (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (global-flycheck-mode))
 
 (use-package editorconfig
