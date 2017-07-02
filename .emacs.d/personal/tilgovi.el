@@ -10,6 +10,17 @@
 (toggle-frame-fullscreen)
 ;;(setq frame-title-format (list "%b - " invocation-name "@" system-name))
 
+;; https://emacs.stackexchange.com/a/27609
+(defun my/use-eslint-from-node-modules ()
+  (let ((root (locate-dominating-file
+               (or (buffer-file-name) default-directory)
+               (lambda (dir)
+                 (let ((eslint (expand-file-name "node_modules/eslint/bin/eslint.js" dir)))
+                   (and eslint (file-executable-p eslint)))))))
+    (when root
+      (let ((eslint (expand-file-name "node_modules/eslint/bin/eslint.js" root)))
+        (setq-local flycheck-javascript-eslint-executable eslint)))))
+
 ;; This definition and the hook below auto-balance and -center windows.
 (defun center-window (window)
   "Tile and center buffers in WINDOW at 80 columns."
@@ -70,6 +81,7 @@
 
 (use-package flycheck
   :config
+  (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
   (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (global-flycheck-mode))
 
