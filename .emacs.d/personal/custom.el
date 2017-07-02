@@ -9,6 +9,7 @@
  '(eldoc-idle-delay 0)
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
  '(js-indent-level 2)
+ '(js-switch-indent-offset 2)
  '(js2-bounce-indent-p t)
  '(js2-mode-show-parse-errors nil)
  '(js2-mode-show-strict-warnings nil)
