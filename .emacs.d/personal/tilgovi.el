@@ -80,7 +80,7 @@
 
 (use-package flow-mode
   :config
-  (add-hook 'js-mode-hook 'flow-enable-automatically))
+  (add-hook 'js-mode-hook 'flow-minor-mode))
 
 (use-package flycheck
   :config
