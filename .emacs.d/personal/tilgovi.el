@@ -10,6 +10,9 @@
 (toggle-frame-fullscreen)
 ;;(setq frame-title-format (list "%b - " invocation-name "@" system-name))
 
+;; Use JSX always for JavaScript files
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js-jsx-mode))
+
 ;; https://emacs.stackexchange.com/a/27609
 (defun my/use-eslint-from-node-modules ()
   (let ((root (locate-dominating-file
@@ -101,8 +104,6 @@
 (use-package py-yapf
   :config
   (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
-
-(use-package rjsx-mode :mode "components\\/.*\\.js\\'")
 
 (use-package robe
   :config
