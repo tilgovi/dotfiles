@@ -11,7 +11,7 @@
 ;;(setq frame-title-format (list "%b - " invocation-name "@" system-name))
 
 ;; Use JSX always for JavaScript files
-(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js-jsx-mode))
 
 ;; https://emacs.stackexchange.com/a/27609
 (defun my/use-eslint-from-node-modules ()
@@ -49,8 +49,8 @@
 
 (use-package add-node-modules-path
   :config
-  (eval-after-load 'js2-mode
-    '(add-hook 'js2-mode-hook #'add-node-modules-path)))
+  (eval-after-load 'js-mode
+    '(add-hook 'js-mode-hook #'add-node-modules-path)))
 
 (use-package auto-virtualenv
   :config
@@ -120,8 +120,8 @@
 (use-package tern
   :config
   (setq tern-command (append tern-command '("--no-port-file")))
-  (eval-after-load 'js2-mode
-    '(add-hook 'js2-mode-hook (lambda () (tern-mode t)))))
+  (eval-after-load 'js-mode
+    '(add-hook 'js-mode-hook (lambda () (tern-mode t)))))
 
 (use-package theme-changer
   :config
