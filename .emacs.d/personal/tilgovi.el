@@ -60,11 +60,6 @@
   :config
   (add-hook 'ruby-mode-hook 'chruby-use-corresponding))
 
-(use-package company-flow
-  :config
-  (eval-after-load 'company
-    '(add-to-list 'company-backends 'company-flow)))
-
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode 1))
@@ -77,10 +72,6 @@
 (use-package elpy
   :config
   (elpy-enable))
-
-(use-package flow-mode
-  :config
-  (add-hook 'js2-mode-hook 'flow-minor-mode))
 
 (use-package flycheck
   :config
