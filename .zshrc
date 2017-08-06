@@ -26,6 +26,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+if test aws_zsh_completer.sh &> /dev/null; then
+    source $(whence aws_zsh_completer.sh)
+fi
+
 if [ -d "/usr/local/share/chruby" ]; then
     source "/usr/local/share/chruby/chruby.sh"
     source "/usr/local/share/chruby/auto.sh"
