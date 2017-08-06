@@ -18,3 +18,7 @@ case $OSTYPE in
     alias agud="sudo apt update && sudo apt full-upgrade"
   ;;
 esac
+
+if type pew &> /dev/null; then
+    source $(pew shell_config)
+fi
