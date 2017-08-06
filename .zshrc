@@ -26,6 +26,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+if [ -d "/usr/local/share/chruby" ]; then
+    source "/usr/local/share/chruby/chruby.sh"
+    source "/usr/local/share/chruby/auto.sh"
+fi
+
 case $OSTYPE in
   darwin*)
     alias code="open /Applications/Emacs.app"
