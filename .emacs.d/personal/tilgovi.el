@@ -133,6 +133,15 @@
 
 (use-package toml-mode)
 
+(use-package typescript-mode
+  :config
+  (define-derived-mode flow-mode typescript-mode "Flow"
+    "JavaScript with Flow type checking")
+  (use-package flycheck
+    :config
+    (add-to-list 'auto-mode-alist '("components\\/.*\\.jsx?\\'" . flow-mode))
+    (flycheck-add-mode 'javascript-eslint 'flow-mode)))
+
 (use-package yasnippet)
 
 (use-package whitespace-cleanup-mode

@@ -16,7 +16,7 @@
  '(js2-mode-show-strict-warnings nil)
  '(package-selected-packages
    (quote
-    (ace-window add-node-modules-path auto-virtualenv cargo chruby color-theme-solarized company company-anaconda company-go company-jedi company-quickhelp company-tern diminish dockerfile-mode editorconfig elpy erlang flycheck flycheck-mypy flycheck-rust geiser gitconfig-mode gitignore-mode google-c-style gotest helm helm-core import-js jedi json-mode less-css-mode magit magit-popup markdown-mode multiple-cursors nginx-mode py-yapf pylint python racer rainbow-delimiters rainbow-mode robe rust-mode rustfmt smart-mode-line smartparens smex solarized-theme tern terraform-mode theme-changer toml-mode undo-tree use-package web-mode whitespace-cleanup-mode yaml-mode yasnippet zencoding-mode)))
+    (ace-window add-node-modules-path auto-virtualenv cargo chruby color-theme-solarized company company-anaconda company-go company-jedi company-quickhelp company-tern diminish dockerfile-mode editorconfig elpy erlang flycheck flycheck-mypy flycheck-rust geiser gitconfig-mode gitignore-mode google-c-style gotest helm helm-core import-js jedi json-mode less-css-mode magit magit-popup markdown-mode multiple-cursors nginx-mode py-yapf pylint python racer rainbow-delimiters rainbow-mode robe rust-mode rustfmt smart-mode-line smartparens smex solarized-theme tern terraform-mode theme-changer toml-mode typescript-mode undo-tree use-package web-mode whitespace-cleanup-mode yaml-mode yasnippet zencoding-mode)))
  '(prelude-whitespace nil)
  '(prettify-symbols-unprettify-at-point (quote right-edge))
  '(python-shell-extra-pythonpaths (quote ("~/.local/venvs")))
@@ -26,6 +26,8 @@
  '(search-default-mode (quote char-fold-to-regexp))
  '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(typescript-auto-indent-flag nil)
+ '(typescript-indent-level 2)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
