@@ -13,6 +13,9 @@
 ;; Use JSX always for JavaScript files
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
 
+;; Use JS2 for JavaScript modules
+(add-to-list 'auto-mode-alist '("\\.mjs\\'" . js2-mode))
+
 ;; https://emacs.stackexchange.com/a/27609
 (defun my/use-eslint-from-node-modules ()
   (let ((root (locate-dominating-file
