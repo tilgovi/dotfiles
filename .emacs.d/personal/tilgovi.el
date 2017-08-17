@@ -142,7 +142,7 @@
     "JavaScript with Flow type checking")
   (use-package flycheck
     :config
-    (add-to-list 'auto-mode-alist '("components\\/.*\\.jsx?\\'" . flow-mode))
+    (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . flow-mode))
     (flycheck-add-mode 'javascript-eslint 'flow-mode)))
 
 (use-package yasnippet)
