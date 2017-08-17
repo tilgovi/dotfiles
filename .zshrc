@@ -37,7 +37,7 @@ fi
 
 case $OSTYPE in
   darwin*)
-    alias code="open /Applications/Emacs.app"
+    alias code="/Applications/Emacs.app/Contents/MacOS/Emacs &>/dev/null &!"
     ;;
   linux*)
     alias code="emacs &>/dev/null &!"
