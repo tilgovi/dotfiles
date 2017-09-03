@@ -36,11 +36,11 @@ if [ -d "/usr/local/share/chruby" ]; then
 fi
 
 case $OSTYPE in
-  darwin*)
-    alias code="/Applications/Emacs.app/Contents/MacOS/Emacs &>/dev/null &!"
-    ;;
-  linux*)
-    alias code="emacs &>/dev/null &!"
-    alias agud="sudo apt update && sudo apt full-upgrade"
-  ;;
+    darwin*)
+        alias code="/Applications/Emacs.app/Contents/MacOS/Emacs &>/dev/null &!"
+        ;;
+    linux*)
+        alias code="emacs &>/dev/null &!"
+        alias agud="sudo apt update && sudo apt full-upgrade"
+        ;;
 esac
