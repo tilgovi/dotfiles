@@ -90,6 +90,10 @@
 
 (use-package import-js)
 
+(use-package flow-minor-mode
+  :config
+  (add-hook 'flow-mode-hook 'flow-minor-mode))
+
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
