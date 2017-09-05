@@ -20,7 +20,7 @@ export PATH="$GOPATH/bin:$PATH"
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npmrc"
 
 if whence yarn > /dev/null; then
-    export PATH="`yarn global bin`:$PATH"
+    export PATH="`yarn global bin 2> /dev/null`:$PATH"
 fi
 
 # Python
