@@ -5,7 +5,7 @@
 ;;; Code:
 (eval-when-compile (require 'use-package))
 
-(setq mac-command-modifier 'control)
+(setq mac-command-modifier 'meta)
 
 (toggle-frame-fullscreen)
 ;;(setq frame-title-format (list "%b - " invocation-name "@" system-name))
