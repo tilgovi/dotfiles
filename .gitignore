@@ -5,7 +5,10 @@
 # cache
 .*cache*
 .*.elc
+.babel.json
+.pylint.d
 .rnd
+.v8flags.*
 .wget-hsts
 
 # history
@@ -16,6 +19,7 @@
 # local
 .CFUserTextEncoding
 .cargo
+.docker
 .emacs.d
 .emscripten
 .face.icon
