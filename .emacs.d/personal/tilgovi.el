@@ -82,7 +82,7 @@
 (use-package company-tern
   :config
   (eval-after-load 'company
-    '(add-to-list 'company-backends 'company-tern)))
+    '(add-to-list 'company-backends 'company-tern t)))
 
 (use-package elpy
   :config
@@ -122,7 +122,7 @@
          (before activate-rvm-for-robe activate)
        (chruby-use-corresponding)))
   (eval-after-load 'company
-    '(add-to-list 'company-backends 'robe-mode))
+    '(add-to-list 'company-backends 'robe-mode t))
   (add-hook 'ruby-mode-hook 'robe-mode))
 
 (use-package rust-mode
