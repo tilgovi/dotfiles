@@ -5,7 +5,6 @@
  ;; If there is more than one, they won't work right.
  '(company-auto-complete t)
  '(company-idle-delay 0.2)
- '(company-minimum-prefix-length 0)
  '(company-quickhelp-delay 0.2)
  '(custom-safe-themes
    (quote
