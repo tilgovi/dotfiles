@@ -65,9 +65,19 @@
 
 (use-package company)
 
+(use-package company-flow
+  :config
+  (eval-after-load 'company
+    '(add-to-list 'company-backends 'company-flow)))
+
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode 1))
+
+(use-package company-terraform
+  :config
+  (eval-after-load 'company
+    '(add-to-list 'company-backends 'company-terraform)))
 
 (use-package company-tern
   :config
