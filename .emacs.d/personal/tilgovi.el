@@ -151,6 +151,23 @@
 
 (use-package toml-mode)
 
+(use-package typescript-mode
+  :config
+  (define-derived-mode flow-mode typescript-mode "Flow"
+    "JavaScript with Flow type checking")
+  (add-to-list 'auto-mode-alist '("\\.m?jsx?\\'" . flow-mode))
+  (add-to-list 'interpreter-mode-alist '("node" . flow-mode))
+  (eval-after-load 'add-node-modules-path
+    '(add-hook 'flow-mode-hook #'add-node-modules-path))
+  (eval-after-load 'company-flow
+    '(add-to-list 'company-flow-modes 'flow-mode))
+  (eval-after-load 'flow-minor-mode
+    '(add-hook 'flow-mode-hook 'flow-minor-mode))
+  (eval-after-load 'flycheck
+    '(flycheck-add-mode 'javascript-eslint 'flow-mode))
+  (eval-after-load 'tern-mode
+    '(add-hook 'flow-mode-hook (lambda () (tern-mode t)))))
+
 (use-package yasnippet)
 
 (use-package whitespace-cleanup-mode
