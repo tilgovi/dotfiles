@@ -63,6 +63,8 @@
   :config
   (add-hook 'ruby-mode-hook 'chruby-use-corresponding))
 
+(use-package company)
+
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode 1))
