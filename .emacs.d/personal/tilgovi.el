@@ -11,10 +11,8 @@
 ;;(setq frame-title-format (list "%b - " invocation-name "@" system-name))
 
 ;; Use JSX always for JavaScript files
-(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
-
-;; Use JS2 for JavaScript modules
-(add-to-list 'auto-mode-alist '("\\.mjs\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.m?jsx?\\'" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
 
 ;; https://emacs.stackexchange.com/a/27609
 (defun my/use-eslint-from-node-modules ()
@@ -53,7 +51,7 @@
 (use-package add-node-modules-path
   :config
   (eval-after-load 'js2-mode
-    '(add-hook 'js2-mode-hook #'add-node-modules-path)))
+    '(add-hook 'js2-jsx-mode-hook #'add-node-modules-path)))
 
 (use-package auto-virtualenv
   :config
@@ -102,9 +100,11 @@
 
 (use-package import-js)
 
+(use-package flow-js2-mode)
+
 (use-package flow-minor-mode
   :config
-  (add-hook 'flow-mode-hook 'flow-minor-mode))
+  (add-hook 'js2-jsx-mode-hook 'flow-minor-mode))
 
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
@@ -139,8 +139,7 @@
 (use-package tern
   :config
   (setq tern-command (append tern-command '("--no-port-file")))
-  (eval-after-load 'js2-mode
-    '(add-hook 'js2-mode-hook (lambda () (tern-mode t)))))
+  (add-hook 'js2-jsx-mode-hook (lambda () (tern-mode t))))
 
 (use-package theme-changer
   :config
@@ -151,15 +150,6 @@
   (change-theme 'solarized-light 'solarized-dark))
 
 (use-package toml-mode)
-
-(use-package typescript-mode
-  :config
-  (define-derived-mode flow-mode typescript-mode "Flow"
-    "JavaScript with Flow type checking")
-  (use-package flycheck
-    :config
-    (add-to-list 'auto-mode-alist '("\\.m?jsx?\\'" . flow-mode))
-    (flycheck-add-mode 'javascript-eslint 'flow-mode)))
 
 (use-package yasnippet)
 
