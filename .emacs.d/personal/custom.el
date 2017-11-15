@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-virtualenv-dir "~/.local/share/virtualenvs")
  '(company-auto-complete t)
  '(company-idle-delay 0.2)
  '(company-quickhelp-delay 0.2)
@@ -26,6 +27,7 @@
  '(prelude-whitespace nil)
  '(prettify-symbols-unprettify-at-point (quote right-edge))
  '(python-shell-extra-pythonpaths (quote ("~/.local/venvs")))
+ '(pyvenv-virtualenvwrapper-python "~/.local/share/virtualenvs/virtualenvwrapper/bin/python")
  '(replace-char-fold t)
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
