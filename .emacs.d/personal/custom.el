@@ -12,6 +12,7 @@
  '(eldoc-idle-delay 0)
  '(flycheck-checker-error-threshold 1000)
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
+ '(flycheck-javascript-flow-args nil)
  '(global-company-mode t)
  '(global-prettify-symbols-mode t)
  '(js-indent-level 2)
