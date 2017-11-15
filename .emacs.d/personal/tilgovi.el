@@ -159,22 +159,39 @@
 
 (use-package typescript-mode
   :config
+  ;; Derive a flow-mode from typescript-mode
   (define-derived-mode flow-mode typescript-mode "Flow"
     "JavaScript with Flow type checking")
+
+  ;; Use flow-mode for all kinds of JavaScript files
   (add-to-list 'auto-mode-alist '("\\.m?jsx?\\'" . flow-mode))
+
+  ;; Use node as the interpreter for flow-mode
   (add-to-list 'interpreter-mode-alist '("node" . flow-mode))
+
+  ;; Add node modules path to the default path under flow-mode.
   (eval-after-load 'add-node-modules-path
     '(add-hook 'flow-mode-hook #'add-node-modules-path))
+
+  ;; Enable company-flow to autocomplete for flow-mode.
   (eval-after-load 'company-flow
     '(add-to-list 'company-flow-modes 'flow-mode))
+
+  ;; Enable flow-minor-mode to get the type at point echoed.
   (eval-after-load 'flow-minor-mode
     '(add-hook 'flow-mode-hook 'flow-minor-mode))
+
+  ;; Enable flycheck with eslint for flow-mode.
   (eval-after-load 'flycheck
     '(flycheck-add-mode 'javascript-eslint 'flow-mode))
+
+  ;; Chain flow and flow-coverage flycheck to eslint.
   (eval-after-load 'flycheck-flow
     '(progn
        (flycheck-add-mode 'javascript-flow' flow-mode)
        (flycheck-add-mode 'javascript-flow-coverage' flow-mode)))
+
+  ;; Enable tern-mode when in flow-mode.
   (eval-after-load 'tern-mode
     '(add-hook 'flow-mode-hook (lambda () (tern-mode t)))))
 
