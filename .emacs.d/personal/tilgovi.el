@@ -106,6 +106,12 @@
   :config
   (add-hook 'js2-jsx-mode-hook 'flow-minor-mode))
 
+(use-package flycheck-flow
+  :config
+  (flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
+  (flycheck-add-next-checker 'javascript-flow
+                             'javascript-flow-coverage))
+
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
