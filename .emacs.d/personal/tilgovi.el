@@ -108,6 +108,13 @@
 
 (use-package flycheck-flow
   :config
+  (eval-after-load 'flow-minor-mode
+    '(advice-add
+      'flycheck-flow--predicate
+      :filter-return
+      (lambda (r)
+        "Only enable flow checkers on flow files"
+        (and r (flow-minor-tag-present-p)))))
   (flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
   (flycheck-add-next-checker 'javascript-flow
                              'javascript-flow-coverage))
