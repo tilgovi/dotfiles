@@ -135,7 +135,7 @@
          (before activate-rvm-for-robe activate)
        (chruby-use-corresponding)))
   (eval-after-load 'company
-    '(add-to-list 'company-backends 'robe-mode t))
+    '(add-to-list 'company-backends 'company-robe t))
   (add-hook 'ruby-mode-hook 'robe-mode))
 
 (use-package rust-mode
