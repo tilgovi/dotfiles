@@ -171,6 +171,10 @@
     '(add-hook 'flow-mode-hook 'flow-minor-mode))
   (eval-after-load 'flycheck
     '(flycheck-add-mode 'javascript-eslint 'flow-mode))
+  (eval-after-load 'flycheck-flow
+    '(progn
+       (flycheck-add-mode 'javascript-flow' flow-mode)
+       (flycheck-add-mode 'javascript-flow-coverage' flow-mode)))
   (eval-after-load 'tern-mode
     '(add-hook 'flow-mode-hook (lambda () (tern-mode t)))))
 
