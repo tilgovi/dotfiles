@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(auto-virtualenv-dir "~/.local/share/virtualenvs")
  '(company-auto-complete t)
+ '(company-auto-complete-chars nil)
  '(company-idle-delay 0.2)
  '(company-quickhelp-delay 0.2)
  '(custom-safe-themes
