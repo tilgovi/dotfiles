@@ -30,6 +30,7 @@
  '(python-shell-extra-pythonpaths (quote ("~/.local/venvs")))
  '(pyvenv-virtualenvwrapper-python "~/.local/share/virtualenvs/virtualenvwrapper/bin/python")
  '(replace-char-fold t)
+ '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(search-default-mode (quote char-fold-to-regexp))
