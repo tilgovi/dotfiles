@@ -149,6 +149,10 @@
   :config
   (smartparens-global-mode))
 
+(use-package terraform-mode
+  :config
+  (add-hook 'terraform-mode-hook 'terraform-format-on-save-mode))
+
 (use-package tern
   :config
   (setq tern-command (append tern-command '("--no-port-file")))
