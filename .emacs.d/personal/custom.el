@@ -20,6 +20,7 @@
  '(flycheck-javascript-flow-args nil)
  '(global-company-mode t)
  '(global-prettify-symbols-mode t)
+ '(ivy-height 35)
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)
  '(js2-bounce-indent-p t)
@@ -27,7 +28,7 @@
  '(js2-mode-show-strict-warnings nil)
  '(package-selected-packages
    (quote
-    (ace-window add-node-modules-path auto-virtualenv cargo chruby color-theme-solarized company company-anaconda company-flow company-go company-quickhelp company-terraform company-tern cython-mode diminish dockerfile-mode editorconfig elpy erlang flow-minor-mode flycheck flycheck-flow flycheck-mypy flycheck-rust geiser gitconfig-mode gitignore-mode google-c-style gotest helm helm-core import-js json-mode less-css-mode magit magit-popup markdown-mode multiple-cursors nginx-mode py-yapf pylint python racer rainbow-delimiters rainbow-mode robe rust-mode rustfmt smart-mode-line smartparens smex solarized-theme tern terraform-mode theme-changer toml-mode typescript-mode undo-tree use-package web-mode whitespace-cleanup-mode yaml-mode yasnippet zencoding-mode)))
+    (ace-window add-node-modules-path alchemist auto-virtualenv cargo chruby color-theme-solarized company company-anaconda company-flow company-go company-quickhelp company-tern company-terraform counsel cython-mode diminish dockerfile-mode editorconfig elixir-mode elpy erlang flow-minor-mode flycheck flycheck-flow flycheck-mypy flycheck-rust geiser gitconfig-mode gitignore-mode google-c-style gotest haskell-mode import-js json-mode less-css-mode magit magit-popup markdown-mode multiple-cursors nginx-mode py-yapf pylint python racer rainbow-delimiters rainbow-mode robe rust-mode rustfmt scss-mode smart-mode-line smartparens solarized-theme sort-words swiper tern terraform-mode theme-changer toml-mode typescript-mode undo-tree use-package web-mode whitespace-cleanup-mode yaml-mode yasnippet zencoding-mode)))
  '(prelude-whitespace nil)
  '(prettify-symbols-unprettify-at-point (quote right-edge))
  '(python-shell-extra-pythonpaths (quote ("~/.local/venvs")))
