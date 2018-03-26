@@ -7,7 +7,7 @@
 
 (setq mac-command-modifier 'meta)
 
-(toggle-frame-fullscreen)
+(when window-system (toggle-frame-fullscreen))
 ;;(setq frame-title-format (list "%b - " invocation-name "@" system-name))
 
 ;; Use JSX always for JavaScript files
