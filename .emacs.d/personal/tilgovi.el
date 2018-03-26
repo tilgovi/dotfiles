@@ -129,6 +129,9 @@
   :config
   (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
 
+(use-package pipenv
+  :hook (python-mode . pipenv-mode))
+
 (use-package robe
   :requires (chruby company)
   :hook (ruby-mode . robe-mode)
