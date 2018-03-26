@@ -100,8 +100,6 @@
 
 (use-package import-js)
 
-(use-package flow-js2-mode)
-
 (use-package flow-minor-mode
   :config
   (add-hook 'js2-jsx-mode-hook 'flow-minor-mode))
