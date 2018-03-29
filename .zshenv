@@ -34,3 +34,8 @@ case $OSTYPE in
         export PATH="$HOME/Library/Python/3.6/bin:$PATH"
         ;;
 esac
+
+# Remix
+
+export REMIX_HOME="$HOME/src/remix"
+export PATH="$REMIX_HOME/bin:$PATH"
