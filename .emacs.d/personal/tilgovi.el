@@ -115,38 +115,14 @@
 (use-package flycheck
   :functions
   (flycheck-add-mode flycheck-add-next-checker global-flycheck-mode)
-  :init
-  ;; https://emacs.stackexchange.com/a/27609
-  (defun my/use-eslint-from-node-modules ()
-    (let ((root (locate-dominating-file
-                 (or (buffer-file-name) default-directory)
-                 (lambda (dir)
-                   (let ((eslint (expand-file-name "node_modules/.bin/eslint" dir)))
-                     (and eslint (file-executable-p eslint)))))))
-      (when root
-        (let ((eslint (expand-file-name "node_modules/.bin/eslint" root)))
-          (setq-local flycheck-javascript-eslint-executable eslint)))))
   :config
-  (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
   (flycheck-add-mode 'javascript-eslint 'flow-mode)
   (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (global-flycheck-mode))
 
 (use-package flycheck-flow
   :requires flycheck
-  :init
-  ;; https://emacs.stackexchange.com/a/27609
-  (defun my/use-flow-from-node-modules ()
-    (let ((root (locate-dominating-file
-                 (or (buffer-file-name) default-directory)
-                 (lambda (dir)
-                   (let ((flow (expand-file-name "node_modules/.bin/flow" dir)))
-                     (and flow (file-executable-p flow)))))))
-      (when root
-        (let ((flow (expand-file-name "node_modules/.bin/flow" root)))
-          (setq-local flycheck-javascript-flow-executable flow)))))
   :config
-  (add-hook 'flycheck-mode-hook #'my/use-flow-from-node-modules)
   (flycheck-add-mode 'javascript-flow'flow-mode)
   (flycheck-add-mode 'javascript-flow-coverage 'flow-mode))
 
