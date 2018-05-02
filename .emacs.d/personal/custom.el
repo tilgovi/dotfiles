@@ -46,6 +46,7 @@
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(search-default-mode (quote char-fold-to-regexp))
+ '(sentence-end-double-space nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(typescript-auto-indent-flag nil)
