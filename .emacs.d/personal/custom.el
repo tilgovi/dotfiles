@@ -29,6 +29,7 @@
  '(package-selected-packages
    (quote
     (ace-window add-node-modules-path alchemist auto-virtualenv cargo chruby color-theme-solarized company company-anaconda company-flow company-go company-quickhelp company-tern company-terraform counsel cython-mode diminish dockerfile-mode editorconfig elixir-mode elpy erlang flow-minor-mode flycheck flycheck-flow flycheck-mypy flycheck-rust geiser gitconfig-mode gitignore-mode google-c-style gotest haskell-mode import-js json-mode less-css-mode magit magit-popup markdown-mode multiple-cursors nginx-mode pipenv py-yapf pylint python racer rainbow-delimiters rainbow-mode robe rust-mode rustfmt scss-mode smart-mode-line smartparens solarized-theme sort-words swiper tern terraform-mode theme-changer toml-mode typescript-mode undo-tree use-package web-mode whitespace-cleanup-mode yaml-mode yasnippet zencoding-mode)))
+ '(pixel-scroll-mode t)
  '(prelude-whitespace nil)
  '(prettify-symbols-unprettify-at-point (quote right-edge))
  '(projectile-project-root-files
