@@ -38,6 +38,7 @@
  '(projectile-project-root-files-functions
    (quote
     (projectile-root-local projectile-root-top-down projectile-root-top-down-recurring projectile-root-bottom-up)))
+ '(python-indent-def-block-scale 1)
  '(python-shell-extra-pythonpaths (quote ("~/.local/venvs")))
  '(pyvenv-virtualenvwrapper-python "~/.local/share/virtualenvs/virtualenvwrapper/bin/python")
  '(replace-char-fold t)
