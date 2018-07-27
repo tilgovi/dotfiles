@@ -176,7 +176,7 @@
   (setq calendar-latitude 37.80)
   (setq calendar-longitude -122.27)
   :config
-  (change-theme 'solarized-light 'solarized-dark))
+  (change-theme 'base16-tomorrow 'base16-tomorrow-night))
 
 (use-package toml-mode)
 
