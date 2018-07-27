@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="gentoo"
+ZSH_THEME="kardan"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
