@@ -19,6 +19,7 @@
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
  '(flycheck-javascript-flow-args nil)
  '(global-company-mode t)
+ '(global-display-line-numbers-mode t)
  '(global-prettify-symbols-mode t)
  '(ivy-height 35)
  '(js-indent-level 2)
