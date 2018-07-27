@@ -28,13 +28,6 @@ fi
 export PIPSI_HOME="$HOME/.local/share/virtualenvs"
 export WORKON_HOME="$HOME/.local/share/virtualenvs"
 
-case $OSTYPE in
-    darwin*)
-        export PATH="$HOME/Library/Python/2.7/bin:$PATH"
-        export PATH="$HOME/Library/Python/3.6/bin:$PATH"
-        ;;
-esac
-
 # Remix
 
 export REMIX_HOME="$HOME/src/remix"

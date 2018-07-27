@@ -13,6 +13,7 @@ plugins=(
     gitfast
     golang
     pip
+    pyenv
     python
     ruby
     rust
