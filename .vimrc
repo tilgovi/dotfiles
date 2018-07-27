@@ -1,11 +1,9 @@
-execute pathogen#infect()
-
 filetype plugin indent on
 syntax enable
 
 let g:nd_themes = [
-  \ [ 'sunrise+0', 'solarized', 'light' ],
-  \ [ 'sunset+0',  'solarized', 'dark'  ],
+  \ [ 'sunrise+0', 'base16-tomorrow', 'light' ],
+  \ [ 'sunset+0',  'base16-tomorrow-night', 'dark'  ],
   \ ]
 let g:nd_latitude = '40'
 
