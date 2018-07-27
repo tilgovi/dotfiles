@@ -5,7 +5,7 @@
 ;;; Code:
 (eval-when-compile (require 'use-package))
 
-(setq mac-command-modifier 'meta)
+(if (eq system-type 'darwin) (setq mac-command-modifier 'meta))
 
 (when window-system
   (toggle-frame-fullscreen)
