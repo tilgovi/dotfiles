@@ -37,7 +37,20 @@
   :hook ((flow-mode . add-node-modules-path) (js2-mode . add-node-modules-path)))
 
 (use-package auto-virtualenv
-  :hook (python-mode . auto-virtualenv-set-virtualenv))
+  :defines auto-virtualenv--project-root
+  :hook (python-mode . auto-virtualenv-set-virtualenv)
+  :config
+  (defun auto-virtualenv-find-virtualenv-path--more-paths (original-venv-dir)
+    "Check additional paths for virtualenv."
+    (let* ((project-root (auto-virtualenv--project-root))
+          (venv-dir (expand-file-name "venv/" project-root)))
+      (cond
+       (original-venv-dir original-venv-dir)
+       ((file-exists-p venv-dir) venv-dir))))
+  (advice-add
+   'auto-virtualenv-find-virtualenv-path
+   :filter-return
+   #'auto-virtualenv-find-virtualenv-path--more-paths))
 
 (use-package chruby
   :hook (ruby-mode . chruby-use-corresponding))
