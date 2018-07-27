@@ -18,7 +18,7 @@
          (left (car edges))
          (right (nth 2 edges))
          (width (- right left))
-         (excess (- width 80)))
+         (excess (- width 100)))
     (if (> excess 0)
         (progn
           (setq truncate-lines t)
