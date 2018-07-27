@@ -42,6 +42,10 @@
 (use-package chruby
   :hook (ruby-mode . chruby-use-corresponding))
 
+(use-package color-identifiers-mode
+  :config
+  (global-color-identifiers-mode))
+
 (use-package company)
 
 (use-package company-flow
