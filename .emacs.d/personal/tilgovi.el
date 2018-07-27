@@ -73,7 +73,7 @@
   (company-quickhelp-mode 1))
 
 (use-package company-terraform
-  :requires company
+  :after (company)
   :init
   (add-to-list 'company-backends 'company-terraform))
 
@@ -108,7 +108,7 @@
   (global-flycheck-mode))
 
 (use-package flycheck-flow
-  :requires flycheck
+  :after (flycheck)
   :config
   (flycheck-add-mode 'javascript-flow'flow-mode)
   (flycheck-add-mode 'javascript-flow-coverage 'flow-mode))
@@ -131,7 +131,7 @@
    '((pretty-fonts-fira-font prog-mode-hook org-mode-hook))))
 
 (use-package robe
-  :requires (chruby company)
+  :after (chruby company)
   :hook (ruby-mode . robe-mode)
   :config
   (defadvice inf-ruby-console-auto
@@ -143,7 +143,7 @@
   (setq-default rust-format-on-save t))
 
 (use-package racer
-  :requires rust-mode
+  :after (rust-mode)
   :hook (rust-mode . racer-mode))
 
 (use-package smartparens
