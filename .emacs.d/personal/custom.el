@@ -21,7 +21,7 @@
  '(global-company-mode t)
  '(global-display-line-numbers-mode t)
  '(global-prettify-symbols-mode t)
- '(ivy-height 35)
+ '(ivy-height 25)
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)
  '(js2-bounce-indent-p t)
