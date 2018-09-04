@@ -110,7 +110,7 @@
 (use-package flycheck-flow
   :after (flycheck)
   :config
-  (flycheck-add-mode 'javascript-flow'flow-mode)
+  (flycheck-add-mode 'javascript-flow 'flow-mode)
   (flycheck-add-mode 'javascript-flow-coverage 'flow-mode))
 
 (use-package multiple-cursors
