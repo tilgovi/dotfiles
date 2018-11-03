@@ -17,6 +17,7 @@
 .recently-used
 
 # local
+.base16_theme
 .CFUserTextEncoding
 .cargo
 .docker
@@ -33,6 +34,7 @@
 .themes
 .vim
 .viminfo
+.vimrc_background
 .virtualenvs
 .wine
 .yarn

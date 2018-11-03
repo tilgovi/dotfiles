@@ -5,6 +5,7 @@ HYPHEN_INSENSITIVE="true"
 
 plugins=(
     aws
+    base16-shell
     cargo
     chruby
     colorize
@@ -48,3 +49,6 @@ case $OSTYPE in
         alias agud="sudo apt update && sudo apt full-upgrade"
         ;;
 esac
+
+alias light=base16_tomorrow
+alias dark=base16_tomorrow-night
