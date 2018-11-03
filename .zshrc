@@ -12,6 +12,7 @@ plugins=(
     extract
     gitfast
     golang
+    heroku
     pip
     pyenv
     python
