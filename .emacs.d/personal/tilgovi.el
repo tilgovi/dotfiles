@@ -59,6 +59,7 @@
 (use-package company)
 
 (use-package company-flow
+  :after (company)
   :init
   (add-to-list 'company-backends 'company-flow)
   :config
