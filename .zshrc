@@ -11,6 +11,7 @@ plugins=(
     colorize
     docker
     extract
+    git
     gitfast
     golang
     heroku
