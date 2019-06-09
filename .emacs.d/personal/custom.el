@@ -21,7 +21,6 @@
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
  '(flycheck-javascript-flow-args nil)
  '(global-company-mode t)
- '(global-display-line-numbers-mode t)
  '(global-prettify-symbols-mode t)
  '(global-subword-mode t)
  '(ivy-height 25)
