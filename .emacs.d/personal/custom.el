@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(auto-virtualenv-dir "~/.local/share/virtualenvs")
  '(clang-format-style "Chromium")
+ '(column-number-mode t)
  '(company-auto-complete t)
  '(company-auto-complete-chars nil)
  '(company-idle-delay 0.2)
