@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-virtualenv-dir "~/.local/share/virtualenvs")
+ '(clang-format-style "Chromium")
  '(company-auto-complete t)
  '(company-auto-complete-chars nil)
  '(company-idle-delay 0.2)
@@ -16,6 +17,7 @@
    (quote
     (elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-django elpy-module-sane-defaults)))
  '(flycheck-checker-error-threshold 1000)
+ '(flycheck-clang-language-standard "c++17")
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
  '(flycheck-javascript-flow-args nil)
  '(global-company-mode t)
