@@ -79,11 +79,16 @@
 
 (use-package flow-mode
   :mode "\\.m?jsx?\\'"
-  :interpreter "node")
+  :interpreter "node"
+  :config
+  (with-eval-after-load 'flycheck
+    (flycheck-add-mode 'javascript-eslint 'flow-mode))
+  (with-eval-after-load 'flycheck-flow
+    (flycheck-add-mode 'javascript-flow 'flow-mode)
+    (flycheck-add-mode 'javascript-flow-coverage 'flow-mode)))
 
 (use-package flycheck
   :config
-  (flycheck-add-mode 'javascript-eslint 'flow-mode)
   (defun flycheck-maybe-select-python-mypy ()
     (when (flycheck-may-enable-checker 'python-mypy)
       (flycheck-select-checker 'python-mypy)))
@@ -92,10 +97,7 @@
   (flycheck-add-next-checker 'python-mypy 'python-pylint))
 
 (use-package flycheck-flow
-  :requires flycheck
-  :config
-  (flycheck-add-mode 'javascript-flow 'flow-mode)
-  (flycheck-add-mode 'javascript-flow-coverage 'flow-mode))
+  :requires flycheck)
 
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
@@ -130,9 +132,11 @@
   :requires (chruby company)
   :hook (ruby-mode . robe-mode)
   :config
-  (defadvice inf-ruby-console-auto
-      (before activate-rvm-for-robe activate) (chruby-use-corresponding))
-  (add-to-list 'company-backends 'company-robe t))
+  (when (package-installed-p 'chruby)
+    (defadvice inf-ruby-console-auto
+        (before activate-rvm-for-robe activate) (chruby-use-corresponding)))
+  (when (package-installed-p 'company)
+    (add-to-list 'company-backends 'company-robe t)))
 
 (use-package rust-mode
   :init
