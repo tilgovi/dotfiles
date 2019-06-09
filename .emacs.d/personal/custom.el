@@ -23,6 +23,7 @@
  '(flycheck-javascript-flow-args nil)
  '(global-color-identifiers-mode t)
  '(global-company-mode t)
+ '(global-flycheck-inline-mode t)
  '(global-flycheck-mode t)
  '(global-prettify-symbols-mode t)
  '(global-subword-mode t)
