@@ -68,6 +68,9 @@
 (use-package editorconfig
   :hook (editor-config-custom-hooks . (lambda (props) (whitespace-mode))))
 
+(use-package eslintd-fix
+  :hook (flow-mode . eslintd-fix-mode))
+
 (use-package import-js)
 
 (use-package flow-minor-mode
