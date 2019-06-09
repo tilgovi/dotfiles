@@ -80,7 +80,12 @@
 (use-package flycheck
   :config
   (flycheck-add-mode 'javascript-eslint 'flow-mode)
-  (flycheck-add-next-checker 'python-flake8 'python-pylint))
+  (defun flycheck-maybe-select-python-mypy ()
+    (when (flycheck-may-enable-checker 'python-mypy)
+      (flycheck-select-checker 'python-mypy)))
+  (add-hook 'python-mode-hook 'flycheck-maybe-select-python-mypy)
+  (flycheck-add-next-checker 'python-flake8 'python-pylint)
+  (flycheck-add-next-checker 'python-mypy 'python-pylint))
 
 (use-package flycheck-flow
   :after (flycheck)
