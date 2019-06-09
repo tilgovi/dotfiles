@@ -24,6 +24,7 @@
  '(global-company-mode t)
  '(global-prettify-symbols-mode t)
  '(global-subword-mode t)
+ '(global-whitespace-cleanup-mode t)
  '(ivy-height 25)
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)

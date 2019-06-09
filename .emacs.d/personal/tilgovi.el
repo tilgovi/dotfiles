@@ -166,17 +166,11 @@
   (setq calendar-location-name "Oakland, CA")
   (setq calendar-latitude 37.80)
   (setq calendar-longitude -122.27)
-  :config
-  (change-theme 'base16-tomorrow 'base16-tomorrow-night))
+  :config (change-theme 'base16-solarized-light 'base16-solarized-dark))
 
 (use-package toml-mode)
 
 (use-package yasnippet)
-
-(use-package whitespace-cleanup-mode
-  :functions global-whitespace-cleanup-mode
-  :config
-  (global-whitespace-cleanup-mode))
 
 (provide 'tilgovi)
 ;;; tilgovi.el ends here
