@@ -23,6 +23,7 @@
  '(flycheck-checker-error-threshold 1000)
  '(flycheck-clang-language-standard "c++17")
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
+ '(flycheck-indication-mode nil)
  '(flycheck-javascript-flow-args nil)
  '(global-company-mode t)
  '(global-flycheck-inline-mode t)
