@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(auto-save-visited-mode t)
  '(auto-virtualenv-dir "~/.local/share/virtualenvs")
+ '(base16-theme-256-color-source (quote base16-shell))
  '(clang-format-style "Chromium")
  '(column-number-mode t)
  '(company-auto-complete t)

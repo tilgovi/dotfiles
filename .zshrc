@@ -50,5 +50,5 @@ case $OSTYPE in
         ;;
 esac
 
-alias light=base16_tomorrow
-alias dark=base16_tomorrow-night
+alias light=base16_solarized-light
+alias dark=base16_solarized-dark
