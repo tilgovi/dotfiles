@@ -5,7 +5,8 @@
 ;;; Code:
 (eval-when-compile (require 'use-package))
 
-(if (eq system-type 'darwin) (setq mac-command-modifier 'meta))
+(when (eq system-type 'darwin)
+  (prelude-swap-meta-and-super))
 
 (when window-system
   (toggle-frame-fullscreen))
