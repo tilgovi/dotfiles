@@ -24,7 +24,6 @@
  '(flycheck-clang-language-standard "c++17")
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
  '(flycheck-javascript-flow-args nil)
- '(global-color-identifiers-mode t)
  '(global-company-mode t)
  '(global-flycheck-inline-mode t)
  '(global-flycheck-mode t)
