@@ -45,14 +45,14 @@
 (use-package company)
 
 (use-package company-flow
-  :after (company)
+  :requires company
   :init
   (add-to-list 'company-backends 'company-flow)
   :config
   (add-to-list 'company-flow-modes 'flow-mode))
 
 (use-package company-terraform
-  :after (company)
+  :requires company
   :init
   (add-to-list 'company-backends 'company-terraform))
 
@@ -74,6 +74,7 @@
 (use-package import-js)
 
 (use-package flow-minor-mode
+  :requires flow-mode
   :hook (flow-mode . flow-minor-enable-automatically))
 
 (use-package flow-mode
@@ -91,7 +92,7 @@
   (flycheck-add-next-checker 'python-mypy 'python-pylint))
 
 (use-package flycheck-flow
-  :after (flycheck)
+  :requires flycheck
   :config
   (flycheck-add-mode 'javascript-flow 'flow-mode)
   (flycheck-add-mode 'javascript-flow-coverage 'flow-mode))
@@ -126,7 +127,7 @@
   (add-hook 'python-mode-hook 'pyvenv-auto))
 
 (use-package robe
-  :after (chruby company)
+  :requires (chruby company)
   :hook (ruby-mode . robe-mode)
   :config
   (defadvice inf-ruby-console-auto
@@ -138,7 +139,7 @@
   (setq-default rust-format-on-save t))
 
 (use-package racer
-  :after (rust-mode)
+  :requires rust-mode
   :hook (rust-mode . racer-mode))
 
 (use-package terraform-mode
