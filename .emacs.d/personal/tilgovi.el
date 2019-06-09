@@ -4,6 +4,7 @@
 
 ;;; Code:
 (eval-when-compile (require 'use-package))
+(eval-when-compile (setq use-package-expand-minimally byte-compile-current-file))
 
 (when (eq system-type 'darwin)
   (prelude-swap-meta-and-super))
@@ -38,7 +39,7 @@
   :hook ((flow-mode . add-node-modules-path) (js2-mode . add-node-modules-path)))
 
 (use-package auto-virtualenv
-  :defines auto-virtualenv--project-root
+  :functions (auto-virtualenv--project-root)
   :hook (python-mode . auto-virtualenv-set-virtualenv)
   :config
   (defun auto-virtualenv-find-virtualenv-path--more-paths (original-venv-dir)
@@ -76,7 +77,6 @@
   (add-to-list 'company-backends 'company-tern t))
 
 (use-package elpy
-  :functions elpy-enable
   :config
   (elpy-enable))
 
@@ -93,8 +93,6 @@
   :interpreter "node")
 
 (use-package flycheck
-  :functions
-  (flycheck-add-mode flycheck-add-next-checker global-flycheck-mode)
   :config
   (flycheck-add-mode 'javascript-eslint 'flow-mode)
   (flycheck-add-next-checker 'python-flake8 'python-pylint))
@@ -146,12 +144,10 @@
 
 (use-package tern
   :hook ((flow-mode . tern-mode) (js2-mode . tern-mode))
-  :functions tern-mode
   :init
   (setq tern-command (append tern-command '("--no-port-file"))))
 
 (use-package theme-changer
-  :functions change-theme
   :init
   ;; Day / Night themes
   (setq calendar-location-name "Oakland, CA")
