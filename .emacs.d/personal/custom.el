@@ -56,6 +56,7 @@
  '(search-default-mode (quote char-fold-to-regexp))
  '(sentence-end-double-space nil)
  '(show-paren-mode t)
+ '(smartparens-global-mode t)
  '(tool-bar-mode nil)
  '(typescript-auto-indent-flag nil)
  '(typescript-indent-level 2)

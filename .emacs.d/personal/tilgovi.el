@@ -139,11 +139,6 @@
   :after (rust-mode)
   :hook (rust-mode . racer-mode))
 
-(use-package smartparens
-  :functions smartparens-global-mode
-  :config
-  (smartparens-global-mode))
-
 (use-package terraform-mode
   :hook (terraform-mode . terraform-format-on-save-mode))
 
