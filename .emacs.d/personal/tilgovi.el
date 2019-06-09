@@ -102,8 +102,7 @@
          ("C-c C-<" . mc/mark-all-like-this)))
 
 (use-package py-yapf
-  :config
-  (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
+  :hook (python-mode . py-yapf-enable-on-save))
 
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
