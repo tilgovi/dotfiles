@@ -95,8 +95,7 @@
   (flycheck-add-mode flycheck-add-next-checker global-flycheck-mode)
   :config
   (flycheck-add-mode 'javascript-eslint 'flow-mode)
-  (flycheck-add-next-checker 'python-flake8 'python-pylint)
-  (global-flycheck-mode))
+  (flycheck-add-next-checker 'python-flake8 'python-pylint))
 
 (use-package flycheck-flow
   :after (flycheck)
