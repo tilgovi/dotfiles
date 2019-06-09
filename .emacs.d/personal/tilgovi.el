@@ -63,11 +63,6 @@
   :config
   (add-to-list 'company-flow-modes 'flow-mode))
 
-(use-package company-quickhelp
-  :functions company-quickhelp-mode
-  :config
-  (company-quickhelp-mode 1))
-
 (use-package company-terraform
   :after (company)
   :init
