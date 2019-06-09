@@ -35,6 +35,13 @@
 
 (add-hook 'window-configuration-change-hook 'balance-margins)
 
+(defun split-window-right-ignore (&optional size)
+  (interactive)
+  (split-window-right (or size (/ (window-total-width) 2)))
+  (balance-windows-area))
+
+(define-key ctl-x-map "3" 'split-window-right-ignore)
+
 (use-package add-node-modules-path
   :hook ((flow-mode . add-node-modules-path) (js2-mode . add-node-modules-path)))
 
