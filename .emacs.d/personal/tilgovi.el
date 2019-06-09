@@ -12,29 +12,28 @@
 (when window-system
   (toggle-frame-fullscreen))
 
-;; This definition and the hook below auto-balance and -center windows.
-(defun center-window (window)
-  "Tile and center buffers in WINDOW at 80 columns."
-  (let* ((margins (window-margins window))
-         (edges (window-edges window))
-         (left (car edges))
-         (right (nth 2 edges))
-         (width (- right left))
-         (excess (- width 100)))
-    (if (> excess 0)
-        (progn
-          (setq truncate-lines t)
-          ;(set-window-fringes window 2 nil)
-          (set-window-margins window (floor (/ (float excess) 2.0))))
-      (set-window-margins window 0))
-    (unless (equal margins (window-margins window))
-      (balance-windows (window-frame window)))))
+(defun balance-margins (&optional frame)
+  "This function balances the margins of all windows on the selected
+   frame such that the first column and the fill column are the same
+   distance from the left and right edge, respectively."
+  (walk-windows
+   (lambda (window)
+     (let* ((buffer (window-buffer window))
+            (fill-column (buffer-local-value 'fill-column buffer))
+            (font-width (window-font-width window))
+            (body-width (* (+ fill-column 0) font-width))
+            (total-width (window-pixel-width window))
+            (fringe-width (apply '+ (butlast (window-fringes window))))
+            (scroll-bar-width (window-scroll-bar-width window))
+            (divider-width (window-right-divider-width window))
+            (extras-width (+ fringe-width scroll-bar-width divider-width))
+            (excess (max (- total-width body-width extras-width) 0))
+            (excess-columns (/ excess font-width))
+            (margin (floor (/ (float excess-columns) 2))))
+       (set-window-margins window margin margin))
+     t frame)))
 
-(add-hook
- 'window-configuration-change-hook
- (lambda ()
-   (walk-windows 'center-window 'f)))
-
+(add-hook 'window-configuration-change-hook 'balance-margins)
 
 (use-package add-node-modules-path
   :hook ((flow-mode . add-node-modules-path) (js2-mode . add-node-modules-path)))
