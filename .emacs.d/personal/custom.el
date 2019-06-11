@@ -61,6 +61,7 @@
  '(size-indication-mode t)
  '(smartparens-global-mode t)
  '(tool-bar-mode nil)
+ '(truncate-lines t)
  '(typescript-auto-indent-flag nil)
  '(typescript-indent-level 2)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
