@@ -121,8 +121,9 @@
 
 (use-package pretty-fonts
   :config
-  (pretty-fonts-set-kwds
-   '((pretty-fonts-fira-font prog-mode-hook org-mode-hook))))
+  (when window-system
+    (pretty-fonts-set-kwds
+     '((pretty-fonts-fira-font prog-mode-hook org-mode-hook)))))
 
 (use-package pyvenv
   :config
