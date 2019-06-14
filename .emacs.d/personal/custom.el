@@ -25,8 +25,9 @@
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
  '(flycheck-indication-mode nil)
  '(flycheck-javascript-flow-args nil)
+ '(flycheck-pos-tip-max-width 80)
+ '(flycheck-pos-tip-mode t)
  '(global-company-mode t)
- '(global-flycheck-inline-mode t)
  '(global-flycheck-mode t)
  '(global-prettify-symbols-mode t)
  '(global-subword-mode t)
@@ -39,7 +40,7 @@
  '(js2-mode-show-strict-warnings nil)
  '(package-selected-packages
    (quote
-    (ace-window add-node-modules-path alchemist all-the-icons anaconda-mode anzu async avy base16-theme beacon bind-key browse-kill-ring cargo chruby clang-format color-identifiers-mode company company-anaconda company-flow company-go company-lsp company-quickhelp company-tern company-terraform counsel crux cython-mode dash dash-functional diff-hl diminish discover-my-major dockerfile-mode easy-kill editorconfig elisp-slime-nav elixir-mode elpy epl erlang eslintd-fix exec-path-from-shell expand-region f find-file-in-project flow-minor-mode flycheck flycheck-flow flycheck-inline flycheck-mypy flycheck-rust geiser gh ghub gist git-commit git-timemachine gitconfig-mode gitignore-mode go-eldoc go-guru go-mode go-projectile go-rename god-mode google-c-style gotest grizzl guru-mode haskell-mode hcl-mode helm-core highlight-indentation hl-todo ht imenu-anywhere import-js inf-ruby ivy js2-mode json-mode json-reformat json-snatcher less-css-mode logito lsp-mode lsp-ui magit magit-popup makey markdown-mode marshal memoize move-text multiple-cursors nginx-mode operate-on-number pcache pipenv pkg-info popup pos-tip powerline projectile protobuf-mode py-yapf pylint python pythonic pyvenv racer rainbow-delimiters rainbow-mode rich-minority robe rust-mode rustfmt s scss-mode smart-mode-line smartparens smartrep sort-words swiper tern terraform-mode theme-changer toml-mode typescript-mode undo-tree use-package volatile-highlights web-mode which-key whitespace-cleanup-mode with-editor yaml-mode yari yasnippet zenburn-theme zencoding-mode zop-to-char)))
+    (ace-window add-node-modules-path alchemist all-the-icons anaconda-mode anzu async avy base16-theme beacon bind-key browse-kill-ring cargo chruby clang-format coffee-mode color-identifiers-mode company company-anaconda company-flow company-go company-lsp company-quickhelp company-tern company-terraform counsel crux cython-mode dash dash-functional diff-hl diminish discover-my-major dockerfile-mode easy-kill editorconfig elisp-slime-nav elixir-mode elpy epl erlang eslintd-fix exec-path-from-shell expand-region f find-file-in-project flow-minor-mode flycheck flycheck-flow flycheck-inline flycheck-mypy flycheck-pos-tip flycheck-rust geiser gh ghub gist git-commit git-timemachine gitconfig-mode gitignore-mode go-eldoc go-guru go-mode go-projectile go-rename god-mode google-c-style gotest grizzl guru-mode haskell-mode hcl-mode helm-core highlight-indentation hl-todo ht imenu-anywhere import-js inf-ruby ivy js2-mode json-mode json-reformat json-snatcher less-css-mode logito lsp-mode lsp-ui magit magit-popup makey markdown-mode marshal memoize move-text multiple-cursors nginx-mode operate-on-number pcache pipenv pkg-info popup pos-tip powerline projectile protobuf-mode py-yapf pylint python pythonic pyvenv racer rainbow-delimiters rainbow-mode rich-minority robe rust-mode rustfmt s scss-mode smart-mode-line smartparens smartrep sort-words swiper tern terraform-mode theme-changer toml-mode typescript-mode undo-tree use-package volatile-highlights web-mode which-key whitespace-cleanup-mode with-editor yaml-mode yari yasnippet zenburn-theme zencoding-mode zop-to-char)))
  '(pixel-scroll-mode t)
  '(prelude-whitespace nil)
  '(prettify-symbols-unprettify-at-point (quote right-edge))
