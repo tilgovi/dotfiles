@@ -156,18 +156,13 @@
 (use-package terraform-mode
   :hook (terraform-mode . terraform-format-on-save-mode))
 
-(use-package tern
-  :hook ((flow-mode . tern-mode) (js2-mode . tern-mode))
-  :init
-  (setq tern-command (append tern-command '("--no-port-file"))))
-
 (use-package theme-changer
   :init
   ;; Day / Night themes
   (setq calendar-location-name "Oakland, CA")
   (setq calendar-latitude 37.80)
   (setq calendar-longitude -122.27)
-  :config (change-theme 'base16-solarized-light 'base16-solarized-dark))
+  :config (change-theme 'base16-atelier-forest-light 'base16-atelier-forest))
 
 (use-package toml-mode)
 

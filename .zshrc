@@ -50,5 +50,5 @@ case $OSTYPE in
         ;;
 esac
 
-alias light=base16_solarized-light
-alias dark=base16_solarized-dark
+alias light=base16_atelier-forest-light
+alias dark=base16_atelier-forest
