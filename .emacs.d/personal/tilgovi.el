@@ -43,29 +43,19 @@
 (define-key ctl-x-map "3" 'split-window-right-ignore)
 
 (use-package add-node-modules-path
-  :hook ((flow-mode . add-node-modules-path) (js2-mode . add-node-modules-path)))
+  :hook (js2-mode . add-node-modules-path))
 
 (use-package chruby
   :hook (ruby-mode . chruby-use-corresponding))
 
 (use-package company)
 
-(use-package company-flow
-  :requires company
-  :init
-  (add-to-list 'company-backends 'company-flow)
-  :config
-  (add-to-list 'company-flow-modes 'flow-mode))
+(use-package company-lsp :commands company-lsp)
 
 (use-package company-terraform
   :requires company
   :init
   (add-to-list 'company-backends 'company-terraform))
-
-(use-package company-tern
-  :requires company
-  :init
-  (add-to-list 'company-backends 'company-tern t))
 
 (use-package elpy
   :config
@@ -75,23 +65,17 @@
   :hook (editor-config-custom-hooks . (lambda (props) (whitespace-mode))))
 
 (use-package eslintd-fix
-  :hook (flow-mode . eslintd-fix-mode))
+  :hook (js2-mode . eslintd-fix-mode))
+
+(use-package flow-js2-mode)
 
 (use-package import-js)
 
-(use-package flow-minor-mode
-  :requires flow-mode
-  :hook (flow-mode . flow-minor-enable-automatically))
+(use-package lsp-mode
+  :hook (js2-mode . lsp-deferred)
+  :commands lsp-deferred)
 
-(use-package flow-mode
-  :mode "\\.m?jsx?\\'"
-  :interpreter "node"
-  :config
-  (with-eval-after-load 'flycheck
-    (flycheck-add-mode 'javascript-eslint 'flow-mode))
-  (with-eval-after-load 'flycheck-flow
-    (flycheck-add-mode 'javascript-flow 'flow-mode)
-    (flycheck-add-mode 'javascript-flow-coverage 'flow-mode)))
+(use-package lsp-ui :commands lsp-ui-mode)
 
 (use-package flycheck
   :config
@@ -101,9 +85,6 @@
   (add-hook 'python-mode-hook 'flycheck-maybe-select-python-mypy)
   (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (flycheck-add-next-checker 'python-mypy 'python-pylint))
-
-(use-package flycheck-flow
-  :requires flycheck)
 
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
