@@ -29,3 +29,4 @@ export WORKON_HOME="$HOME/.local/share/virtualenvs"
 
 export REMIX_HOME="$HOME/src/remix/remix"
 export PATH="$REMIX_HOME/bin:$PATH"
+export OVERCOMMIT_DISABLE=1
