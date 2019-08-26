@@ -72,9 +72,16 @@
 
 (use-package import-js)
 
+(use-package js2-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+  (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
+
 (use-package lsp-mode
   :hook (js2-mode . lsp-deferred)
-  :commands lsp-deferred)
+  :commands lsp-deferred
+  :config
+  (add-to-list 'lsp-language-id-configuration '(js2-jsx-mode . "javascript") t))
 
 (use-package lsp-ui :commands lsp-ui-mode)
 
