@@ -67,7 +67,8 @@
 (use-package eslintd-fix
   :hook (js2-mode . eslintd-fix-mode))
 
-(use-package flow-js2-mode)
+(use-package flow-js2-mode
+  :requires js2-mode)
 
 (use-package import-js)
 
