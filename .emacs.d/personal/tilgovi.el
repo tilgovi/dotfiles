@@ -78,7 +78,8 @@
   (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
 
 (use-package lsp-mode
-  :hook (js2-mode . lsp-deferred)
+  :hook ((js2-mode . lsp-deferred)
+         (ruby-mode . lsp-deferred))
   :commands lsp-deferred
   :config
   (add-to-list 'lsp-language-id-configuration '(js2-jsx-mode . "javascript") t))
@@ -123,16 +124,6 @@
            (root (locate-dominating-file directory "venv")))
       (if root (pyvenv-activate (concat root "venv")) (pyvenv-deactivate))))
   (add-hook 'python-mode-hook 'pyvenv-auto))
-
-(use-package robe
-  :requires (chruby company)
-  :hook (ruby-mode . robe-mode)
-  :config
-  (when (package-installed-p 'chruby)
-    (defadvice inf-ruby-console-auto
-        (before activate-rvm-for-robe activate) (chruby-use-corresponding)))
-  (when (package-installed-p 'company)
-    (add-to-list 'company-backends 'company-robe t)))
 
 (use-package rust-mode
   :init
