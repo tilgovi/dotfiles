@@ -25,6 +25,7 @@ plugins=(
     vault
     yarn
     z
+    zsh-autosuggestions
     zsh-aws-vault
 )
 
