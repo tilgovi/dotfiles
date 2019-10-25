@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="kardan"
+ZSH_THEME="starship"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
