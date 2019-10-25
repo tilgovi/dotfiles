@@ -24,6 +24,7 @@
  '(flycheck-clang-language-standard "c++2a")
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
  '(flycheck-indication-mode nil)
+ '(flycheck-javascript-eslint-executable "eslint_d")
  '(flycheck-javascript-flow-args nil)
  '(flycheck-pos-tip-max-width 80)
  '(flycheck-pos-tip-mode t)
