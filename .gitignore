@@ -17,6 +17,7 @@
 .recently-used
 
 # local
+._sync_*.db
 .base16_theme
 .CFUserTextEncoding
 .cargo
