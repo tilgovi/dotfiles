@@ -43,7 +43,9 @@
 (define-key ctl-x-map "3" 'split-window-right-ignore)
 
 (use-package add-node-modules-path
-  :hook (js2-mode . add-node-modules-path))
+  :hook ((flow-mode . add-node-modules-path)
+         (js2-mode . add-node-modules-path)
+         (typescript-mode . add-node-modules-path)))
 
 (use-package chruby
   :hook (ruby-mode . chruby-use-corresponding))
@@ -65,24 +67,41 @@
   :hook (editor-config-custom-hooks . (lambda (props) (whitespace-mode))))
 
 (use-package eslintd-fix
-  :hook (js2-mode . eslintd-fix-mode))
+  :hook ((flow-mode . eslintd-fix-mode)
+         (js2-mode . eslintd-fix-mode)))
 
 (use-package flow-js2-mode
+  :disabled
   :requires js2-mode)
 
 (use-package import-js)
 
 (use-package js2-mode
+  :disabled
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
   (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
 
+(use-package flow-mode
+  :requires typescript-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . flow-mode))
+  (add-to-list 'interpreter-mode-alist '("node" . flow-mode)))
+
 (use-package lsp-mode
-  :hook ((js2-mode . lsp-deferred)
+  :hook ((flow-mode . lsp-deferred)
          (ruby-mode . lsp-deferred))
   :commands lsp-deferred
   :config
-  (add-to-list 'lsp-language-id-configuration '(js2-jsx-mode . "javascript") t))
+  (defun lsp-clients-flow-activate-custom-p (orig-fun file-name mode)
+    (or (and (derived-mode-p 'flow-mode)
+             (lsp-clients-flow-project-p file-name)
+             (lsp-clients-flow-tag-file-present-p file-name))
+        (funcall orig-fun file-name mode)))
+  (advice-add 'lsp-clients-flow-activate-p
+              :around
+              #'lsp-clients-flow-activate-custom-p)
+  (add-to-list 'lsp-language-id-configuration '(flow-mode . "javascript") t))
 
 (use-package lsp-ui :commands lsp-ui-mode)
 
