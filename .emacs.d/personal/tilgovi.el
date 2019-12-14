@@ -68,7 +68,8 @@
 
 (use-package eslintd-fix
   :hook ((flow-mode . eslintd-fix-mode)
-         (js2-mode . eslintd-fix-mode)))
+         (js2-mode . eslintd-fix-mode)
+         (typescript-mode . eslintd-fix-mode)))
 
 (use-package flow-js2-mode
   :disabled
@@ -90,7 +91,8 @@
 
 (use-package lsp-mode
   :hook ((flow-mode . lsp-deferred)
-         (ruby-mode . lsp-deferred))
+         (ruby-mode . lsp-deferred)
+         (typescript-mode . lsp-deferred))
   :commands lsp-deferred
   :config
   (defun lsp-clients-flow-activate-custom-p (orig-fun file-name mode)
@@ -164,6 +166,10 @@
   :config (change-theme 'base16-atelier-forest-light 'base16-atelier-forest))
 
 (use-package toml-mode)
+
+(use-package typescript-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode)))
 
 (use-package yasnippet)
 
