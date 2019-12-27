@@ -25,11 +25,5 @@ export NPM_CONFIG_USERCONFIG="$HOME/.config/npmrc"
 export PIPSI_HOME="$HOME/.local/share/virtualenvs"
 export WORKON_HOME="$HOME/.local/share/virtualenvs"
 
-# Remix
-
-export REMIX_HOME="$HOME/src/remix/remix"
-export PATH="$REMIX_HOME/bin:$PATH"
-export OVERCOMMIT_DISABLE=1
-
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
