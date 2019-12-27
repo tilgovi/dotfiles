@@ -25,6 +25,7 @@
 .emacs.d
 .emscripten
 .face.icon
+.fonts
 .git-completion.sh
 .gtkrc-*
 .kde*
