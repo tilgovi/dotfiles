@@ -18,7 +18,5 @@
 (define-derived-mode flow-mode typescript-mode "Flow"
   "JavaScript with Flow type checking")
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . flow-mode))
-
 (provide 'flow-mode)
 ;;; flow-mode.el ends here
