@@ -9,6 +9,7 @@ plugins=(
     cargo
     chruby
     colorize
+    command-not-found
     docker
     extract
     git
