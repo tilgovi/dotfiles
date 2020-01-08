@@ -21,6 +21,7 @@
 .base16_theme
 .CFUserTextEncoding
 .cargo
+.DS_Store
 .docker
 .emacs.d
 .emscripten
