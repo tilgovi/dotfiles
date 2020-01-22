@@ -69,14 +69,6 @@
   :hook ((js2-mode . eslintd-fix-mode)
          (typescript-mode . eslintd-fix-mode)))
 
-(use-package import-js)
-
-(use-package js2-mode
-  :disabled
-  :config
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
-  (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
-
 (use-package flycheck
   :config
   (defun flycheck-maybe-select-python-mypy ()
@@ -88,6 +80,14 @@
 
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
+
+(use-package import-js)
+
+(use-package js2-mode
+  :disabled
+  :config
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+  (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
 
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
