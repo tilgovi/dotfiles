@@ -100,12 +100,6 @@
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
 
-(use-package pretty-fonts
-  :config
-  (when window-system
-    (pretty-fonts-set-kwds
-     '((pretty-fonts-fira-font prog-mode-hook org-mode-hook)))))
-
 (use-package pyvenv
   :config
   (defun pyvenv-auto ()
