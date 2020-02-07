@@ -91,6 +91,10 @@
 
 (use-package lsp-mode)
 
+(use-package lsp-java
+  :after lsp
+  :hook (java-mode . lsp-deferred))
+
 (use-package lsp-ui)
 
 (use-package multiple-cursors
