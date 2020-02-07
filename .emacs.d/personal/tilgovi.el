@@ -89,6 +89,10 @@
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
   (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
 
+(use-package lsp-mode)
+
+(use-package lsp-ui)
+
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
