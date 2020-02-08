@@ -10,7 +10,9 @@
   (prelude-swap-meta-and-super))
 
 (when window-system
-  (toggle-frame-fullscreen))
+  (if (eq system-type 'darwin)
+      (toggle-frame-fullscreen)
+    (toggle-frame-maximized)))
 
 (defun balance-margins (&optional frame)
   "This function balances the margins of all windows on the selected
