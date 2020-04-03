@@ -18,6 +18,7 @@ export PATH="$GOPATH/bin:$PATH"
 
 # Node
 
+export NPM_CONFIG_CACHE="$HOME/.cache"
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npmrc"
 
 # Python
