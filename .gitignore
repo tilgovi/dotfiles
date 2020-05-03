@@ -32,6 +32,7 @@
 .kde*
 .java
 .multirust
+.nvidia-settings-rc
 .pulse-cookie
 .steam*
 .Trash
