@@ -34,6 +34,7 @@
 .multirust
 .nvidia-settings-rc
 .pulse-cookie
+.pyenv
 .steam*
 .Trash
 .themes
