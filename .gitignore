@@ -29,8 +29,8 @@
 .fonts
 .git-completion.sh
 .gtkrc-*
-.kde*
 .java
+.kde*
 .multirust
 .nvidia-settings-rc
 .pulse-cookie
