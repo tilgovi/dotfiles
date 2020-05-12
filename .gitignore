@@ -33,6 +33,7 @@
 .kde*
 .multirust
 .nvidia-settings-rc
+.nvm
 .pulse-cookie
 .pyenv
 .steam*
