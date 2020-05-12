@@ -91,7 +91,8 @@
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
   (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
 
-(use-package lsp-mode)
+(use-package lsp-mode
+  :hook (typescript-mode . lsp-deferred))
 
 (use-package lsp-java
   :after lsp
