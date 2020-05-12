@@ -19,6 +19,7 @@ plugins=(
     golang
     heroku
     kubectl
+    nvm
     pip
     pyenv
     python
