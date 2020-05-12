@@ -15,3 +15,7 @@
 
 # flymake-mode
 *_flymake.*
+
+# TypeScript Language Server
+ti-*.log
+tsserver.log
