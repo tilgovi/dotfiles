@@ -2,6 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_DISABLE_COMPFIX="true"
 ZSH_THEME="starship"
+ZSH_TMUX_AUTOSTART="true"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
@@ -26,6 +27,7 @@ plugins=(
     rust
     sudo
     terraform
+    tmux
     vault
     yarn
     z
