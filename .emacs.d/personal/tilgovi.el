@@ -55,6 +55,11 @@
 
 (use-package company-lsp :commands company-lsp)
 
+(use-package company-tabnine
+  :requires company
+  :init
+  (add-to-list 'company-backends 'company-tabnine))
+
 (use-package company-terraform
   :requires company
   :init
