@@ -1,1 +1,1 @@
-(setq exec-path-from-shell-arguments nil)
+(setq exec-path-from-shell-arguments `("-l"))
