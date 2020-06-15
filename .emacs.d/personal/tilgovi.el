@@ -25,7 +25,7 @@
             (font-width (window-font-width window))
             (body-width (* (+ fill-column 0) font-width))
             (total-width (window-pixel-width window))
-            (fringe-width (apply '+ (butlast (window-fringes window))))
+            (fringe-width (apply '+ (seq-take (window-fringes window) 2)))
             (scroll-bar-width (window-scroll-bar-width window))
             (divider-width (window-right-divider-width window))
             (extras-width (+ fringe-width scroll-bar-width divider-width))
