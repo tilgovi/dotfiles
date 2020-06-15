@@ -45,7 +45,8 @@
 (define-key ctl-x-map "3" 'split-window-right-ignore)
 
 (use-package add-node-modules-path
-  :hook ((js2-mode . add-node-modules-path)
+  :hook ((js-mode . add-node-modules-path)
+         (js2-mode . add-node-modules-path)
          (typescript-mode . add-node-modules-path)))
 
 (use-package chruby
@@ -73,7 +74,8 @@
   :hook (editor-config-custom-hooks . (lambda (props) (whitespace-mode))))
 
 (use-package eslintd-fix
-  :hook ((js2-mode . eslintd-fix-mode)
+  :hook ((js-mode . eslintd-fix-mode)
+         (js2-mode . eslintd-fix-mode)
          (typescript-mode . eslintd-fix-mode)))
 
 (use-package flycheck
