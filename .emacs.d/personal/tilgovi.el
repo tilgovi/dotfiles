@@ -6,8 +6,9 @@
 (eval-when-compile (require 'use-package))
 (eval-when-compile (setq use-package-expand-minimally byte-compile-current-file))
 
-(when (eq system-type 'darwin)
-  (prelude-swap-meta-and-super))
+;; Set macOS modifier key bindings
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
 
 (when window-system
   (if (eq system-type 'darwin)
