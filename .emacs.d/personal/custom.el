@@ -30,6 +30,7 @@
  '(flycheck-pos-tip-mode t)
  '(global-company-mode t)
  '(global-flycheck-mode t)
+ '(global-hl-line-mode nil)
  '(global-subword-mode t)
  '(global-whitespace-cleanup-mode t)
  '(ivy-height 25)
