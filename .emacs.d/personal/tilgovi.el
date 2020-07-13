@@ -94,7 +94,6 @@
 (use-package import-js)
 
 (use-package js2-mode
-  :disabled
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
   (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
