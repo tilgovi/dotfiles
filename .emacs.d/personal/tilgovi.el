@@ -86,8 +86,6 @@
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
 
-(use-package import-js)
-
 (use-package js2-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
