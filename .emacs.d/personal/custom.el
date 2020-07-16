@@ -20,7 +20,7 @@
    (quote
     (elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-django elpy-module-sane-defaults)))
  '(elpy-rpc-python-command "python3")
- '(fill-column 80)
+ '(fill-column 100)
  '(flycheck-checker-error-threshold 1000)
  '(flycheck-clang-language-standard "c++2a")
  '(flycheck-disabled-checkers (quote (javascript-jshint)))
