@@ -12,8 +12,10 @@
 
 (when window-system
   (if (eq system-type 'darwin)
-      (toggle-frame-fullscreen)
-    (toggle-frame-maximized)))
+      (progn (toggle-frame-fullscreen)
+             (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend))
+    (progn (toggle-frame-maximized)
+           (set-fontset-font t 'symbol (font-spec :family "Symbola") nil 'prepend))))
 
 (defun balance-margins (&optional frame)
   "This function balances the margins of all windows on the selected
@@ -53,19 +55,25 @@
 (use-package chruby
   :hook (ruby-mode . chruby-use-corresponding))
 
-(use-package company)
+(use-package company
+  :config
+  ;; In reverse order:
+  ;;   - TabNine (last resort, but very flexible)
+  ;;   - Language-specific completions
+  ;;   - Language Server Protocol (any supported language)
+  ;;   - Emoji (first)
+  (add-to-list 'company-backends 'company-tabnine)
+  (add-to-list 'company-backends 'company-terraform)
+  (add-to-list 'company-backends 'company-lsp)
+  (add-to-list 'company-backends 'company-emoji))
 
-(use-package company-lsp :commands company-lsp)
+(use-package company-emoji :requires company)
 
-(use-package company-tabnine
-  :requires company
-  :init
-  (add-to-list 'company-backends 'company-tabnine))
+(use-package company-lsp :requires company)
 
-(use-package company-terraform
-  :requires company
-  :init
-  (add-to-list 'company-backends 'company-terraform))
+(use-package company-tabnine :requires company)
+
+(use-package company-terraform :requires company)
 
 (use-package elpy
   :config
