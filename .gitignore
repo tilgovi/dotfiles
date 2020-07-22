@@ -52,7 +52,6 @@
 
 # secrets
 .dockercfg
-.eslint_d
 .gitconfig
 .git-credentials
 .gnupg
