@@ -12,9 +12,10 @@
 
 ;; Set the emoji font
 (when window-system
-  (if (eq system-type 'darwin)
-      (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend)
-    (set-fontset-font t 'symbol (font-spec :family "Symbola") nil 'prepend)))
+  (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji"))
+  (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
+  (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
+  (set-fontset-font t 'symbol "Symbola" nil 'append))
 
 (defun balance-margins (&optional frame)
   "This function balances the margins of all windows on the selected
