@@ -24,7 +24,6 @@
  '(flycheck-clang-language-standard "c++2a")
  '(flycheck-disabled-checkers '(javascript-jshint))
  '(flycheck-indication-mode nil)
- '(flycheck-pos-tip-max-width 80)
  '(flycheck-pos-tip-mode t)
  '(global-company-mode t)
  '(global-flycheck-mode t)
