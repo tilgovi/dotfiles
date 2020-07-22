@@ -93,21 +93,16 @@
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
 
-(use-package js2-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
-  (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
-
 (use-package lsp-mode
   :defines lsp-eslint-server-command
-  :hook ((typescript-mode . lsp-deferred)
-         (js2-jsx-mode . lsp-deferred))
+  :hook ((js-mode . lsp-deferred)
+         (typescript-mode . lsp-deferred))
   :config
   (add-to-list 'lsp-language-id-configuration '(js2-jsx-mode . "javascript"))
   (let* ((path "~/.vscode/extensions/dbaeumer.vscode-eslint-*/server/out/eslintServer.js")
          (expanded-path (expand-file-name (car (last (file-expand-wildcards path))))))
     (setq lsp-eslint-server-command `("node" ,expanded-path "--stdio")))
-  (add-hook 'js2-mode-hook
+  (add-hook 'js-mode-hook
             (lambda () (add-hook 'before-save-hook 'lsp-eslint-apply-all-fixes nil t))))
 
 (use-package lsp-java
