@@ -10,12 +10,11 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
 
+;; Set the emoji font
 (when window-system
   (if (eq system-type 'darwin)
-      (progn (toggle-frame-fullscreen)
-             (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend))
-    (progn (toggle-frame-maximized)
-           (set-fontset-font t 'symbol (font-spec :family "Symbola") nil 'prepend))))
+      (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend)
+    (set-fontset-font t 'symbol (font-spec :family "Symbola") nil 'prepend)))
 
 (defun balance-margins (&optional frame)
   "This function balances the margins of all windows on the selected
