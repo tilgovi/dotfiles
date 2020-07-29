@@ -36,6 +36,7 @@
  '(js2-mode-show-parse-errors nil)
  '(js2-mode-show-strict-warnings nil)
  '(lsp-auto-guess-root t)
+ '(lsp-clients-typescript-server-args '("--stdio" "--tsserver-log-file" "/dev/stderr"))
  '(lsp-eldoc-render-all t)
  '(lsp-enable-file-watchers nil)
  '(lsp-ui-doc-enable nil)
