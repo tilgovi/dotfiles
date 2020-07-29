@@ -39,6 +39,8 @@
  '(lsp-clients-typescript-server-args '("--stdio" "--tsserver-log-file" "/dev/stderr"))
  '(lsp-eldoc-render-all t)
  '(lsp-enable-file-watchers nil)
+ '(lsp-eslint-auto-fix-on-save t)
+ '(lsp-eslint-package-manager "yarn")
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-sideline-enable nil)
  '(package-selected-packages
