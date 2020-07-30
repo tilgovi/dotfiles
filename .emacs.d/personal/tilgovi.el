@@ -95,6 +95,7 @@
   :hook (c-mode-common . google-set-c-style))
 
 (use-package lsp-mode
+  :commands lsp-eslint-apply-all-fixes
   :defines lsp-eslint-server-command
   :hook ((js-mode . lsp-deferred)
          (typescript-mode . lsp-deferred))
