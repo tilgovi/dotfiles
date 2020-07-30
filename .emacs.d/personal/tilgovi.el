@@ -117,7 +117,11 @@
   :after lsp
   :hook (java-mode . lsp-deferred))
 
-(use-package lsp-ui)
+(use-package lsp-ui
+  :config
+  (define-key lsp-ui-mode-map [remap js-find-symbol] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
 
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
