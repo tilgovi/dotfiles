@@ -55,25 +55,16 @@
 (use-package chruby
   :hook (ruby-mode . chruby-use-corresponding))
 
-(use-package company
-  :config
-  ;; In reverse order:
-  ;;   - TabNine (last resort, but very flexible)
-  ;;   - Language-specific completions
-  ;;   - Language Server Protocol (any supported language)
-  ;;   - Emoji (first)
-  (add-to-list 'company-backends 'company-tabnine)
-  (add-to-list 'company-backends 'company-terraform)
-  (add-to-list 'company-backends 'company-lsp)
-  (add-to-list 'company-backends 'company-emoji))
+(use-package company)
 
-(use-package company-emoji :requires company)
+(use-package company-emoji
+  :requires company
+  :config (add-to-list 'company-backends 'company-emoji))
 
-(use-package company-lsp :requires company)
-
-(use-package company-tabnine :requires company)
-
-(use-package company-terraform :requires company)
+(use-package company-tabnine
+  :disabled
+  :requires company
+  :config (add-to-list 'company-backends '(company-capf :with company-tabnine :separate)))
 
 (use-package elpy
   :config

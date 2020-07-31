@@ -6,7 +6,7 @@
 (require 'prelude-ivy) ;; A mighty modern alternative to ido
 ;; (require 'prelude-helm) ;; Interface for narrowing and search
 ;; (require 'prelude-helm-everywhere) ;; Enable Helm everywhere
-(require 'prelude-company)
+;; (require 'prelude-company)
 ;; (require 'prelude-key-chord) ;; Binds useful features to key combinations
 ;; (require 'prelude-evil)
 
@@ -24,7 +24,7 @@
 ;; (require 'prelude-js)
 ;; (require 'prelude-latex)
 (require 'prelude-lisp)
-(require 'prelude-lsp)
+;; (require 'prelude-lsp)
 ;; (require 'prelude-ocaml)
 (require 'prelude-org) ;; Org-mode helps you keep TODO lists, notes and more
 ;; (require 'prelude-perl)
