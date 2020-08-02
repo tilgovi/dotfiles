@@ -86,23 +86,19 @@
   :hook (c-mode-common . google-set-c-style))
 
 (use-package lsp-mode
-  :commands lsp-eslint-apply-all-fixes
-  :defines lsp-eslint-server-command
+  :defines (lsp-eslint-auto-fix-on-save lsp-eslint-server-command)
   :hook ((js-mode . lsp-deferred)
          (typescript-mode . lsp-deferred))
-  :config
-  (add-to-list 'lsp-language-id-configuration '(js2-jsx-mode . "javascript"))
-  (let* ((path "~/.vscode/extensions/dbaeumer.vscode-eslint-*/server/out/eslintServer.js")
-         (expanded-path (expand-file-name (car (last (file-expand-wildcards path))))))
-    (setq lsp-eslint-server-command `("node" ,expanded-path "--stdio")))
+  :preface
   (defun lsp--eslint-before-save (orig-fun)
     "Run lsp-eslint-apply-all-fixes and then run the original lsp--before-save."
-    (lsp-eslint-apply-all-fixes)
+    (when lsp-eslint-auto-fix-on-save (lsp-eslint-fix-all))
     (funcall orig-fun))
-  (add-hook 'js-mode-hook
-            (advice-add 'lsp--before-save :around #'lsp--eslint-before-save))
-  (add-hook 'typescript-mode-hook
-            (advice-add 'lsp--before-save :around #'lsp--eslint-before-save)))
+  :config
+  (let* ((path "~/.vscode/extensions/dbaeumer.vscode-eslint-*/server/out/eslintServer.js")
+         (expanded-path (expand-file-name (car (last (file-expand-wildcards path)))))) (setq
+         lsp-eslint-server-command `("node" ,expanded-path "--stdio")))
+  (advice-add 'lsp--before-save :around #'lsp--eslint-before-save))
 
 (use-package lsp-java
   :after lsp
