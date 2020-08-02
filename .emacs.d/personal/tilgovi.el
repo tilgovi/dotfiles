@@ -115,9 +115,6 @@
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this)))
 
-(use-package py-yapf
-  :hook (python-mode . py-yapf-enable-on-save))
-
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
 
