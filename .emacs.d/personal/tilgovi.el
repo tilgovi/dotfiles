@@ -88,6 +88,8 @@
 (use-package lsp-mode
   :defines (lsp-eslint-auto-fix-on-save lsp-eslint-server-command)
   :hook ((js-mode . lsp-deferred)
+         (python-mode . lsp-deferred)
+         (terraform-mode . lsp-deferred)
          (typescript-mode . lsp-deferred))
   :preface
   (defun lsp--eslint-before-save (orig-fun)
