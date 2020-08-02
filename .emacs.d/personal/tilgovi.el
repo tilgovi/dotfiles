@@ -106,9 +106,7 @@
 
 (use-package lsp-ui
   :config
-  (define-key lsp-ui-mode-map [remap js-find-symbol] #'lsp-ui-peek-find-definitions)
-  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
+  (define-key lsp-ui-mode-map [remap js-find-symbol] #'xref-find-definitions))
 
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
