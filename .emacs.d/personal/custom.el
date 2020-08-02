@@ -9,7 +9,8 @@
  '(column-number-mode t)
  '(company-auto-complete t)
  '(company-auto-complete-chars nil)
- '(company-idle-delay 0.2)
+ '(company-idle-delay 0)
+ '(company-minimum-prefix-length 1)
  '(company-quickhelp-delay 0.2)
  '(company-quickhelp-mode t)
  '(custom-safe-themes
@@ -54,6 +55,7 @@
  '(python-indent-def-block-scale 1)
  '(python-shell-extra-pythonpaths '("~/.local/venvs"))
  '(pyvenv-virtualenvwrapper-python "~/.local/share/virtualenvs/virtualenvwrapper/bin/python")
+ '(read-process-output-max (* 1024 1024) t)
  '(replace-char-fold t)
  '(safe-local-variable-values '((encoding . utf-8)))
  '(save-place-mode t nil (saveplace))
