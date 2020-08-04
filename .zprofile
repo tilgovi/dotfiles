@@ -1,7 +1,6 @@
 # Shell
 
 export PATH="$HOME/.local/bin:$PATH"
-export MAN_PATH="$HOME/.local/share/man:$MAN_PATH"
 
 # AWS
 
