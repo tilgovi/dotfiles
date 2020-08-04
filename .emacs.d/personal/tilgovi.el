@@ -118,13 +118,14 @@
   :hook (python-mode . pipenv-mode))
 
 (use-package pyvenv
-  :config
+  :preface
   (defun pyvenv-auto ()
     "Automatically activate any virtualenv found in a project root directory."
     (let* ((buffer (current-buffer))
            (directory (buffer-local-value 'default-directory buffer))
            (root (locate-dominating-file directory "venv")))
       (if root (pyvenv-activate (concat root "venv")) (pyvenv-deactivate))))
+  :config
   (add-hook 'python-mode-hook 'pyvenv-auto))
 
 (use-package rust-mode
