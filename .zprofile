@@ -1,7 +1,3 @@
-# Shell
-
-export PATH="$HOME/.local/bin:$PATH"
-
 # AWS
 
 case $OSTYPE in
@@ -10,7 +6,7 @@ case $OSTYPE in
         ;;
 esac
 
-# Golang
+# Go
 
 export GOPATH="$HOME/src/golang"
 export PATH="$GOPATH/bin:$PATH"
@@ -37,4 +33,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Rust
+
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Shell
+
+export PATH="$HOME/.local/bin:$PATH"
