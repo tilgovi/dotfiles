@@ -1,3 +1,5 @@
+set viminfo='100,<0,s10,h
+
 filetype plugin indent on
 syntax enable
 
