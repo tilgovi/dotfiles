@@ -17,10 +17,11 @@
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
   (set-fontset-font t 'symbol "Symbola" nil 'append))
 
-(defun balance-margins (&optional frame)
+(defun balance-windows-margins ()
   "This function balances the margins of all windows on the selected
    frame such that the first column and the fill column are the same
    distance from the left and right edge, respectively."
+  (interactive "P")
   (walk-windows
    (lambda (window)
      (let* ((buffer (window-buffer window))
@@ -35,17 +36,21 @@
             (excess (max (- total-width body-width extras-width) 0))
             (excess-columns (/ excess font-width))
             (margin (floor (/ (float excess-columns) 2))))
-       (set-window-margins window margin margin))
-     t frame)))
+       (set-window-margins window margin margin)))))
 
-(add-hook 'window-configuration-change-hook 'balance-margins)
 
-(defun split-window-right-ignore (&optional size)
-  (interactive)
-  (split-window-right (or size (/ (window-total-width) 2)))
-  (balance-windows-area))
+(defun set-window-default-parameters ()
+  "This function sets default window parameters."
+  (walk-windows
+   (lambda (window)
+     (when (not (window-parameter window 'min-margins))
+           (set-window-parameter window 'min-margins '(0 . 0))))))
 
-(define-key ctl-x-map "3" 'split-window-right-ignore)
+(add-hook 'window-configuration-change-hook
+          (lambda ()
+            (set-window-default-parameters)
+            (balance-windows)
+            (balance-windows-margins)))
 
 (use-package add-node-modules-path
   :hook ((js-mode . add-node-modules-path)
