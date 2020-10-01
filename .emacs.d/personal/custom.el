@@ -48,10 +48,6 @@
    '(ace-window add-node-modules-path alchemist anaconda-mode anzu avy base16-theme beacon browse-kill-ring cargo chruby clang-format coffee-mode company company-anaconda company-emoji company-go company-lsp company-quickhelp company-tabnine company-terraform counsel crux cython-mode diff-hl diminish discover-my-major dockerfile-mode easy-kill editorconfig elisp-slime-nav elixir-mode elpy erlang exec-path-from-shell flycheck flycheck-inline flycheck-mypy flycheck-rust geiser gitconfig-mode gitignore-mode go-eldoc go-mode go-projectile god-mode google-c-style graphql-mode haskell-mode hcl-mode helm helm-projectile ivy jest json-mode less-css-mode let-alist lsp-java lsp-javascript-typescript lsp-mode lsp-ui magit magit-popup markdown-mode move-text multiple-cursors nginx-mode operate-on-number pipenv projectile protobuf-mode python pyvenv racer rust-mode rustfmt scss-mode smartparens smartrep sort-words super-save swiper terraform-mode theme-changer toml-mode typescript-mode undo-tree use-package volatile-highlights vterm vterm-toggle web-mode which-key whitespace-cleanup-mode yaml-mode yari zop-to-char))
  '(pixel-scroll-mode t)
  '(prelude-whitespace nil)
- '(projectile-project-root-files
-   '("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS" "configure.in" "configure.ac" "cscope.out" "package.json"))
- '(projectile-project-root-files-functions
-   '(projectile-root-local projectile-root-top-down projectile-root-top-down-recurring projectile-root-bottom-up))
  '(python-indent-def-block-scale 1)
  '(python-shell-extra-pythonpaths '("~/.local/venvs"))
  '(pyvenv-virtualenvwrapper-python "~/.local/share/virtualenvs/virtualenvwrapper/bin/python")
