@@ -136,6 +136,13 @@
   :requires rust-mode
   :hook (rust-mode . racer-mode))
 
+(use-package selectrum
+  :config (selectrum-mode +1))
+
+(use-package selectrum-prescient
+  :requires selectrum
+  :config (selectrum-prescient-mode +1))
+
 (use-package terraform-mode
   :hook (terraform-mode . terraform-format-on-save-mode))
 
