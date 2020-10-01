@@ -70,6 +70,44 @@
   :requires company
   :config (add-to-list 'company-backends '(company-capf :with company-tabnine :separate)))
 
+(use-package composite
+  :init
+  (defvar composition-ligature-table (make-char-table nil))
+  :hook
+  (((prog-mode conf-mode nxml-mode markdown-mode help-mode)
+    . (lambda () (setq-local composition-function-table composition-ligature-table))))
+  :config
+  (let ((ligatures `((?-  ,(regexp-opt '("-|" "-~" "---" "-<<" "-<" "--" "->" "->>" "-->")))
+                     (?/  ,(regexp-opt '("/**" "/*" "///" "/=" "/==" "/>" "//")))
+                     (?*  ,(regexp-opt '("*>" "***" "*/")))
+                     (?<  ,(regexp-opt '("<-" "<<-" "<=>" "<=" "<|" "<||" "<|||" "<|>" "<:" "<>" "<-<"
+                                           "<<<" "<==" "<<=" "<=<" "<==>" "<-|" "<<" "<~>" "<=|" "<~~" "<~"
+                                           "<$>" "<$" "<+>" "<+" "</>" "</" "<*" "<*>" "<->" "<!--")))
+                     (?:  ,(regexp-opt '(":>" ":<" ":::" "::" ":?" ":?>" ":=" "::=")))
+                     (?=  ,(regexp-opt '("=>>" "==>" "=/=" "=!=" "=>" "===" "=:=" "==")))
+                     (?!  ,(regexp-opt '("!==" "!!" "!=")))
+                     (?>  ,(regexp-opt '(">]" ">:" ">>-" ">>=" ">=>" ">>>" ">-" ">=")))
+                     (?&  ,(regexp-opt '("&&&" "&&")))
+                     (?|  ,(regexp-opt '("|||>" "||>" "|>" "|]" "|}" "|=>" "|->" "|=" "||-" "|-" "||=" "||")))
+                     (?.  ,(regexp-opt '(".." ".?" ".=" ".-" "..<" "...")))
+                     (?+  ,(regexp-opt '("+++" "+>" "++")))
+                     (?\[ ,(regexp-opt '("[||]" "[<" "[|")))
+                     (?\{ ,(regexp-opt '("{|")))
+                     (?\? ,(regexp-opt '("??" "?." "?=" "?:")))
+                     (?#  ,(regexp-opt '("####" "###" "#[" "#{" "#=" "#!" "#:" "#_(" "#_" "#?" "#(" "##")))
+                     (?\; ,(regexp-opt '(";;")))
+                     (?_  ,(regexp-opt '("_|_" "__")))
+                     (?\\ ,(regexp-opt '("\\")))
+                     (?~  ,(regexp-opt '("~~" "~~>" "~>" "~-" "~@")))
+                     (?$  ,(regexp-opt '("$>")))
+                     (?^  ,(regexp-opt '("^=")))
+                     (?\] ,(regexp-opt '("]#"))))))
+    (dolist (char-regexp ligatures)
+      (apply (lambda (char regexp) (set-char-table-range
+                                    composition-ligature-table
+                                    char `([,regexp 0 font-shape-gstring])))
+             char-regexp))))
+
 (use-package elpy
   :config
   (elpy-enable))
