@@ -15,8 +15,9 @@ export PATH="$GOPATH/bin:$PATH"
 
 export NPM_CONFIG_CACHE="$HOME/.cache"
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npmrc"
-export NVM_DIR="$HOME/.nvm"
-if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+
+if [[ -d "$HOME/.nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
     source "$NVM_DIR/nvm.sh"
 else
     export N_PREFIX="$HOME/.local"
