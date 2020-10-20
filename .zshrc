@@ -19,6 +19,7 @@ plugins=(
     gitfast
     golang
     heroku
+    nvm
     pip
     python
     ruby
