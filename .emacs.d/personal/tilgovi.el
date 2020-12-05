@@ -108,7 +108,7 @@
     (dolist (char-regexp ligatures)
       (apply (lambda (char regexp) (set-char-table-range
                                     composition-ligature-table
-                                    char `([,regexp 0 font-shape-gstring])))
+                                    char `([,regexp 0 compose-gstring-for-graphic])))
              char-regexp))))
 
 (use-package elpy
