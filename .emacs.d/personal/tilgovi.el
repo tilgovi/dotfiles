@@ -131,7 +131,7 @@
   :hook (c-mode-common . google-set-c-style))
 
 (use-package lsp-mode
-  :defines (lsp-eslint-auto-fix-on-save lsp-eslint-server-command)
+  :defines (lsp-eslint-fix-all lsp-eslint-auto-fix-on-save lsp-eslint-server-command)
   :hook ((js-mode . lsp-deferred)
          (python-mode . lsp-deferred)
          (terraform-mode . lsp-deferred)
