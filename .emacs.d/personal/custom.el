@@ -42,6 +42,7 @@
  '(lsp-enable-file-watchers nil)
  '(lsp-eslint-auto-fix-on-save t)
  '(lsp-eslint-package-manager "yarn")
+ '(lsp-headerline-breadcrumb-enable nil)
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-sideline-enable nil)
  '(package-selected-packages
