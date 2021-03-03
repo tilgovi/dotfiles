@@ -131,7 +131,7 @@
   :hook (c-mode-common . google-set-c-style))
 
 (use-package lsp-mode
-  :defines (lsp-eslint-fix-all lsp-eslint-auto-fix-on-save lsp-eslint-server-command)
+  :defines (lsp-eslint-fix-all lsp-eslint-auto-fix-on-save)
   :hook ((js-mode . lsp-deferred)
          (python-mode . lsp-deferred)
          (terraform-mode . lsp-deferred)
@@ -142,9 +142,6 @@
     (when lsp-eslint-auto-fix-on-save (lsp-eslint-fix-all))
     (funcall orig-fun))
   :config
-  (let* ((path "~/.vscode/extensions/dbaeumer.vscode-eslint-*/server/out/eslintServer.js")
-         (expanded-path (expand-file-name (car (last (file-expand-wildcards path)))))) (setq
-         lsp-eslint-server-command `("node" ,expanded-path "--stdio")))
   (advice-add 'lsp--before-save :around #'lsp--eslint-before-save))
 
 (use-package lsp-java
