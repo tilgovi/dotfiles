@@ -74,6 +74,7 @@
  '(recentf-mode t)
  '(replace-char-fold t)
  '(require-final-newline t)
+ '(ring-bell-function 'ignore)
  '(safe-local-variable-values '((encoding . utf-8)))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
