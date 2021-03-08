@@ -1,2 +1,5 @@
+[gcloud]
+format = 'on [$symbol$project]($style) '
+
 [kubernetes]
 disabled = false
