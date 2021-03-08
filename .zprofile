@@ -25,6 +25,11 @@ else
     export NPM_CONFIG_PREFIX="$HOME/.local"
 fi
 
+# OCaml
+if [[ -r "$HOME/.opam/opam-init/init.zsh" ]]; then
+    source "$HOME/.opam/opam-init/init.zsh"
+fi
+
 # Python
 
 export PIPSI_HOME="$HOME/.local/share/virtualenvs"
