@@ -1,10 +1,34 @@
-;;; tilgovi.el -- Emacs customizations for @tilgovi
+;;; init.el -- Emacs initialization file for @tilgovi
 
 ;;; Commentary:
 
+;;; Load packages using straight.el with use-package integration.
+;;; Customizations are kept separate (see custom.el).
+
 ;;; Code:
-(eval-when-compile (require 'use-package))
-(eval-when-compile (setq use-package-expand-minimally byte-compile-current-file))
+
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+	(url-retrieve-synchronously
+	 "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+	 'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+;; load customizations
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load (expand-file-name "custom.el" user-emacs-directory))
+
+;; install use-package
+(when (functionp 'straight-use-package) (straight-use-package 'use-package))
+(eval-when-compile
+  (add-to-list 'load-path (expand-file-name "straight/repos/use-package" user-emacs-directory))
+  (require 'use-package))
 
 ;; Set macOS modifier key bindings
 (setq mac-command-modifier 'meta)
@@ -18,10 +42,10 @@
   (set-fontset-font t 'symbol "Symbola" nil 'append))
 
 (defun balance-windows-margins ()
-  "This function balances the margins of all windows on the selected
-   frame such that the first column and the fill column are the same
-   distance from the left and right edge, respectively."
-  (interactive "P")
+  "Balance the margins of windows on the selected frame.
+Balance the margins such that the first column and the fill column are the same
+distance from the left and right edge, respectively."
+  (interactive)
   (walk-windows
    (lambda (window)
      (let* ((buffer (window-buffer window))
@@ -38,9 +62,9 @@
             (margin (floor (/ (float excess-columns) 2))))
        (set-window-margins window margin margin)))))
 
-
 (defun set-window-default-parameters ()
-  "This function sets default window parameters."
+  "Set default window parameters."
+  (interactive)
   (walk-windows
    (lambda (window)
      (when (not (window-parameter window 'min-margins))
@@ -56,10 +80,20 @@
   :hook ((js-mode . add-node-modules-path)
          (typescript-mode . add-node-modules-path)))
 
+(use-package base16-theme)
+
+(use-package beacon)
+
+(use-package browse-kill-ring
+  :functions browse-kill-ring-default-keybindings
+  :config
+  (browse-kill-ring-default-keybindings))
+
 (use-package chruby
   :hook (ruby-mode . chruby-use-corresponding))
 
-(use-package company)
+(use-package company
+  :defines company-backends)
 
 (use-package company-emoji
   :requires company
@@ -71,6 +105,7 @@
   :config (add-to-list 'company-backends '(company-capf :with company-tabnine :separate)))
 
 (use-package composite
+  :straight nil
   :init
   (defvar composition-ligature-table (make-char-table nil))
   :hook
@@ -111,14 +146,48 @@
                                     char `([,regexp 0 compose-gstring-for-graphic])))
              char-regexp))))
 
+(use-package crux
+  :config
+  (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
+  (global-set-key [(shift return)] 'crux-smart-open-line)
+  (global-set-key (kbd "M-o") 'crux-smart-open-line)
+  (global-set-key [(control shift return)] 'crux-smart-open-line-above)
+  (global-set-key [(control shift up)] 'move-text-up)
+  (global-set-key [(control shift down)] 'move-text-down)
+  (global-set-key [(meta shift up)] 'move-text-up)
+  (global-set-key [(meta shift down)] 'move-text-down)
+  (global-set-key (kbd "C-c n") 'crux-cleanup-buffer-or-region)
+  (global-set-key (kbd "C-c f") 'crux-recentf-find-file)
+  (global-set-key (kbd "C-M-z") 'crux-indent-defun)
+  (global-set-key (kbd "C-c u") 'crux-view-url)
+  (global-set-key (kbd "C-c e") 'crux-eval-and-replace)
+  (global-set-key (kbd "C-c s") 'crux-swap-windows)
+  (global-set-key (kbd "C-c D") 'crux-delete-file-and-buffer)
+  (global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
+  (global-set-key (kbd "C-c M-d") 'crux-duplicate-and-comment-current-line-or-region)
+  (global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
+  (global-set-key (kbd "C-c t") 'crux-visit-term-buffer)
+  (global-set-key (kbd "C-c k") 'crux-kill-other-buffers)
+  (global-set-key (kbd "C-c I") 'crux-find-user-init-file)
+  (global-set-key (kbd "C-c S") 'crux-find-shell-init-file))
+
+(use-package diff-hl)
+
 (use-package elpy
+  :functions elpy-enable
   :config
   (elpy-enable))
 
 (use-package editorconfig
   :hook (editor-config-custom-hooks . (lambda (props) (whitespace-mode))))
 
+(use-package exec-path-from-shell
+  :functions exec-path-from-shell-initialize
+  :config
+  (exec-path-from-shell-initialize))
+
 (use-package flycheck
+  :functions flycheck-add-next-checker flycheck-may-enable-checker flycheck-select-checker
   :config
   (defun flycheck-maybe-select-python-mypy ()
     (when (flycheck-may-enable-checker 'python-mypy)
@@ -130,8 +199,11 @@
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
 
+(use-package jest)
+
 (use-package lsp-mode
-  :defines (lsp-eslint-fix-all lsp-eslint-auto-fix-on-save)
+  :defines lsp-eslint-auto-fix-on-save
+  :functions lsp-eslint-fix-all
   :hook ((js-mode . lsp-deferred)
          (python-mode . lsp-deferred)
          (terraform-mode . lsp-deferred)
@@ -149,8 +221,11 @@
   :hook (java-mode . lsp-deferred))
 
 (use-package lsp-ui
+  :defines lsp-ui-mode-map
   :config
   (define-key lsp-ui-mode-map [remap js-find-symbol] #'xref-find-definitions))
+
+(use-package move-text)
 
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
@@ -160,7 +235,10 @@
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
 
+(use-package projectile)
+
 (use-package pyvenv
+  :functions pyvenv-activate pyvenv-deactivate
   :preface
   (defun pyvenv-auto ()
     "Automatically activate any virtualenv found in a project root directory."
@@ -171,6 +249,11 @@
   :config
   (add-hook 'python-mode-hook 'pyvenv-auto))
 
+(use-package rainbow-mode
+  :hook prog-mode)
+
+(use-package ripgrep)
+
 (use-package rust-mode
   :init
   (setq-default rust-format-on-save t))
@@ -179,17 +262,24 @@
   :requires rust-mode
   :hook (rust-mode . racer-mode))
 
-(use-package selectrum
-  :config (selectrum-mode +1))
+(use-package rect
+  :straight nil)
+
+(use-package selectrum)
 
 (use-package selectrum-prescient
-  :requires selectrum
-  :config (selectrum-prescient-mode +1))
+  :requires selectrum)
+
+(use-package smartparens
+  :init
+  (require 'smartparens-config))
 
 (use-package terraform-mode
   :hook (terraform-mode . terraform-format-on-save-mode))
 
 (use-package theme-changer
+  :defines calendar-location-name calendar-latitude calendar-longitude
+  :functions change-theme
   :init
   ;; Day / Night themes
   (setq calendar-location-name "Oakland, CA")
@@ -203,7 +293,21 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode)))
 
+(use-package undo-tree)
+
+(use-package uniquify
+  :straight nil)
+
+(use-package volatile-highlights)
+
 (use-package yasnippet)
 
-(provide 'tilgovi)
-;;; tilgovi.el ends here
+(use-package windmove
+  :config
+  (windmove-default-keybindings))
+
+(use-package which-key)
+
+(use-package whitespace-cleanup-mode)
+
+;;; init.el ends here
