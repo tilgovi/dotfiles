@@ -30,10 +30,6 @@
   (add-to-list 'load-path (expand-file-name "straight/repos/use-package" user-emacs-directory))
   (require 'use-package))
 
-;; Set macOS modifier key bindings
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
-
 ;; Set the emoji font
 (when window-system
   (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji"))
