@@ -15,6 +15,7 @@
 .*_history
 .lesshst
 .recently-used
+.utop-history
 
 # local
 ._sync_*.db
