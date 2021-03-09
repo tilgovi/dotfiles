@@ -231,7 +231,9 @@ distance from the left and right edge, respectively."
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
 
-(use-package projectile)
+(use-package projectile
+  :config
+   (global-set-key (kbd "C-c p") 'projectile-command-map))
 
 (use-package pyvenv
   :functions pyvenv-activate pyvenv-deactivate
