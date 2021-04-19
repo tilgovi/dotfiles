@@ -18,7 +18,10 @@ export PATH="$GOPATH/bin:$PATH"
 export NPM_CONFIG_CACHE="$HOME/.cache"
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npmrc"
 
-if [[ -d "$HOME/.nvm" ]]; then
+if [[ -d "$XDG_CONFIG_HOME/nvm" ]]; then
+    export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+    source "$NVM_DIR/nvm.sh"
+elif [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
     source "$NVM_DIR/nvm.sh"
 else
