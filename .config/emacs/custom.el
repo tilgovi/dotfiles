@@ -3,7 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
  '(auto-save-visited-mode t)
+ '(backup-directory-alist `((".*" \, temporary-file-directory)))
  '(base16-theme-256-color-source 'base16-shell)
  '(beacon-mode t)
  '(blink-cursor-mode nil)
