@@ -272,6 +272,11 @@ distance from the left and right edge, respectively."
   :init
   (require 'smartparens-config))
 
+(use-package super-save
+  :functions super-save-mode
+  :config
+  (super-save-mode +1))
+
 (use-package terraform-mode
   :hook (terraform-mode . terraform-format-on-save-mode))
 
