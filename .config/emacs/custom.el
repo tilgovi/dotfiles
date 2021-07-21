@@ -110,7 +110,8 @@
  '(web-mode-script-padding 2)
  '(web-mode-style-padding 2)
  '(which-key-mode t)
- '(whitespace-line-column nil))
+ '(whitespace-line-column nil)
+ '(winner-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
