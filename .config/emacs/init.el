@@ -257,6 +257,15 @@ distance from the left and right edge, respectively."
 (use-package rainbow-mode
   :hook prog-mode)
 
+(use-package reformatter
+  :defines python-format
+  :config
+  (reformatter-define python-format
+    :program "black"
+    :args '("-")
+    :lighter " PY")
+  :hook ((python-mode . python-format-on-save)))
+
 (use-package ripgrep)
 
 (use-package rust-mode
