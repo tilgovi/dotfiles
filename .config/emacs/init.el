@@ -45,7 +45,8 @@ distance from the left and right edge, respectively."
   (walk-windows
    (lambda (window)
      (let* ((buffer (window-buffer window))
-            (fill-column (buffer-local-value 'fill-column buffer))
+            (fill-column (cond ((window-minibuffer-p window) 120)
+                               (t (buffer-local-value 'fill-column buffer))))
             (font-width (window-font-width window))
             (body-width (* (+ fill-column 0) font-width))
             (total-width (window-pixel-width window))
