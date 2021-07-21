@@ -203,7 +203,7 @@ distance from the left and right edge, respectively."
 (use-package jsonnet-mode)
 
 (use-package lsp-mode
-  :defines lsp-eslint-auto-fix-on-save
+  :defines lsp-deferred lsp-eslint-auto-fix-on-save
   :functions lsp-eslint-fix-all
   :hook ((js-mode . lsp-deferred)
          (python-mode . lsp-deferred)
