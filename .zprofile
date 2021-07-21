@@ -20,10 +20,8 @@ export NPM_CONFIG_USERCONFIG="$HOME/.config/npmrc"
 
 if [[ -d "$XDG_CONFIG_HOME/nvm" ]]; then
     export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-    source "$NVM_DIR/nvm.sh"
 elif [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
-    source "$NVM_DIR/nvm.sh"
 else
     export N_PREFIX="$HOME/.local"
     export N_PRESERVE_NPM=1
@@ -40,7 +38,7 @@ fi
 export PIPSI_HOME="$HOME/.local/share/virtualenvs"
 export WORKON_HOME="$HOME/.local/share/virtualenvs"
 if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
 fi
 
 # Rust
