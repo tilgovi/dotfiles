@@ -193,6 +193,8 @@ distance from the left and right edge, respectively."
   (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (flycheck-add-next-checker 'python-mypy 'python-pylint))
 
+(use-package go-mode)
+
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
 
