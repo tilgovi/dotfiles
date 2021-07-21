@@ -209,6 +209,7 @@ distance from the left and right edge, respectively."
          (go-mode . lsp-deferred)
          (python-mode . lsp-deferred)
          (terraform-mode . lsp-deferred)
+         (tuareg-mode . lsp-deferred)
          (typescript-mode . lsp-deferred))
   :preface
   (defun lsp--eslint-before-save (orig-fun)
@@ -297,6 +298,8 @@ distance from the left and right edge, respectively."
   :config (change-theme 'base16-atelier-forest-light 'base16-atelier-forest))
 
 (use-package toml-mode)
+
+(use-package tuareg)
 
 (use-package typescript-mode
   :config
