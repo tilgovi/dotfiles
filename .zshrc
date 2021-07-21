@@ -21,6 +21,7 @@ plugins=(
     heroku
     nvm
     pip
+    pyenv
     python
     ruby
     rust
