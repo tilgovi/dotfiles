@@ -200,6 +200,8 @@ distance from the left and right edge, respectively."
 
 (use-package jest)
 
+(use-package jsonnet-mode)
+
 (use-package lsp-mode
   :defines lsp-eslint-auto-fix-on-save
   :functions lsp-eslint-fix-all
