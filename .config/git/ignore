@@ -9,6 +9,8 @@
 
 # Emacs
 \#*\#
+.dir-locals.el
+.dir-locals-2.el
 /.emacs.desktop
 /.emacs.desktop.lock
 .\#*
