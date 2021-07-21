@@ -321,6 +321,8 @@ distance from the left and right edge, respectively."
 
 (use-package volatile-highlights)
 
+(use-package yaml-mode)
+
 (use-package yasnippet)
 
 (use-package windmove
