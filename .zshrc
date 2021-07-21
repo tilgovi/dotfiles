@@ -1,7 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 HYPHEN_INSENSITIVE="true"
-NVM_AUTOLOAD=1
 ZSH_DISABLE_COMPFIX="true"
 ZSH_THEME="starship"
 ZSH_TMUX_AUTOSTART="true"
