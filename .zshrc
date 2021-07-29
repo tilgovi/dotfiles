@@ -48,13 +48,13 @@ prompt_aws_vault
 
 case $OSTYPE in
     darwin*)
-        alias code="/Applications/Emacs.app/Contents/MacOS/Emacs &>/dev/null &!"
         ;;
     linux*)
-        alias code="emacs &>/dev/null &!"
         alias agud="sudo apt update && sudo apt full-upgrade"
         ;;
 esac
+
+alias code="emacs &>/dev/null &!"
 
 alias light=base16_atelier-forest-light
 alias dark=base16_atelier-forest
