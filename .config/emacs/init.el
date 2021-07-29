@@ -235,6 +235,10 @@ distance from the left and right edge, respectively."
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this)))
 
+(use-package nvm
+  :hook ((js-mode . nvm-use-for-buffer)
+         (typescript-mode . nvm-use-for-buffer)))
+
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
 

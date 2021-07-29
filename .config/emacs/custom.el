@@ -64,6 +64,7 @@
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-sideline-enable nil)
  '(menu-bar-mode nil)
+ '(nvm-dir "/Users/randall/.config/nvm")
  '(pixel-scroll-mode t)
  '(prelude-whitespace nil)
  '(prescient-persist-mode t)
