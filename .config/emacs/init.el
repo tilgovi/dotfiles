@@ -270,6 +270,8 @@ distance from the left and right edge, respectively."
     :lighter " PY")
   :hook ((python-mode . python-format-on-save)))
 
+(use-package rego-mode)
+
 (use-package ripgrep)
 
 (use-package rust-mode
