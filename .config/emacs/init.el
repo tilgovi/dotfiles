@@ -263,12 +263,13 @@ distance from the left and right edge, respectively."
 
 (use-package reformatter
   :defines python-format
+  :functions reformatter-define
+  :hook ((python-mode . python-format-on-save))
   :config
   (reformatter-define python-format
     :program "black"
     :args '("-")
-    :lighter " PY")
-  :hook ((python-mode . python-format-on-save)))
+    :lighter " PY"))
 
 (use-package rego-mode)
 
