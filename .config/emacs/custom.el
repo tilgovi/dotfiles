@@ -18,6 +18,7 @@
  '(company-quickhelp-delay 0.2)
  '(company-quickhelp-mode t)
  '(company-show-numbers ''t)
+ '(company-show-quick-access ''t)
  '(company-tooltip-align-annotations t)
  '(company-tooltip-flip-when-above t)
  '(create-lockfiles nil)
