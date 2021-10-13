@@ -4,8 +4,8 @@ filetype plugin indent on
 syntax enable
 
 let g:nd_themes = [
-  \ [ 'sunrise+0', 'base16-atelier-forest-light', 'light' ],
-  \ [ 'sunset+0',  'base16-atelier-forest', 'dark'  ],
+  \ [ 'sunrise+0', 'base16-tomorrow', 'light' ],
+  \ [ 'sunset+0',  'base16-tomorrow-night', 'dark'  ],
   \ ]
 let g:nd_latitude = 40
 
