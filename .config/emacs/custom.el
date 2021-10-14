@@ -80,7 +80,15 @@
  '(replace-char-fold t)
  '(require-final-newline t)
  '(ring-bell-function 'ignore)
- '(safe-local-variable-values '((encoding . utf-8)))
+ '(safe-local-variable-values
+   '((eval let*
+           ((project-directory
+             (car
+              (dir-locals-find-file default-directory))))
+           (setq lsp-clients-typescript-server-args
+                 `("--tsserver-path" ,(concat project-directory ".yarn/sdks/typescript/bin/tsserver")
+                   "--stdio"))
+           (setq lsp-eslint-node-path ".yarn/sdks"))))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scroll-preserve-screen-position t)
