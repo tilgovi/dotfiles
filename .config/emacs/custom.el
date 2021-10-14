@@ -61,6 +61,7 @@
  '(lsp-eslint-auto-fix-on-save t)
  '(lsp-eslint-package-manager "yarn")
  '(lsp-headerline-breadcrumb-enable nil)
+ '(lsp-terraform-server `(,"terraform-ls" "serve"))
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-sideline-enable nil)
  '(menu-bar-mode nil)
