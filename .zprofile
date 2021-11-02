@@ -15,20 +15,14 @@ export PATH="$GOPATH/bin:$PATH"
 
 # Node
 
+export N_PREFIX="$HOME/.local"
+export N_PRESERVE_NPM=1
 export NPM_CONFIG_CACHE="$HOME/.cache"
+export NPM_CONFIG_PREFIX="$HOME/.local"
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npmrc"
 
-if [[ -d "$XDG_CONFIG_HOME/nvm" ]]; then
-    export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-elif [[ -d "$HOME/.nvm" ]]; then
-    export NVM_DIR="$HOME/.nvm"
-else
-    export N_PREFIX="$HOME/.local"
-    export N_PRESERVE_NPM=1
-    export NPM_CONFIG_PREFIX="$HOME/.local"
-fi
-
 # OCaml
+
 if [[ -r "$HOME/.opam/opam-init/init.zsh" ]]; then
     source "$HOME/.opam/opam-init/init.zsh"
 fi
