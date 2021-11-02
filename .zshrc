@@ -18,6 +18,7 @@ plugins=(
     gitfast
     golang
     heroku
+    kubectl
     nvm
     pip
     pyenv
