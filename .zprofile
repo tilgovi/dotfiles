@@ -19,7 +19,7 @@ export N_PREFIX="$HOME/.local"
 export N_PRESERVE_NPM=1
 export NPM_CONFIG_CACHE="$HOME/.cache"
 export NPM_CONFIG_PREFIX="$HOME/.local"
-export NPM_CONFIG_USERCONFIG="$HOME/.config/npmrc"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npmrc"
 
 # OCaml
 
