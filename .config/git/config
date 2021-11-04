@@ -8,9 +8,9 @@
 [user]
 	name = Randall Leeds
 	email = randall@bleeds.info
-[includeIf "gitdir:~/src/apache"]
-	email = randall@apache.org
-[includeIf "gitdir:~/src/nytm"]
-	email = randall.leeds@nytimes.com
-[includeIf "gitdir:~/src/nytimes"]
-	email = randall.leeds@nytimes.com
+[includeIf "gitdir:~/src/apache/"]
+	path = config-apache
+[includeIf "gitdir:~/src/nytm/"]
+	path = config-nyt
+[includeIf "gitdir:~/src/nytimes/"]
+	path = config-nyt
