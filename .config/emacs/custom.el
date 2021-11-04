@@ -84,7 +84,7 @@
  '(require-final-newline t)
  '(ring-bell-function 'ignore)
  '(safe-local-variable-values
-   '((eval let*
+   '((eval let
            ((project-directory
              (car
               (dir-locals-find-file default-directory))))
