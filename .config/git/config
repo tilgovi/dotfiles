@@ -7,6 +7,8 @@
 	required = true
 [pull]
 	rebase = false
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 [user]
 	name = Randall Leeds
 	email = randall@bleeds.info
