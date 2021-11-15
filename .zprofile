@@ -10,8 +10,7 @@ esac
 
 # Go
 
-export GOPATH="$HOME/src/golang"
-export PATH="$GOPATH/bin:$PATH"
+export GOMODCACHE=$HOME/.cache/golang
 
 # Node
 
