@@ -6,7 +6,7 @@
  '(auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
  '(auto-save-visited-mode t)
  '(backup-directory-alist `((".*" \, temporary-file-directory)))
- '(base16-theme-256-color-source 'base16-shell)
+ '(base16-theme-256-color-source 'colors)
  '(beacon-mode t)
  '(blink-cursor-mode nil)
  '(clang-format-style "Chromium")
