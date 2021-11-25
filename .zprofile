@@ -10,7 +10,7 @@ esac
 
 # Go
 
-export GOMODCACHE=$HOME/.cache/golang
+export GOMODCACHE=$HOME/.go
 
 # Node
 
