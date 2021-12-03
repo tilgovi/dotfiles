@@ -170,10 +170,6 @@ distance from the left and right edge, respectively."
 
 (use-package diff-hl)
 
-(use-package eldoc-box
-  :functions (eldoc-box-hover-mode)
-  :hook ((eldoc-mode . eldoc-box-hover-mode)))
-
 (use-package elpy
   :functions elpy-enable
   :config
