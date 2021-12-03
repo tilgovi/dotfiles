@@ -228,6 +228,12 @@ distance from the left and right edge, respectively."
   :config
   (define-key lsp-ui-mode-map [remap js-find-symbol] #'xref-find-definitions))
 
+;; Enable richer annotations using the Marginalia package
+(use-package marginalia
+  :functions marginalia-mode
+  :init
+  (marginalia-mode))
+
 (use-package move-text)
 
 (use-package multiple-cursors
