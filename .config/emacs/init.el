@@ -90,7 +90,6 @@
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta)
  '(ns-right-alternate-modifier 'none)
- '(nvm-dir "/Users/randall/.config/nvm")
  '(pixel-scroll-mode t)
  '(prelude-whitespace nil)
  '(prescient-persist-mode t)
