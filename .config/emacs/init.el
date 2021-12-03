@@ -81,7 +81,6 @@
  '(lsp-signature-function 'lsp-signature-posframe)
  '(lsp-terraform-server `(,"terraform-ls" "serve"))
  '(lsp-ui-doc-position 'at-point)
- '(lsp-ui-sideline-enable nil)
  '(menu-bar-mode nil)
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta)
