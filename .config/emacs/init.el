@@ -223,48 +223,6 @@ distance from the left and right edge, respectively."
   :requires company
   :config (add-to-list 'company-backends '(company-capf :with company-tabnine :separate)))
 
-(use-package composite
-  :straight nil
-  :init
-  (defvar composition-ligature-table (make-char-table nil))
-  :hook
-  (((prog-mode conf-mode nxml-mode markdown-mode help-mode)
-    . (lambda () (setq-local composition-function-table composition-ligature-table))))
-  :config
-  (let ((ligatures `((?!  ,(regexp-opt '("!!" "!=" "!==")))
-                     (?#  ,(regexp-opt '("#!" "##" "###" "####" "#(" "#:" "#=" "#?" "#[" "#_" "#_(" "#{")))
-                     (?$  ,(regexp-opt '("$>")))
-                     (?&  ,(regexp-opt '("&&" "&&&" "&=")))
-                     (?*  ,(regexp-opt '("***" "*/" "*>")))
-                     (?+  ,(regexp-opt '("++" "+++" "+>")))
-                     (?-  ,(regexp-opt '("--" "---" "-->" "-<" "-<<" "->" "->>" "-|" "-~")))
-                     (?.  ,(regexp-opt '(".-" ".." "..." "..<" ".=" ".?")))
-                     (?/  ,(regexp-opt '("/*" "//" "///" "//=" "/=" "/==" "/>")))
-                     (?:  ,(regexp-opt '("::" ":::" "::=" ":<" ":=" ":>" ":?" ":?>")))
-                     (?\; ,(regexp-opt '(";;")))
-                     (?<  ,(regexp-opt '("<!--" "<#--"
-                                         "<$" "<$>" "<*" "<*>" "<+" "<+>"
-                                         "<-" "<-<" "<->" "<-|"
-                                         "</" "</>"
-                                         "<:" "<<" "<<-" "<<<" "<<=" "<=" "<=<" "<==" "<==>" "<=>" "<=|"
-                                         "<>" "<|" "<|>" "<||" "<|||" "<~" "<~>" "<~~")))
-                     (?=  ,(regexp-opt '("=!=" "=/=" "=:=" "=<<" "==" "===" "==>" "=>" "=>>")))
-                     (?>  ,(regexp-opt '(">-" ">--" ">->" ">:" ">=" ">=>" ">>" ">>-" ">>=" ">>>" ">]")))
-                     (?? ,(regexp-opt '("?." "?:" "?=" "??")))
-                     (?@  ,(regexp-opt '("@_")))
-                     (?\[ ,(regexp-opt '("[|" "[<" "[||]")))
-                     (?\] ,(regexp-opt '("]#")))
-                     (?^  ,(regexp-opt '("^=")))
-                     (?_  ,(regexp-opt '("__" "_|_")))
-                     (?{ ,(regexp-opt '("{|")))
-                     (?|  ,(regexp-opt '("|-" "|->" "|=" "|=>" "|>" "|]" "||" "||-" "||=" "||>" "|||>" "|}")))
-                     (?~  ,(regexp-opt '("~-" "~>" "~@" "~~" "~~>"))))))
-    (dolist (char-regexp ligatures)
-      (apply (lambda (char regexp) (set-char-table-range
-                                    composition-ligature-table
-                                    char `([,regexp 0 compose-gstring-for-graphic])))
-             char-regexp))))
-
 (use-package crux
   :config
   (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
@@ -323,6 +281,18 @@ distance from the left and right edge, respectively."
 (use-package jest)
 
 (use-package jsonnet-mode)
+
+(use-package ligature
+  :straight (ligature :type git :host github :repo "mickeynp/ligature.el")
+  :config
+  (ligature-set-ligatures 'prog-mode
+                          '("-<<" "-<" "-<-" "<--" "<---" "<<-" "<-" "->" "->>" "-->" "--->" "->-" ">-" ">>-"
+                            "=<<" "=<" "=<=" "<==" "<===" "<<=" "<=" "=>" "=>>" "==>" "===>" "=>=" ">=" ">>="
+                            "<->" "<-->" "<--->" "<---->" "<=>" "<==>" "<===>" "<====>" "-------->"
+                            "<~~" "<~" "~>" "~~>" "::" ":::" "==" "!=" "/=" "~=" "<>" "===" "!==" "=/=" "=!="
+                            ":=" ":-" ":+" "<*" "<*>" "*>" "<|" "<|>" "|>" "<." "<.>" ".>" "+:" "-:" "=:" ":>" "__"
+                            "(*" "*)" "[|" "|]" "{|" "|}" "++" "+++" "\\/" "/\\" "|-" "-|" "<!--" "<!---" "<***>"))
+  (global-ligature-mode t))
 
 (use-package lsp-mode
   :defines lsp-deferred lsp-eslint-auto-fix-on-save
