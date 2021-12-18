@@ -14,10 +14,11 @@ export GOMODCACHE=$HOME/.go
 
 # Node
 
-export N_PREFIX="$HOME/.local"
 export NPM_CONFIG_CACHE="$HOME/.cache"
 export NPM_CONFIG_PREFIX="$HOME/.local"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npmrc"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$HOME/.volta/bin:$PATH"
 
 # OCaml
 
