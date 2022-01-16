@@ -7,7 +7,6 @@ ZSH_TMUX_AUTOSTART="true"
 plugins=(
     aws
     base16-shell
-    cargo
     chruby
     colorize
     command-not-found
