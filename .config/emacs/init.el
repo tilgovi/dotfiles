@@ -88,6 +88,7 @@
  '(prescient-persist-mode t)
  '(projectile-completion-system 'default)
  '(projectile-mode t nil (projectile))
+ '(projectile-project-search-path '("~/src"))
  '(python-indent-def-block-scale 1)
  '(python-shell-extra-pythonpaths '("~/.local/venvs"))
  '(pyvenv-virtualenvwrapper-python "~/.local/share/virtualenvs/virtualenvwrapper/bin/python")
