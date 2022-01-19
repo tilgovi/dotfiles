@@ -47,6 +47,10 @@ prompt_aws_vault
 
 case $OSTYPE in
     darwin*)
+        if [[ ${+commands[gdircolors]} == 1 ]]; then
+            eval $(gdircolors)
+            alias ls="gls --color=tty"
+        fi
         ;;
     linux*)
         alias agud="sudo apt update && sudo apt full-upgrade"
