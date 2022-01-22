@@ -29,6 +29,7 @@
  '(auto-save-visited-mode t)
  '(backup-directory-alist `((".*" \, temporary-file-directory)))
  '(base16-distinct-fringe-background nil)
+ '(base16-highlight-mode-line 'contrast)
  '(base16-theme-256-color-source 'colors)
  '(beacon-mode t)
  '(blink-cursor-mode nil)
