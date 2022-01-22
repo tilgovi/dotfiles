@@ -407,7 +407,7 @@ distance from the left and right edge, respectively."
   (setq calendar-location-name "Oakland, CA")
   (setq calendar-latitude 37.80)
   (setq calendar-longitude -122.27)
-  :config (change-theme 'base16-atelier-plateau-light 'base16-atelier-plateau))
+  :config (change-theme 'base16-tomorrow 'base16-tomorrow-night))
 
 (use-package toml-mode)
 

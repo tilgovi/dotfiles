@@ -59,5 +59,5 @@ esac
 
 alias code="emacs &>/dev/null &!"
 
-alias light=base16_atelier-plateau-light
-alias dark=base16_atelier-plateau
+alias light=base16_tomorrow
+alias dark=base16_tomorrow-night
