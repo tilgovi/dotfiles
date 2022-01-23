@@ -158,6 +158,7 @@
 
 ;; Set the emoji font
 (when window-system
+  (set-fontset-font t 'symbol (font-spec :family "Symbols Nerd Font"))
   (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji"))
   (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
   (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
