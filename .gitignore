@@ -6,6 +6,7 @@
 .*cache*
 .*.elc
 .babel.json
+.npm
 .pylint.d
 .rnd
 .v8flags.*
