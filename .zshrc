@@ -30,20 +30,11 @@ plugins=(
     yarn
     z
     zsh-autosuggestions
-    zsh-aws-vault
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-prompt_aws_vault() {
-    local vault_segment
-    vault_segment="`prompt_aws_vault_segment`"
-    [[ $vault_segment != '' ]] && PROMPT="$vault_segment $PROMPT"
-}
-
-prompt_aws_vault
 
 case $OSTYPE in
     darwin*)

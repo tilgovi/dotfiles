@@ -7,9 +7,6 @@
 [submodule ".oh-my-zsh/custom/plugins/base16-shell"]
 	path = .oh-my-zsh/custom/plugins/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
-[submodule ".oh-my-zsh/custom/plugins/aws-vault"]
-	path = .oh-my-zsh/custom/plugins/zsh-aws-vault
-	url = https://github.com/blimmer/zsh-aws-vault.git
 [submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
