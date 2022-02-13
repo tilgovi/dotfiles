@@ -1,5 +1,3 @@
-export XDG_CONFIG_HOME="$HOME/.config"
-
 # AWS
 
 case $OSTYPE in
@@ -16,7 +14,7 @@ export GOMODCACHE=$HOME/.go
 
 export NPM_CONFIG_CACHE="$HOME/.cache"
 export NPM_CONFIG_PREFIX="$HOME/.local"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npmrc"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npmrc"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$HOME/.volta/bin:$PATH"
 
