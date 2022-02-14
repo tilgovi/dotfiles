@@ -266,7 +266,8 @@ distance from the left and right edge, respectively."
 (use-package exec-path-from-shell
   :functions exec-path-from-shell-initialize
   :config
-  (exec-path-from-shell-initialize))
+  (when window-system
+    (exec-path-from-shell-initialize)))
 
 (use-package flycheck
   :functions flycheck-add-next-checker flycheck-may-enable-checker flycheck-select-checker
