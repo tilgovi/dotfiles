@@ -10,8 +10,6 @@ export NPM_CONFIG_PREFIX="$HOME/.local"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npmrc"
 
 # Python
-export PIPSI_HOME="$HOME/.local/share/virtualenvs"
-export WORKON_HOME="$HOME/.local/share/virtualenvs"
 path+="${PYENV_ROOT:-$HOME/.pyenv}/shims"
 
 # Rust
