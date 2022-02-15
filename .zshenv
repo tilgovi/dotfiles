@@ -1,5 +1,5 @@
 typeset -U path
-path+="$HOME/.local/bin"
+path=("$HOME/.local/bin" $path)
 
 # Go
 export GOMODCACHE=$HOME/.go
@@ -10,11 +10,11 @@ export NPM_CONFIG_PREFIX="$HOME/.local"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npmrc"
 
 # Python
-path+="${PYENV_ROOT:-$HOME/.pyenv}/shims"
+path=("${PYENV_ROOT:-$HOME/.pyenv}/shims" $path)
 
 # Rust
-path+="$HOME/.cargo/bin"
+path=("$HOME/.cargo/bin" $path)
 
 # Volta
 export VOLTA_HOME="$HOME/.volta"
-path+="$VOLTA_HOME/bin"
+path=("$VOLTA_HOME/bin" $path)
