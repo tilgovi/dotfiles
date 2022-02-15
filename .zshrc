@@ -8,22 +8,15 @@ plugins=(
     aws
     base16-shell
     chruby
-    colorize
-    command-not-found
     docker
     extract
     gcloud
     git
-    gitfast
     golang
-    heroku
     kubectl
     pip
     pyenv
-    python
-    ruby
     rust
-    sudo
     terraform
     tmux
     vault
