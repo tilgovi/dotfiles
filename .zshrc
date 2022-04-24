@@ -3,6 +3,8 @@ export ZSH="$HOME/.oh-my-zsh"
 HYPHEN_INSENSITIVE="true"
 ZSH_THEME="starship"
 
+zstyle ':omz:update' mode reminder
+
 plugins=(
     aws
     base16-shell
