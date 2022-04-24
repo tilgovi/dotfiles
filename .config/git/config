@@ -13,3 +13,5 @@
 	path = config-nyt
 [includeIf "gitdir:~/src/nytimes/"]
 	path = config-nyt
+[init]
+	defaultBranch = main
