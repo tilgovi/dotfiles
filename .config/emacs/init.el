@@ -70,6 +70,7 @@
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
+ '(global-prettier-mode t)
  '(global-subword-mode t)
  '(global-undo-tree-mode t)
  '(global-visual-line-mode t)
@@ -341,9 +342,7 @@ distance from the left and right edge, respectively."
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
 
-(use-package prettier-js
-  :hook ((javascript-mode . prettier-js-mode)
-         (typescript-mode . prettier-js-mode)))
+(use-package prettier)
 
 (use-package projectile
   :config
