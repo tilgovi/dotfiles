@@ -73,7 +73,6 @@
  '(global-prettier-mode t)
  '(global-subword-mode t)
  '(global-undo-tree-mode t)
- '(global-visual-line-mode t)
  '(global-whitespace-cleanup-mode t)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
@@ -151,6 +150,8 @@
  ;; If there is more than one, they won't work right.
  '(eldoc-box-body ((t (:family "sans-serif"))))
  '(terraform--resource-name-face ((t (:inherit font-lock-variable-name-face)))))
+
+(setq-default auto-fill-function 'do-auto-fill)
 
 ;; install use-package
 (when (functionp 'straight-use-package) (straight-use-package 'use-package))
