@@ -191,7 +191,7 @@ distance from the left and right edge, respectively."
             (excess (max (- total-width body-width extras-width) 0))
             (excess-columns (/ excess font-width))
             (margin (floor (/ (float excess-columns) 2))))
-       (set-window-margins window margin margin)))))
+       (set-window-margins window margin)))))
 
 (defun set-window-default-parameters ()
   "Set default window parameters."
