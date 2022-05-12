@@ -200,11 +200,12 @@ distance from the left and right edge, respectively."
      (when (not (window-parameter window 'min-margins))
            (set-window-parameter window 'min-margins '(0 . 0))))))
 
-(add-hook 'window-configuration-change-hook
-          (lambda ()
-            (set-window-default-parameters)
-            (balance-windows)
-            (balance-windows-margins)))
+(add-hook 'window-buffer-change-functions
+          (lambda (frame)
+            (with-selected-frame frame
+              (set-window-default-parameters)
+              (balance-windows)
+              (balance-windows-margins))))
 
 (use-package add-node-modules-path
   :hook ((js-mode . add-node-modules-path)
