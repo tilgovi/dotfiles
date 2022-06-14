@@ -77,6 +77,7 @@
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)
+ '(kill-whole-line t)
  '(lsp-auto-guess-root t)
  '(lsp-enable-file-watchers nil)
  '(lsp-eslint-auto-fix-on-save t)
