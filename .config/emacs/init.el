@@ -299,6 +299,8 @@ distance from the left and right edge, respectively."
 
 (use-package jest)
 
+(use-package json-mode)
+
 (use-package jsonnet-mode)
 
 (use-package ligature
