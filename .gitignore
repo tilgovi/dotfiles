@@ -48,6 +48,7 @@
 .wine
 .yarn
 .yarnrc
+.yarnrc.yml
 
 # logs
 .xsession-errors
