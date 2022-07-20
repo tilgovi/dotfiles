@@ -263,12 +263,16 @@ distance from the left and right edge, respectively."
 
 (use-package diff-hl)
 
+(use-package diminish
+  :diminish (auto-fill-function beacon-mode subword-mode))
+
 (use-package elpy
   :functions elpy-enable
   :config
   (elpy-enable))
 
 (use-package editorconfig
+  :diminish
   :hook (editor-config-custom-hooks . (lambda (props) (whitespace-mode))))
 
 (use-package exec-path-from-shell
@@ -278,6 +282,7 @@ distance from the left and right edge, respectively."
     (exec-path-from-shell-initialize)))
 
 (use-package flycheck
+  :diminish
   :functions flycheck-add-next-checker flycheck-may-enable-checker flycheck-select-checker
   :config
   (defun flycheck-maybe-select-python-mypy ()
@@ -309,6 +314,7 @@ distance from the left and right edge, respectively."
   (global-ligature-mode t))
 
 (use-package lsp-mode
+  :diminish
   :defines lsp-deferred lsp-eslint-auto-fix-on-save
   :functions lsp-eslint-fix-all
   :hook ((js-mode . lsp-deferred)
@@ -344,9 +350,11 @@ distance from the left and right edge, respectively."
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
 
-(use-package prettier)
+(use-package prettier
+  :diminish)
 
 (use-package projectile
+  :diminish
   :config
    (global-set-key (kbd "C-c p") 'projectile-command-map))
 
@@ -363,6 +371,7 @@ distance from the left and right edge, respectively."
   (add-hook 'python-mode-hook 'pyvenv-auto))
 
 (use-package rainbow-mode
+  :diminish
   :hook prog-mode)
 
 (use-package reformatter
@@ -396,10 +405,12 @@ distance from the left and right edge, respectively."
   :requires selectrum)
 
 (use-package smartparens
+  :diminish
   :init
   (require 'smartparens-config))
 
 (use-package super-save
+  :diminish
   :functions super-save-mode
   :config
   (super-save-mode +1))
@@ -428,7 +439,8 @@ distance from the left and right edge, respectively."
 (use-package uniquify
   :straight nil)
 
-(use-package volatile-highlights)
+(use-package volatile-highlights
+  :diminish)
 
 (use-package yaml-mode)
 
@@ -438,8 +450,10 @@ distance from the left and right edge, respectively."
   :config
   (windmove-default-keybindings))
 
-(use-package which-key)
+(use-package which-key
+  :diminish)
 
-(use-package whitespace-cleanup-mode)
+(use-package whitespace-cleanup-mode
+  :diminish)
 
 ;;; init.el ends here
