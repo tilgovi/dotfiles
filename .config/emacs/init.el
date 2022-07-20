@@ -72,7 +72,6 @@
  '(global-hl-line-mode nil)
  '(global-prettier-mode t)
  '(global-subword-mode t)
- '(global-undo-tree-mode t)
  '(global-whitespace-cleanup-mode t)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
@@ -425,8 +424,6 @@ distance from the left and right edge, respectively."
 (use-package typescript-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode)))
-
-(use-package undo-tree)
 
 (use-package uniquify
   :straight nil)
