@@ -151,6 +151,7 @@
  '(eldoc-box-body ((t (:family "sans-serif"))))
  '(terraform--resource-name-face ((t (:inherit font-lock-variable-name-face)))))
 
+(add-to-list 'auto-mode-alist '("\\.[cm]js\\'" . js-mode))
 (setq-default auto-fill-function 'do-auto-fill)
 
 ;; install use-package
