@@ -225,6 +225,10 @@ distance from the left and right edge, respectively."
 (use-package chruby
   :hook (ruby-mode . chruby-use-corresponding))
 
+(use-package cider)
+
+(use-package clojure-mode)
+
 (use-package company
   :defines company-backends)
 
