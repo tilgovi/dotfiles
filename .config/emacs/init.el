@@ -302,6 +302,8 @@ distance from the left and right edge, respectively."
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
 
+(use-package htmlize)
+
 (use-package jest)
 
 (use-package json-mode)
@@ -353,6 +355,8 @@ distance from the left and right edge, respectively."
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this)))
+
+(use-package ox-clip)
 
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
