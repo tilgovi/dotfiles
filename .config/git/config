@@ -3,6 +3,8 @@
 [core]
 	abbrev = 12
 	pager = less -F -X
+[init]
+	defaultBranch = main
 [pull]
 	rebase = false
 [push]
@@ -16,5 +18,3 @@
 	path = config-apache
 [includeIf "gitdir:~/src/nytimes/"]
 	path = config-nyt
-[init]
-	defaultBranch = main
