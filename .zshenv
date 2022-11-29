@@ -16,5 +16,5 @@ path=("${PYENV_ROOT:-$HOME/.pyenv}/shims" $path)
 path=("$HOME/.cargo/bin" $path)
 
 # Volta
-export VOLTA_HOME="$HOME/.volta"
+export VOLTA_HOME="$HOME/.config/volta"
 path=("$VOLTA_HOME/bin" $path)
