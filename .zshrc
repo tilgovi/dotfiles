@@ -21,6 +21,7 @@ plugins=(
     rust
     terraform
     vault
+    volta
     yarn
     z
     zsh-autosuggestions
