@@ -15,6 +15,7 @@ plugins=(
     git
     golang
     kubectl
+    nvm
     pip
     pyenv
     rust
