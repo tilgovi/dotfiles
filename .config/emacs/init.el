@@ -89,6 +89,19 @@
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta)
  '(ns-right-alternate-modifier 'none)
+ '(nvm-dir
+   (let
+       ((custom
+         (expand-file-name "nvm"
+                           (expand-file-name
+                            (or
+                             (getenv "XDG_CONFIG_HOME")
+                             "~/.config")))))
+     (or
+      (and
+       (file-directory-p custom)
+       custom)
+      (expand-file-name "~/.nvm"))))
  '(prescient-persist-mode t)
  '(projectile-completion-system 'default)
  '(projectile-mode t nil (projectile))
