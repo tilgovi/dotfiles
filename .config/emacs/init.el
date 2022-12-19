@@ -105,10 +105,11 @@
            ((project-directory
              (car
               (dir-locals-find-file default-directory))))
-           (setq lsp-clients-typescript-server-args
-                 `("--tsserver-path" ,(concat project-directory ".yarn/sdks/typescript/bin/tsserver")
-                   "--stdio"))
-           (setq lsp-eslint-node-path ".yarn/sdks"))))
+           (setq-local lsp-clients-typescript-server-args
+                       `("--tsserver-path" ,(concat project-directory ".yarn/sdks/typescript/bin/tsserver")
+                         "--stdio"))
+           (setq-local lsp-eslint-node-path
+                       (concat project-directory ".yarn/sdks")))))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scroll-preserve-screen-position t)
