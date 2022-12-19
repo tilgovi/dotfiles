@@ -325,7 +325,8 @@ distance from the left and right edge, respectively."
   :diminish
   :defines lsp-deferred lsp-eslint-auto-fix-on-save
   :functions lsp-eslint-fix-all
-  :hook ((js-mode . lsp-deferred)
+  :hook ((java-mode . lsp-deferred)
+         (js-mode . lsp-deferred)
          (go-mode . lsp-deferred)
          (python-mode . lsp-deferred)
          (terraform-mode . lsp-deferred)
