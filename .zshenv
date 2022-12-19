@@ -10,10 +10,12 @@ export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npmrc"
 export NVM_DIR="$HOME/.nvm"
 
 # Python
-path=("${PYENV_ROOT:-$HOME/.pyenv}/shims" $path)
+export PYENV_ROOT=$HOME/.pyenv
+path=("$PYENV_ROOT/shims" $path)
 
 # Rust
-path=("$HOME/.cargo/bin" $path)
+export CARGO_HOME=$HOME/.cargo
+path=("$CARGO_HOME/bin" $path)
 
 # Volta
 export VOLTA_HOME="$HOME/.volta"
