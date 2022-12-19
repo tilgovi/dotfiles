@@ -56,9 +56,6 @@
      (line-spacing . 0.3)))
  '(editorconfig-mode t)
  '(eldoc-idle-delay 0)
- '(elpy-modules
-   '(elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-highlight-indentation elpy-module-yasnippet elpy-module-django elpy-module-sane-defaults))
- '(elpy-rpc-python-command "python3")
  '(exec-path-from-shell-arguments nil)
  '(fill-column 80)
  '(flycheck-checker-error-threshold 1000)
@@ -269,11 +266,6 @@ distance from the left and right edge, respectively."
 
 (use-package diminish
   :diminish (auto-fill-function beacon-mode subword-mode))
-
-(use-package elpy
-  :functions elpy-enable
-  :config
-  (elpy-enable))
 
 (use-package editorconfig
   :diminish
