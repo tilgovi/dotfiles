@@ -9,6 +9,8 @@
 	rebase = false
 [push]
 	autoSetupRemote = true
+[rebase]
+	abbreviateCommands = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [user]
