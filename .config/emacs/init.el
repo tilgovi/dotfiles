@@ -88,8 +88,6 @@
  '(projectile-mode t nil (projectile))
  '(projectile-project-search-path '(("~/src" . 2)))
  '(python-indent-def-block-scale 1)
- '(python-shell-extra-pythonpaths '("~/.local/venvs"))
- '(pyvenv-virtualenvwrapper-python "~/.local/share/virtualenvs/virtualenvwrapper/bin/python")
  '(read-process-output-max (* 1024 1024) t)
  '(recentf-max-saved-items 500)
  '(recentf-mode t)
