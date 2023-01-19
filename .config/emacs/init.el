@@ -385,7 +385,7 @@ distance from the left and right edge, respectively."
   :config
   (reformatter-define python-format
     :program "black"
-    :args '("-")
+    :args '("--fast" "-")
     :lighter " PY"))
 
 (use-package rego-mode)
