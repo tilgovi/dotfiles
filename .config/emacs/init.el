@@ -132,7 +132,8 @@
  '(web-mode-script-padding 2)
  '(web-mode-style-padding 2)
  '(which-key-mode t)
- '(winner-mode t))
+ '(winner-mode t)
+ '(yas-global-mode t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
