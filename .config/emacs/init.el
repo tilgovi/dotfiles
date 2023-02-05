@@ -310,7 +310,6 @@ distance from the left and right edge, respectively."
 (use-package jsonnet-mode)
 
 (use-package ligature
-  :straight (ligature :type git :host github :repo "mickeynp/ligature.el")
   :functions ligature-set-ligatures global-ligature-mode
   :config
   (ligature-set-ligatures 'prog-mode
