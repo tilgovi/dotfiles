@@ -262,7 +262,13 @@ distance from the left and right edge, respectively."
 (use-package diff-hl)
 
 (use-package diminish
-  :diminish (auto-fill-function beacon-mode subword-mode))
+  :diminish
+  abbrev-mode
+  auto-fill-function
+  beacon-mode
+  company-mode
+  eldoc-mode
+  subword-mode)
 
 (use-package editorconfig
   :diminish
@@ -311,7 +317,7 @@ distance from the left and right edge, respectively."
   (global-ligature-mode t))
 
 (use-package lsp-mode
-  :diminish
+  :diminish lsp-mode lsp-lens-mode
   :defines lsp-deferred lsp-eslint-auto-fix-on-save
   :functions lsp-eslint-fix-all
   :hook ((java-mode . lsp-deferred)
@@ -448,7 +454,8 @@ distance from the left and right edge, respectively."
 
 (use-package yaml-mode)
 
-(use-package yasnippet)
+(use-package yasnippet
+  :diminish)
 
 (use-package windmove
   :config
