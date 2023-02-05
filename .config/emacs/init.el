@@ -77,7 +77,6 @@
  '(lsp-eslint-auto-fix-on-save t)
  '(lsp-file-watch-threshold 2000)
  '(lsp-signature-function 'lsp-signature-posframe)
- '(lsp-ui-doc-position 'at-point)
  '(menu-bar-mode nil)
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta)
