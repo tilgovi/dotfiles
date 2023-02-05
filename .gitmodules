@@ -1,6 +1,3 @@
-[submodule ".vim/pack/tilgovi/start/night-and-day"]
-	path = .vim/pack/tilgovi/start/night-and-day
-	url = https://github.com/nightsense/night-and-day.git
 [submodule ".vim/pack/tilgovi/opt/base16"]
 	path = .vim/pack/tilgovi/opt/base16
 	url = https://github.com/tinted-theming/base16-vim.git
