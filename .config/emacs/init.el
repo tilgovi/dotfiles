@@ -206,7 +206,7 @@ distance from the left and right edge, respectively."
 
 (use-package add-node-modules-path
   :hook ((js-mode . add-node-modules-path)
-         (typescript-mode . add-node-modules-path)))
+         (typescript-ts-mode . add-node-modules-path)))
 
 (use-package base16-theme)
 
@@ -333,7 +333,8 @@ distance from the left and right edge, respectively."
          (python-mode . lsp-deferred)
          (terraform-mode . lsp-deferred)
          (tuareg-mode . lsp-deferred)
-         (typescript-mode . lsp-deferred))
+         (tsx-ts-mode . lsp-deferred)
+         (typescript-ts-mode . lsp-deferred))
   :preface
   (defun lsp--eslint-before-save (orig-fun)
     "Run lsp-eslint-apply-all-fixes and then run the original lsp--before-save."
@@ -360,7 +361,7 @@ distance from the left and right edge, respectively."
 
 (use-package nvm
   :hook ((js-mode . nvm-use-for-buffer)
-         (typescript-mode . nvm-use-for-buffer)))
+         (typescript-ts-mode . nvm-use-for-buffer)))
 
 (use-package ox-clip)
 
@@ -368,7 +369,12 @@ distance from the left and right edge, respectively."
   :hook (python-mode . pipenv-mode))
 
 (use-package prettier
-  :diminish)
+  :diminish
+  :defines prettier-major-mode-parsers
+  :config
+  (let ((typescript-parsers (cdr (assoc 'typescript-mode prettier-major-mode-parsers))))
+    (add-to-list 'prettier-major-mode-parsers `(tsx-ts-mode . ,typescript-parsers)
+    (add-to-list 'prettier-major-mode-parsers `(typescript-ts-mode . ,typescript-parsers)))))
 
 (use-package projectile
   :diminish
@@ -447,11 +453,11 @@ distance from the left and right edge, respectively."
 
 (use-package toml-mode)
 
-(use-package tuareg)
+(use-package typescript-ts-mode
+  :mode (("\\.ts\\'" . typescript-ts-mode)
+         ("\\.tsx\\'" . tsx-ts-mode)))
 
-(use-package typescript-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode)))
+(use-package tuareg)
 
 (use-package uniquify
   :straight nil)
