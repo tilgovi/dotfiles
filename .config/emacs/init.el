@@ -373,7 +373,7 @@ distance from the left and right edge, respectively."
 (use-package projectile
   :diminish
   :config
-   (global-set-key (kbd "C-c p") 'projectile-command-map))
+  (global-set-key (kbd "C-c p") 'projectile-command-map))
 
 (use-package pyvenv
   :functions pyvenv-activate pyvenv-deactivate
