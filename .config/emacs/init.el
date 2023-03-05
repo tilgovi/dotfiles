@@ -143,7 +143,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(fixed-pitch ((t (:family "Iosevka Term"))))
- '(terraform--resource-name-face ((t (:inherit font-lock-variable-name-face)))))
+ '(terraform--resource-name-face ((t (:inherit font-lock-variable-name-face))))
+ '(variable-pitch ((t (:inherit default)))))
 
 (add-to-list 'auto-mode-alist '("\\.[cm]js\\'" . js-mode))
 (setq-default auto-fill-function 'do-auto-fill)
