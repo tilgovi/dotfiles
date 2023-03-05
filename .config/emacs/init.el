@@ -73,6 +73,7 @@
  '(global-subword-mode t)
  '(global-whitespace-cleanup-mode t)
  '(indent-tabs-mode nil)
+ '(inhibit-startup-screen t)
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)
  '(kill-whole-line t)
