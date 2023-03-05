@@ -397,15 +397,10 @@ distance from the left and right edge, respectively."
   :diminish
   :hook prog-mode)
 
-(use-package reformatter
-  :defines python-format
-  :functions reformatter-define
-  :hook ((python-mode . python-format-on-save))
-  :config
-  (reformatter-define python-format
-    :program "black"
-    :args '("--fast" "-")
-    :lighter " PY"))
+(use-package python-black
+  :demand t
+  :after python
+  :hook (python-mode . python-black-on-save-mode-enable-dwim))
 
 (use-package rego-mode)
 
