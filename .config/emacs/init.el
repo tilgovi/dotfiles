@@ -25,6 +25,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(apheleia-global-mode t)
  '(auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
  '(auto-save-visited-mode t)
  '(backup-directory-alist `((".*" \, temporary-file-directory)))
@@ -209,6 +210,9 @@ distance from the left and right edge, respectively."
   :hook ((js-mode . add-node-modules-path)
          (typescript-ts-mode . add-node-modules-path)))
 
+(use-package apheleia
+  :diminish)
+
 (use-package base16-theme)
 
 (use-package beacon)
@@ -369,14 +373,6 @@ distance from the left and right edge, respectively."
 (use-package pipenv
   :hook (python-mode . pipenv-mode))
 
-(use-package prettier
-  :diminish
-  :defines prettier-major-mode-parsers
-  :config
-  (let ((typescript-parsers (cdr (assoc 'typescript-mode prettier-major-mode-parsers))))
-    (add-to-list 'prettier-major-mode-parsers `(tsx-ts-mode . ,typescript-parsers)
-    (add-to-list 'prettier-major-mode-parsers `(typescript-ts-mode . ,typescript-parsers)))))
-
 (use-package projectile
   :diminish
   :config
@@ -434,8 +430,7 @@ distance from the left and right edge, respectively."
   :config
   (super-save-mode +1))
 
-(use-package terraform-mode
-  :hook (terraform-mode . terraform-format-on-save-mode))
+(use-package terraform-mode)
 
 (use-package theme-changer
   :defines calendar-location-name calendar-latitude calendar-longitude
