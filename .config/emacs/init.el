@@ -389,6 +389,7 @@ distance from the left and right edge, respectively."
   (global-treesit-auto-mode))
 
 (use-package typescript-ts-mode
+  :straight nil
   :mode (("\\.ts\\'" . typescript-ts-mode)
          ("\\.tsx\\'" . tsx-ts-mode)))
 
