@@ -78,9 +78,6 @@
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)
  '(kill-whole-line t)
- '(lsp-eslint-auto-fix-on-save t)
- '(lsp-file-watch-threshold 2000)
- '(lsp-signature-function 'lsp-signature-posframe)
  '(menu-bar-mode nil)
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta)
@@ -96,16 +93,6 @@
  '(replace-char-fold t)
  '(require-final-newline t)
  '(ring-bell-function 'ignore)
- '(safe-local-variable-values
-   '((eval let
-           ((project-directory
-             (car
-              (dir-locals-find-file default-directory))))
-           (setq-local lsp-clients-typescript-server-args
-                       `("--tsserver-path" ,(concat project-directory ".yarn/sdks/typescript/bin/tsserver")
-                         "--stdio"))
-           (setq-local lsp-eslint-node-path
-                       (concat project-directory ".yarn/sdks")))))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scroll-preserve-screen-position t)
@@ -281,6 +268,9 @@ distance from the left and right edge, respectively."
   :diminish
   :hook (editor-config-custom-hooks . (lambda (props) (whitespace-mode))))
 
+(use-package eglot
+  :straight nil)
+
 (use-package exec-path-from-shell
   :functions exec-path-from-shell-initialize
   :config
@@ -327,35 +317,6 @@ distance from the left and right edge, respectively."
                             ":=" ":-" ":+" "<*" "<*>" "*>" "<|" "<|>" "|>" "<." "<.>" ".>" "+:" "-:" "=:" ":>" "__"
                             "(*" "*)" "[|" "|]" "{|" "|}" "++" "+++" "\\/" "/\\" "|-" "-|" "<!--" "<!---" "<***>"))
   (global-ligature-mode t))
-
-(use-package lsp-mode
-  :diminish lsp-mode lsp-lens-mode
-  :defines lsp-deferred lsp-eslint-auto-fix-on-save
-  :functions lsp-eslint-fix-all
-  :hook ((java-mode . lsp-deferred)
-         (js-mode . lsp-deferred)
-         (go-mode . lsp-deferred)
-         (python-mode . lsp-deferred)
-         (terraform-mode . lsp-deferred)
-         (tuareg-mode . lsp-deferred)
-         (tsx-ts-mode . lsp-deferred)
-         (typescript-ts-mode . lsp-deferred))
-  :preface
-  (defun lsp--eslint-before-save (orig-fun)
-    "Run lsp-eslint-apply-all-fixes and then run the original lsp--before-save."
-    (when lsp-eslint-auto-fix-on-save (lsp-eslint-fix-all))
-    (funcall orig-fun))
-  :config
-  (advice-add 'lsp--before-save :around #'lsp--eslint-before-save))
-
-(use-package lsp-java
-  :after lsp
-  :hook (java-mode . lsp-deferred))
-
-(use-package lsp-ui
-  :defines lsp-ui-mode-map
-  :config
-  (define-key lsp-ui-mode-map [remap js-find-symbol] #'xref-find-definitions))
 
 (use-package move-text)
 
