@@ -74,6 +74,7 @@
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta)
  '(ns-right-alternate-modifier 'none)
+ '(pixel-scroll-precision-mode t)
  '(prescient-persist-mode t)
  '(projectile-completion-system 'default)
  '(projectile-mode t nil (projectile))
