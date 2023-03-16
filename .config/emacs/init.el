@@ -335,11 +335,6 @@ distance from the left and right edge, respectively."
   :diminish
   :hook prog-mode)
 
-(use-package python-black
-  :demand t
-  :after python
-  :hook (python-mode . python-black-on-save-mode-enable-dwim))
-
 (use-package rego-mode)
 
 (use-package ripgrep)
