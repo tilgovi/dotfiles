@@ -132,7 +132,7 @@
 (add-to-list 'auto-mode-alist '("\\.[cm]js\\'" . js-mode))
 (setq-default auto-fill-function 'do-auto-fill)
 
-;; install use-package
+;; Install use-package
 (when (functionp 'straight-use-package) (straight-use-package 'use-package))
 (eval-when-compile
   (add-to-list 'load-path (expand-file-name "straight/repos/use-package" user-emacs-directory))
