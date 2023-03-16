@@ -35,16 +35,7 @@
  '(blink-cursor-mode nil)
  '(clang-format-style "Chromium")
  '(column-number-mode t)
- '(company-idle-delay 0)
- '(company-insertion-on-trigger t)
- '(company-insertion-triggers nil)
- '(company-minimum-prefix-length 1)
- '(company-quickhelp-delay 0.2)
- '(company-quickhelp-mode t)
- '(company-show-numbers ''t)
- '(company-show-quick-access ''t)
- '(company-tooltip-align-annotations t)
- '(company-tooltip-flip-when-above t)
+ '(corfu-auto t)
  '(create-lockfiles nil)
  '(css-indent-offset 2)
  '(cursor-type 'bar)
@@ -66,7 +57,7 @@
  '(flycheck-indication-mode nil)
  '(gc-cons-threshold 100000000)
  '(global-auto-revert-mode t)
- '(global-company-mode t)
+ '(global-corfu-mode t)
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
@@ -216,17 +207,9 @@ distance from the left and right edge, respectively."
 
 (use-package clojure-mode)
 
-(use-package company
-  :defines company-backends)
-
-(use-package company-emoji
-  :requires company
-  :config (add-to-list 'company-backends 'company-emoji))
-
-(use-package company-tabnine
-  :disabled
-  :requires company
-  :config (add-to-list 'company-backends '(company-capf :with company-tabnine :separate)))
+(use-package corfu
+  :straight (:files (:defaults "extensions/*"))
+  :hook ((corfu-mode . corfu-popupinfo-mode)))
 
 (use-package crux
   :config
@@ -260,7 +243,6 @@ distance from the left and right edge, respectively."
   abbrev-mode
   auto-fill-function
   beacon-mode
-  company-mode
   eldoc-mode
   subword-mode)
 
