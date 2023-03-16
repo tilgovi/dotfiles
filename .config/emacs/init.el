@@ -390,12 +390,12 @@ distance from the left and right edge, respectively."
   :config
   (global-treesit-auto-mode))
 
+(use-package tuareg)
+
 (use-package typescript-ts-mode
   :straight nil
   :mode (("\\.ts\\'" . typescript-ts-mode)
          ("\\.tsx\\'" . tsx-ts-mode)))
-
-(use-package tuareg)
 
 (use-package uniquify
   :straight nil)
