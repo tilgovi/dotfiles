@@ -98,6 +98,7 @@
  '(straight-use-package-by-default t)
  '(tab-always-indent 'complete)
  '(tool-bar-mode nil)
+ '(treesit-auto-install 'prompt)
  '(truncate-lines t)
  '(typescript-auto-indent-flag nil)
  '(typescript-indent-level 2)
@@ -185,7 +186,7 @@ distance from the left and right edge, respectively."
               (balance-windows-margins))))
 
 (use-package add-node-modules-path
-  :hook ((js-mode . add-node-modules-path)
+  :hook ((js-ts-mode . add-node-modules-path)
          (typescript-ts-mode . add-node-modules-path)))
 
 (use-package apheleia
@@ -204,8 +205,6 @@ distance from the left and right edge, respectively."
   :hook (ruby-mode . chruby-use-corresponding))
 
 (use-package cider)
-
-(use-package clojure-mode)
 
 (use-package corfu
   :straight (:files (:defaults "extensions/*"))
@@ -271,11 +270,9 @@ distance from the left and right edge, respectively."
   (defun flycheck-maybe-select-python-mypy ()
     (when (flycheck-may-enable-checker 'python-mypy)
       (flycheck-select-checker 'python-mypy)))
-  (add-hook 'python-mode-hook 'flycheck-maybe-select-python-mypy)
+  (add-hook 'python-ts-mode-hook 'flycheck-maybe-select-python-mypy)
   (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (flycheck-add-next-checker 'python-mypy 'python-pylint))
-
-(use-package go-mode)
 
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
@@ -283,8 +280,6 @@ distance from the left and right edge, respectively."
 (use-package htmlize)
 
 (use-package jest)
-
-(use-package json-mode)
 
 (use-package jsonnet-mode)
 
@@ -308,7 +303,8 @@ distance from the left and right edge, respectively."
          ("C-c C-<" . mc/mark-all-like-this)))
 
 (use-package nvm
-  :hook ((js-mode . nvm-use-for-buffer)
+  :hook ((js-ts-mode . nvm-use-for-buffer)
+         (tsx-ts-mode . nvm-use-for-buffer)
          (typescript-ts-mode . nvm-use-for-buffer)))
 
 (use-package ox-clip)
@@ -386,6 +382,11 @@ distance from the left and right edge, respectively."
   :config (change-theme 'base16-selenized-white 'base16-selenized-black))
 
 (use-package toml-mode)
+
+(use-package treesit-auto
+  :functions global-treesit-auto-mode
+  :config
+  (global-treesit-auto-mode))
 
 (use-package typescript-ts-mode
   :mode (("\\.ts\\'" . typescript-ts-mode)
