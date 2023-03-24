@@ -1,9 +1,12 @@
 [submodule ".vim/pack/tilgovi/opt/base16"]
 	path = .vim/pack/tilgovi/opt/base16
 	url = https://github.com/tinted-theming/base16-vim.git
+	branch = main
 [submodule ".oh-my-zsh/custom/plugins/base16-shell"]
 	path = .oh-my-zsh/custom/plugins/base16-shell
 	url = https://github.com/tinted-theming/base16-shell.git
+	branch = main
 [submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+	branch = master
