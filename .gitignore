@@ -29,6 +29,7 @@
 .emscripten
 .face.icon
 .fonts
+.fonts.conf
 .git-completion.sh
 .gtkrc-*
 .java
