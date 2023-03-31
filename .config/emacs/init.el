@@ -209,6 +209,11 @@ distance from the left and right edge, respectively."
   :straight (:files (:defaults "extensions/*"))
   :hook ((corfu-mode . corfu-popupinfo-mode)))
 
+(use-package corfu-prescient
+  :functions corfu-prescient-mode
+  :init
+  (corfu-prescient-mode 1))
+
 (use-package crux
   :config
   (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
