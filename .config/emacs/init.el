@@ -127,7 +127,6 @@
  '(terraform--resource-name-face ((t (:inherit font-lock-variable-name-face))))
  '(variable-pitch ((t (:inherit default)))))
 
-(add-to-list 'auto-mode-alist '("\\.[cm]js\\'" . js-ts-mode))
 (setq-default auto-fill-function 'do-auto-fill)
 
 ;; Install use-package
@@ -274,6 +273,10 @@ distance from the left and right edge, respectively."
 (use-package jest)
 
 (use-package jsonnet-mode)
+
+(use-package js-ts-mode
+  :straight nil
+  :mode "\\.[cm]js\\'")
 
 (use-package ligature
   :functions ligature-set-ligatures global-ligature-mode
