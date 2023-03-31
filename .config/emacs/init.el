@@ -116,7 +116,6 @@
  '(web-mode-markup-indent-offset 2)
  '(web-mode-script-padding 2)
  '(web-mode-style-padding 2)
- '(which-key-mode t)
  '(winner-mode t)
  '(yas-global-mode t))
 
@@ -406,9 +405,6 @@ distance from the left and right edge, respectively."
 (use-package windmove
   :config
   (windmove-default-keybindings))
-
-(use-package which-key
-  :diminish)
 
 (use-package whitespace-cleanup-mode
   :diminish)
