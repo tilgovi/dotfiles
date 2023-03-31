@@ -86,6 +86,7 @@
  '(replace-char-fold t)
  '(require-final-newline t)
  '(ring-bell-function 'ignore)
+ '(rust-format-on-save t)
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scroll-preserve-screen-position t)
@@ -126,7 +127,7 @@
  '(terraform--resource-name-face ((t (:inherit font-lock-variable-name-face))))
  '(variable-pitch ((t (:inherit default)))))
 
-(add-to-list 'auto-mode-alist '("\\.[cm]js\\'" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.[cm]js\\'" . js-ts-mode))
 (setq-default auto-fill-function 'do-auto-fill)
 
 ;; Install use-package
@@ -331,9 +332,7 @@ distance from the left and right edge, respectively."
 
 (use-package ripgrep)
 
-(use-package rust-mode
-  :init
-  (setq-default rust-format-on-save t))
+(use-package rust-mode)
 
 (use-package racer
   :requires rust-mode
