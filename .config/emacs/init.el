@@ -188,8 +188,7 @@ distance from the left and right edge, respectively."
   :hook ((js-ts-mode . add-node-modules-path)
          (typescript-ts-mode . add-node-modules-path)))
 
-(use-package apheleia
-  :diminish)
+(use-package apheleia)
 
 (use-package base16-theme)
 
@@ -241,16 +240,7 @@ distance from the left and right edge, respectively."
 
 (use-package diff-hl)
 
-(use-package diminish
-  :diminish
-  abbrev-mode
-  auto-fill-function
-  beacon-mode
-  eldoc-mode
-  subword-mode)
-
 (use-package editorconfig
-  :diminish
   :hook (editor-config-custom-hooks . (lambda (props) (whitespace-mode))))
 
 (use-package eglot
@@ -263,12 +253,9 @@ distance from the left and right edge, respectively."
     (exec-path-from-shell-initialize)))
 
 (use-package fixed-pitch
-  :straight (:type git :host github :repo "cstby/fixed-pitch-mode")
-  :diminish fixed-pitch-mode
-  :hook (fixed-pitch-mode . (lambda () (diminish 'buffer-face-mode))))
+  :straight (:type git :host github :repo "cstby/fixed-pitch-mode"))
 
 (use-package flycheck
-  :diminish
   :functions flycheck-add-next-checker flycheck-may-enable-checker flycheck-select-checker
   :config
   (defun flycheck-maybe-select-python-mypy ()
@@ -299,6 +286,11 @@ distance from the left and right edge, respectively."
                             "(*" "*)" "[|" "|]" "{|" "|}" "++" "+++" "\\/" "/\\" "|-" "-|" "<!--" "<!---" "<***>"))
   (global-ligature-mode t))
 
+(use-package mood-line
+  :functions mood-line-mode
+  :config
+  (mood-line-mode))
+
 (use-package move-text)
 
 (use-package multiple-cursors
@@ -317,7 +309,6 @@ distance from the left and right edge, respectively."
   :hook (python-mode . pipenv-mode))
 
 (use-package projectile
-  :diminish
   :config
   (global-set-key (kbd "C-c p") 'projectile-command-map))
 
@@ -334,7 +325,6 @@ distance from the left and right edge, respectively."
   (add-hook 'python-mode-hook 'pyvenv-auto))
 
 (use-package rainbow-mode
-  :diminish
   :hook prog-mode)
 
 (use-package rego-mode)
@@ -353,12 +343,10 @@ distance from the left and right edge, respectively."
   :straight nil)
 
 (use-package smartparens
-  :diminish
   :init
   (require 'smartparens-config))
 
 (use-package super-save
-  :diminish
   :functions super-save-mode
   :config
   (super-save-mode +1))
@@ -404,14 +392,12 @@ distance from the left and right edge, respectively."
 
 (use-package yaml-mode)
 
-(use-package yasnippet
-  :diminish)
+(use-package yasnippet)
 
 (use-package windmove
   :config
   (windmove-default-keybindings))
 
-(use-package whitespace-cleanup-mode
-  :diminish)
+(use-package whitespace-cleanup-mode)
 
 ;;; init.el ends here
