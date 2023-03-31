@@ -90,8 +90,6 @@
  '(scroll-bar-mode nil)
  '(scroll-preserve-screen-position t)
  '(search-default-mode 'char-fold-to-regexp)
- '(selectrum-mode t)
- '(selectrum-prescient-mode t)
  '(sentence-end-double-space nil)
  '(show-paren-mode t)
  '(smartparens-global-mode t)
@@ -349,11 +347,6 @@ distance from the left and right edge, respectively."
 (use-package rect
   :straight nil)
 
-(use-package selectrum)
-
-(use-package selectrum-prescient
-  :requires selectrum)
-
 (use-package smartparens
   :diminish
   :init
@@ -393,6 +386,16 @@ distance from the left and right edge, respectively."
 
 (use-package uniquify
   :straight nil)
+
+(use-package vertico
+  :straight (:files (:defaults "extensions/*"))
+  :init
+  (vertico-mode))
+
+(use-package vertico-prescient
+  :straight (:files (:defaults "extensions/*"))
+  :init
+  (vertico-prescient-mode 1))
 
 (use-package volatile-highlights
   :diminish)
