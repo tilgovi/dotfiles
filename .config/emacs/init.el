@@ -402,9 +402,6 @@ distance from the left and right edge, respectively."
   :init
   (vertico-prescient-mode 1))
 
-(use-package volatile-highlights
-  :diminish)
-
 (use-package yaml-mode)
 
 (use-package yasnippet
