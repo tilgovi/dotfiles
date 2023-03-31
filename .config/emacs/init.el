@@ -210,7 +210,7 @@ distance from the left and right edge, respectively."
 
 (use-package corfu-prescient
   :functions corfu-prescient-mode
-  :init
+  :config
   (corfu-prescient-mode 1))
 
 (use-package crux
@@ -361,7 +361,8 @@ distance from the left and right edge, respectively."
   (setq calendar-location-name "Oakland, CA")
   (setq calendar-latitude 37.80)
   (setq calendar-longitude -122.27)
-  :config (change-theme 'base16-selenized-white 'base16-selenized-black))
+  :config
+  (change-theme 'base16-selenized-white 'base16-selenized-black))
 
 (use-package toml-mode)
 
@@ -382,12 +383,12 @@ distance from the left and right edge, respectively."
 
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
-  :init
+  :config
   (vertico-mode))
 
 (use-package vertico-prescient
   :straight (:files (:defaults "extensions/*"))
-  :init
+  :config
   (vertico-prescient-mode 1))
 
 (use-package yaml-mode)
