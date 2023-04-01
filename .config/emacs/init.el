@@ -154,8 +154,7 @@ distance from the left and right edge, respectively."
   (walk-windows
    (lambda (window)
      (let* ((buffer (window-buffer window))
-            (fill-column (cond ((window-minibuffer-p window) 120)
-                               (t (buffer-local-value 'fill-column buffer))))
+            (fill-column (buffer-local-value 'fill-column buffer))
             (font-width (window-font-width window))
             (body-width (* (+ fill-column 0) font-width))
             (total-width (window-pixel-width window))
@@ -166,7 +165,8 @@ distance from the left and right edge, respectively."
             (excess (max (- total-width body-width extras-width) 0))
             (excess-columns (/ excess font-width))
             (margin (floor (/ (float excess-columns) 2))))
-       (set-window-margins window margin)))))
+       (set-window-margins window margin)))
+   0))
 
 (defun set-window-default-parameters ()
   "Set default window parameters."
