@@ -135,13 +135,12 @@
   (add-to-list 'load-path (expand-file-name "straight/repos/use-package" user-emacs-directory))
   (require 'use-package))
 
-;; Set the emoji font
-(when window-system
-  (set-fontset-font t 'symbol (font-spec :family "Symbols Nerd Font"))
-  (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji"))
-  (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
-  (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
-  (set-fontset-font t 'symbol "Symbola" nil 'append))
+;; Set the fonts to use for symbols
+(set-fontset-font t 'unicode "Symbols Nerd Font Mono" nil 'prepend)
+(set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
+(set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
+(set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
+(set-fontset-font t 'symbol "Symbola" nil 'append)
 
 ;; Use real fullscreen on macOS
 (when (and (eq system-type 'darwin) window-system)
