@@ -143,7 +143,7 @@
 (set-fontset-font t 'symbol "Symbola" nil 'append)
 
 ;; Use real fullscreen on macOS
-(when (and (eq system-type 'darwin) window-system)
+(when (memq window-system '(mac ns))
   (add-hook 'window-setup-hook 'toggle-frame-fullscreen))
 
 (defun balance-margins (&optional window-or-frame)
@@ -247,9 +247,9 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package exec-path-from-shell
   :functions exec-path-from-shell-initialize
+  :if window-system
   :config
-  (when window-system
-    (exec-path-from-shell-initialize)))
+  (exec-path-from-shell-initialize))
 
 (use-package fixed-pitch
   :straight (:type git :host github :repo "cstby/fixed-pitch-mode"))
