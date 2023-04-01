@@ -385,7 +385,8 @@ distance from the left and right edge, respectively."
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
   :config
-  (vertico-mode))
+  (vertico-mode)
+  (vertico-flat-mode))
 
 (use-package vertico-prescient
   :straight (:files (:defaults "extensions/*"))
