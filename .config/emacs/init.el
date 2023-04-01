@@ -146,42 +146,42 @@
 (when (and (eq system-type 'darwin) window-system)
   (add-hook 'window-setup-hook 'toggle-frame-fullscreen))
 
-(defun balance-windows-margins ()
-  "Balance the margins of windows on the selected frame.
-Balance the margins such that the first column and the fill column are the same
-distance from the left and right edge, respectively."
+(defun balance-margins (&optional window-or-frame)
+  "Balances the margins of WINDOW-OR-FRAME.
+WINDOW-OR-FRAME is optional and defaults to the selected frame.
+If WINDOW-OR-FRAME denotes a frame, balance the margins of all
+windows of that frame. If WINDOW-OR-FRAME denotes a window,
+recursively balance the sizes of all child windows of that window."
   (interactive)
-  (walk-windows
-   (lambda (window)
-     (let* ((buffer (window-buffer window))
-            (fill-column (buffer-local-value 'fill-column buffer))
-            (font-width (window-font-width window))
-            (body-width (* (+ fill-column 0) font-width))
-            (total-width (window-pixel-width window))
-            (fringe-width (apply '+ (seq-take (window-fringes window) 2)))
-            (scroll-bar-width (window-scroll-bar-width window))
-            (divider-width (window-right-divider-width window))
-            (extras-width (+ fringe-width scroll-bar-width divider-width))
-            (excess (max (- total-width body-width extras-width) 0))
-            (excess-columns (/ excess font-width))
-            (margin (floor (/ (float excess-columns) 2))))
-       (set-window-margins window margin)))
-   0))
+  (let* ((window
+	  (cond
+	   ((or (not window-or-frame)
+		(frame-live-p window-or-frame))
+	    (frame-root-window window-or-frame))
+	   ((or (window-live-p window-or-frame)
+		(window-child window-or-frame))
+	    window-or-frame)
+	   (t
+	    (error "Not a window or frame %s" window-or-frame)))))
+    (walk-window-subtree
+     (lambda (window)
+       (let* ((buffer (window-buffer window))
+              (fill-column (buffer-local-value 'fill-column buffer))
+              (font-width (window-font-width window))
+              (body-width (* (+ fill-column 0) font-width))
+              (total-width (window-pixel-width window))
+              (fringe-width (apply '+ (seq-take (window-fringes window) 2)))
+              (scroll-bar-width (window-scroll-bar-width window))
+              (divider-width (window-right-divider-width window))
+              (extras-width (+ fringe-width scroll-bar-width divider-width))
+              (excess (max (- total-width body-width extras-width) 0))
+              (excess-columns (/ excess font-width))
+              (margin (floor (/ (float excess-columns) 2))))
+         (set-window-margins window margin)))
+     window)))
 
-(defun set-window-default-parameters ()
-  "Set default window parameters."
-  (interactive)
-  (walk-windows
-   (lambda (window)
-     (when (not (window-parameter window 'min-margins))
-           (set-window-parameter window 'min-margins '(0 . 0))))))
-
-(add-hook 'window-buffer-change-functions
-          (lambda (frame)
-            (with-selected-frame frame
-              (set-window-default-parameters)
-              (balance-windows)
-              (balance-windows-margins))))
+(add-hook 'window-size-change-functions 'balance-margins)
+(add-hook 'window-size-change-functions 'balance-windows)
 
 (use-package add-node-modules-path
   :hook ((js-ts-mode . add-node-modules-path)
