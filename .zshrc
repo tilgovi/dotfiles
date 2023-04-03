@@ -1,6 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 HYPHEN_INSENSITIVE="true"
+ZSH_PYENV_QUIET="true"
 ZSH_THEME="starship"
 
 zstyle ':omz:update' mode reminder
