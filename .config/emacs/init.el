@@ -313,18 +313,6 @@ recursively balance the sizes of all child windows of that window."
   :config
   (global-set-key (kbd "C-c p") 'projectile-command-map))
 
-(use-package pyvenv
-  :functions pyvenv-activate pyvenv-deactivate
-  :preface
-  (defun pyvenv-auto ()
-    "Automatically activate any virtualenv found in a project root directory."
-    (let* ((buffer (current-buffer))
-           (directory (buffer-local-value 'default-directory buffer))
-           (root (locate-dominating-file directory "venv")))
-      (if root (pyvenv-activate (concat root "venv")) (pyvenv-deactivate))))
-  :config
-  (add-hook 'python-mode-hook 'pyvenv-auto))
-
 (use-package rainbow-mode
   :hook prog-mode)
 
