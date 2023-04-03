@@ -11,7 +11,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Python
 export PYENV_ROOT=$HOME/.pyenv
-path=("$PYENV_ROOT/shims" $path)
+path=("$PYENV_ROOT/bin" $path)
 
 # Rust
 export CARGO_HOME=$HOME/.cargo
