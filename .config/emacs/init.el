@@ -96,6 +96,7 @@
  '(smartparens-global-mode t)
  '(sp-autoskip-closing-pair 'always)
  '(sp-base-key-bindings 'paredit)
+ '(straight-repository-branch 'develop)
  '(straight-use-package-by-default t)
  '(tab-always-indent 'complete)
  '(tool-bar-mode nil)
