@@ -43,7 +43,7 @@
    '("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default))
  '(default-frame-alist
    '((font . "Iosevka Etoile-14")
-     (fullscreen . maximized)
+     (fullscreen . fullboth)
      (line-spacing . 0.25)))
  '(editorconfig-mode t)
  '(eldoc-idle-delay 0)
@@ -142,10 +142,6 @@
 (set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
 (set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
 (set-fontset-font t 'symbol "Symbola" nil 'append)
-
-;; Use real fullscreen on macOS
-(when (memq window-system '(mac ns))
-  (add-hook 'window-setup-hook 'toggle-frame-fullscreen))
 
 (defun balance-margins (&optional window-or-frame)
   "Balances the margins of WINDOW-OR-FRAME.
