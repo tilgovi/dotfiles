@@ -308,9 +308,6 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package ox-clip)
 
-(use-package pipenv
-  :hook (python-mode . pipenv-mode))
-
 (use-package projectile
   :config
   (global-set-key (kbd "C-c p") 'projectile-command-map))
