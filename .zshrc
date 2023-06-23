@@ -3,6 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 HYPHEN_INSENSITIVE="true"
 ZSH_PYENV_QUIET="true"
 
+zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:update' mode reminder
 
 plugins=(
