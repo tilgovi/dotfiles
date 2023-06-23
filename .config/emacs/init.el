@@ -261,6 +261,8 @@ recursively balance the sizes of all child windows of that window."
   (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (flycheck-add-next-checker 'python-mypy 'python-pylint))
 
+(use-package go-mode :mode "\\.go\\'")
+
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
 
