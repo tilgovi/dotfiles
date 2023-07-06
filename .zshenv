@@ -1,5 +1,5 @@
 typeset -U path
-path=("$HOME/.local/bin" "/usr/local/bin" $path)
+path=("$HOME/.local/bin" $path)
 
 # Go
 export GOMODCACHE=$HOME/.go
