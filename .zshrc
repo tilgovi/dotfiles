@@ -7,6 +7,7 @@ zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:update' mode reminder
 
 plugins=(
+    1password
     aws
     base16-shell
     chruby
