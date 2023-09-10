@@ -50,7 +50,7 @@
  '(exec-path-from-shell-arguments nil)
  '(fill-column 80)
  '(fixed-pitch-use-extended-default t)
- '(fixed-pitch-whitelist-hooks '(yaml-mode-hook))
+ '(fixed-pitch-whitelist-hooks '(yaml-ts-mode-hook))
  '(flycheck-checker-error-threshold 1000)
  '(flycheck-clang-language-standard "c++2a")
  '(flycheck-disabled-checkers '(javascript-jshint))
