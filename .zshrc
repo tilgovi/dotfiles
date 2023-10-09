@@ -10,21 +10,18 @@ plugins=(
     1password
     aws
     base16-shell
-    chruby
     docker
     extract
     gcloud
     git
     golang
     kubectl
-    nvm
     pip
-    pyenv
+    rtx
     rust
     starship
     terraform
     vault
-    volta
     yarn
     z
     zsh-autosuggestions
