@@ -1,5 +1,5 @@
 [gcloud]
-format = 'on [$symbol$project]($style) '
+format = 'on [$symbol($active )(\($region\))]($style) '
 
 [kubernetes]
 disabled = false
