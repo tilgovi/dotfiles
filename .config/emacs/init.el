@@ -284,6 +284,11 @@ recursively balance the sizes of all child windows of that window."
                             "(*" "*)" "[|" "|]" "{|" "|}" "++" "+++" "\\/" "/\\" "|-" "-|" "<!--" "<!---" "<***>"))
   (global-ligature-mode t))
 
+(use-package marginalia
+  :functions marginalia-mode
+  :init
+  (marginalia-mode))
+
 (use-package mood-line
   :functions mood-line-mode
   :config
