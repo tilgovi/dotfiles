@@ -194,9 +194,6 @@ recursively balance the sizes of all child windows of that window."
   :config
   (browse-kill-ring-default-keybindings))
 
-(use-package chruby
-  :hook (ruby-mode . chruby-use-corresponding))
-
 (use-package cider)
 
 (use-package corfu
@@ -298,11 +295,6 @@ recursively balance the sizes of all child windows of that window."
   :bind (("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this)))
-
-(use-package nvm
-  :hook ((js-ts-mode . nvm-use-for-buffer)
-         (tsx-ts-mode . nvm-use-for-buffer)
-         (typescript-ts-mode . nvm-use-for-buffer)))
 
 (use-package ox-clip)
 
