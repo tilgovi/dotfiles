@@ -46,7 +46,6 @@
      (fullscreen . fullboth)
      (line-spacing . 0.25)))
  '(editorconfig-mode t)
- '(eldoc-idle-delay 0)
  '(exec-path-from-shell-arguments nil)
  '(fill-column 80)
  '(fixed-pitch-use-extended-default t)
