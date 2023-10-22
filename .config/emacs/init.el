@@ -360,8 +360,7 @@ recursively balance the sizes of all child windows of that window."
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
   :config
-  (vertico-mode)
-  (vertico-flat-mode))
+  (vertico-mode))
 
 (use-package vertico-prescient
   :straight (:files (:defaults "extensions/*"))
