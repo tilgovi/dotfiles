@@ -46,6 +46,7 @@
      (fullscreen . fullboth)
      (line-spacing . 0.25)))
  '(editorconfig-mode t)
+ '(eglot-events-buffer-size 0)
  '(exec-path-from-shell-arguments nil)
  '(fill-column 80)
  '(fixed-pitch-use-extended-default t)
