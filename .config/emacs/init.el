@@ -289,6 +289,8 @@ recursively balance the sizes of all child windows of that window."
   :init
   (marginalia-mode))
 
+(use-package markdown-mode)
+
 (use-package mood-line
   :functions mood-line-mode
   :config
