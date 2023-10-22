@@ -106,7 +106,6 @@
  '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(uniquify-ignore-buffers-re "\"^\\\\*\"")
  '(uniquify-separator "\"/\"")
- '(volatile-highlights-mode t)
  '(vterm-kill-buffer-on-exit t)
  '(web-mode-attr-indent-offset 2)
  '(web-mode-code-indent-offset 2)
