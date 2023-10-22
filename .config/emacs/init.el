@@ -324,10 +324,6 @@ recursively balance the sizes of all child windows of that window."
 (use-package rect
   :straight nil)
 
-(use-package smartparens
-  :init
-  (require 'smartparens-config))
-
 (use-package super-save
   :functions super-save-mode
   :config
