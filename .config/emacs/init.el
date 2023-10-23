@@ -188,11 +188,6 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package beacon)
 
-(use-package browse-kill-ring
-  :functions browse-kill-ring-default-keybindings
-  :config
-  (browse-kill-ring-default-keybindings))
-
 (use-package cider)
 
 (use-package corfu
