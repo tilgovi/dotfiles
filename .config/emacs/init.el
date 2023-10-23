@@ -31,7 +31,6 @@
  '(backup-directory-alist `((".*" \, temporary-file-directory)))
  '(base16-theme-256-color-source 'colors)
  '(base16-theme-distinct-fringe-background nil)
- '(beacon-mode t)
  '(blink-cursor-mode nil)
  '(clang-format-style "Chromium")
  '(column-number-mode t)
@@ -185,8 +184,6 @@ recursively balance the sizes of all child windows of that window."
 (use-package apheleia)
 
 (use-package base16-theme)
-
-(use-package beacon)
 
 (use-package cider)
 
