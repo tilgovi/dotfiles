@@ -263,18 +263,6 @@ recursively balance the sizes of all child windows of that window."
   :straight nil
   :mode "\\.[cm]js\\'")
 
-(use-package ligature
-  :functions ligature-set-ligatures global-ligature-mode
-  :config
-  (ligature-set-ligatures 'prog-mode
-                          '("-<<" "-<" "-<-" "<--" "<---" "<<-" "<-" "->" "->>" "-->" "--->" "->-" ">-" ">>-"
-                            "=<<" "=<" "=<=" "<==" "<===" "<<=" "<=" "=>" "=>>" "==>" "===>" "=>=" ">=" ">>="
-                            "<->" "<-->" "<--->" "<---->" "<=>" "<==>" "<===>" "<====>" "-------->"
-                            "<~~" "<~" "~>" "~~>" "::" ":::" "==" "!=" "/=" "~=" "<>" "===" "!==" "=/=" "=!="
-                            ":=" ":-" ":+" "<*" "<*>" "*>" "<|" "<|>" "|>" "<." "<.>" ".>" "+:" "-:" "=:" ":>" "__"
-                            "(*" "*)" "[|" "|]" "{|" "|}" "++" "+++" "\\/" "/\\" "|-" "-|" "<!--" "<!---" "<***>"))
-  (global-ligature-mode t))
-
 (use-package marginalia
   :functions marginalia-mode
   :init
