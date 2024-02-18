@@ -16,8 +16,8 @@ plugins=(
     git
     golang
     kubectl
+    mise
     pip
-    rtx
     rust
     starship
     terraform
