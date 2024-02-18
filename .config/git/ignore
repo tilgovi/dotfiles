@@ -15,6 +15,9 @@
 /.emacs.desktop.lock
 .\#*
 
+# Mise
+.mise.toml
+
 # flymake-mode
 *_flymake.*
 
