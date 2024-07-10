@@ -10,6 +10,7 @@ plugins=(
     1password
     aws
     base16-shell
+    brew
     docker
     extract
     gcloud
