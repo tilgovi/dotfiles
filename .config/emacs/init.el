@@ -254,6 +254,9 @@ recursively balance the sizes of all child windows of that window."
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
 
+(use-package graphql-ts-mode
+  :mode "\\.graphql\\'")
+
 (use-package htmlize)
 
 (use-package jest)
