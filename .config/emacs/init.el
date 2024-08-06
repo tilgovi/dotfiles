@@ -331,7 +331,7 @@ recursively balance the sizes of all child windows of that window."
   :functions change-theme
   :init
   ;; Day / Night themes
-  (setq calendar-location-name "Oakland, CA")
+  (setq calendar-location-name "Oakland")
   (setq calendar-latitude 37.80)
   (setq calendar-longitude -122.27)
   :config
