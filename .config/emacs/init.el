@@ -60,6 +60,7 @@
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-hl-line-mode nil)
+ '(global-mise-mode t)
  '(global-prettier-mode t)
  '(global-subword-mode t)
  '(global-whitespace-cleanup-mode t)
@@ -278,6 +279,8 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package markdown-mode
   :mode "\\.\\(?:md\\|markdown\\|mkd\\|mdown\\|mkdn\\|mdwn\\)\\'")
+
+(use-package mise)
 
 (use-package mood-line
   :functions mood-line-mode
