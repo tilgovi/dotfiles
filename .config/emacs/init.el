@@ -257,6 +257,9 @@ recursively balance the sizes of all child windows of that window."
 (use-package graphql-ts-mode
   :mode "\\.graphql\\'")
 
+(use-package groovy-mode
+  :mode ("/Jenkinsfile\\'" "\\.g\\(?:ant\\|roovy\\|radle\\)\\'"))
+
 (use-package htmlize)
 
 (use-package jest)
