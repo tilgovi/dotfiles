@@ -246,7 +246,10 @@ recursively balance the sizes of all child windows of that window."
   (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (flycheck-add-next-checker 'python-mypy 'python-pylint))
 
-(use-package go-mode :mode "\\.go\\'")
+(use-package go-mode
+  :mode (("\\.go\\'" . go-mode)
+         ("go\\.work\\'" . go-dot-work-mode)
+         ("go\\.mod\\'" . go-dot-mod-mode)))
 
 (use-package google-c-style
   :hook (c-mode-common . google-set-c-style))
@@ -255,7 +258,8 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package jest)
 
-(use-package jsonnet-mode)
+(use-package jsonnet-mode
+  :mode ("\\.libsonnet\\'" "\\.jsonnet\\'"))
 
 (use-package js-ts-mode
   :straight nil
@@ -266,7 +270,8 @@ recursively balance the sizes of all child windows of that window."
   :init
   (marginalia-mode))
 
-(use-package markdown-mode)
+(use-package markdown-mode
+  :mode "\\.\\(?:md\\|markdown\\|mkd\\|mdown\\|mkdn\\|mdwn\\)\\'")
 
 (use-package mood-line
   :functions mood-line-mode
@@ -289,11 +294,13 @@ recursively balance the sizes of all child windows of that window."
 (use-package rainbow-mode
   :hook prog-mode)
 
-(use-package rego-mode)
+(use-package rego-mode
+  :mode "\\.rego\\'")
 
 (use-package ripgrep)
 
-(use-package rust-mode)
+(use-package rust-mode
+  :mode "\\.rs\\'")
 
 (use-package racer
   :requires rust-mode
@@ -307,7 +314,8 @@ recursively balance the sizes of all child windows of that window."
   :config
   (super-save-mode +1))
 
-(use-package terraform-mode)
+(use-package terraform-mode
+  :mode ("\\.tf\\(vars\\)?\\'"))
 
 (use-package theme-changer
   :defines calendar-location-name calendar-latitude calendar-longitude
@@ -320,7 +328,8 @@ recursively balance the sizes of all child windows of that window."
   :config
   (change-theme 'base16-selenized-white 'base16-selenized-black))
 
-(use-package toml-mode)
+(use-package toml-mode
+  :mode "\\.toml\\'")
 
 (use-package treesit-auto
   :functions global-treesit-auto-mode
@@ -345,7 +354,8 @@ recursively balance the sizes of all child windows of that window."
   :config
   (vertico-prescient-mode 1))
 
-(use-package yaml-mode)
+(use-package yaml-mode
+  :mode "\\.\\(e?ya?\\|ra\\)ml\\'")
 
 (use-package yasnippet)
 
