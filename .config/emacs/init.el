@@ -327,8 +327,6 @@ recursively balance the sizes of all child windows of that window."
   :config
   (global-treesit-auto-mode))
 
-(use-package tuareg)
-
 (use-package typescript-ts-mode
   :straight nil
   :mode (("\\.ts\\'" . typescript-ts-mode)
