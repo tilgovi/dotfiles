@@ -185,8 +185,6 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package base16-theme)
 
-(use-package cider)
-
 (use-package corfu
   :straight (:files (:defaults "extensions/*"))
   :hook ((corfu-mode . corfu-popupinfo-mode)))
