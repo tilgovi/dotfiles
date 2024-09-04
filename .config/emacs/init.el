@@ -184,7 +184,11 @@ recursively balance the sizes of all child windows of that window."
   :hook ((js-ts-mode . add-node-modules-path)
          (typescript-ts-mode . add-node-modules-path)))
 
-(use-package apheleia)
+(use-package apheleia
+  :defines apheleia-formatters
+  :config
+  (setf (alist-get 'google-java-format apheleia-formatters)
+        '("google-java-format" "--skip-sorting-imports" "-")))
 
 (use-package base16-theme)
 
