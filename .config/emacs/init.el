@@ -38,12 +38,6 @@
  '(create-lockfiles nil)
  '(css-indent-offset 2)
  '(cursor-type 'bar)
- '(custom-safe-themes
-   '("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0"
-     "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879"
-     "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4"
-     "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365"
-     "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default))
  '(default-frame-alist
    '((font . "Iosevka Etoile-14") (fullscreen . fullboth) (line-spacing . 0.25)))
  '(editorconfig-mode t)
@@ -180,6 +174,19 @@ recursively balance the sizes of all child windows of that window."
 (add-hook 'window-size-change-functions 'balance-margins)
 (add-hook 'window-size-change-functions 'balance-windows)
 
+(defvar my/light-theme 'tango)
+(defvar my/dark-theme 'tango-dark)
+
+(defun my/apply-theme (appearance)
+  "Load theme, taking current system APPEARANCE into consideration."
+  (mapc #'disable-theme custom-enabled-themes)
+  (pcase appearance
+    ('light (load-theme my/light-theme t))
+    ('dark (load-theme my/dark-theme t))))
+
+(when (boundp 'ns-system-appearance-change-functions)
+  (add-hook 'ns-system-appearance-change-functions #'my/apply-theme))
+
 (use-package add-node-modules-path
   :hook ((js-ts-mode . add-node-modules-path)
          (typescript-ts-mode . add-node-modules-path)))
@@ -190,7 +197,11 @@ recursively balance the sizes of all child windows of that window."
   (setf (alist-get 'google-java-format apheleia-formatters)
         '("google-java-format" "--skip-sorting-imports" "-")))
 
-(use-package base16-theme)
+(use-package base16-theme
+  :defer t
+  :init
+  (setq my/light-theme 'base16-selenized-white)
+  (setq my/dark-theme 'base16-selenized-black))
 
 (use-package corfu
   :straight (:files (:defaults "extensions/*"))
@@ -333,6 +344,7 @@ recursively balance the sizes of all child windows of that window."
   :mode ("\\.tf\\(vars\\)?\\'"))
 
 (use-package theme-changer
+  :unless (boundp 'ns-system-appearance-change-functions)
   :defines calendar-location-name calendar-latitude calendar-longitude
   :functions change-theme
   :init
@@ -341,7 +353,7 @@ recursively balance the sizes of all child windows of that window."
   (setq calendar-latitude 37.80)
   (setq calendar-longitude -122.27)
   :config
-  (change-theme 'base16-selenized-white 'base16-selenized-black))
+  (change-theme my/light-theme my/dark-theme))
 
 (use-package toml-mode
   :mode "\\.toml\\'")
