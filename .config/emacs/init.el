@@ -3,7 +3,6 @@
 ;;; Commentary:
 
 ;;; Load packages using straight.el with use-package integration.
-;;; Customizations are kept separate (see custom.el).
 
 ;;; Code:
 
