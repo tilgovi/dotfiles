@@ -41,7 +41,6 @@
    '((font . "Iosevka Etoile-14") (fullscreen . fullboth) (line-spacing . 0.25)))
  '(editorconfig-mode t)
  '(eglot-events-buffer-size 0)
- '(exec-path-from-shell-arguments nil)
  '(fill-column 80)
  '(fixed-pitch-use-extended-default t)
  '(fixed-pitch-whitelist-hooks '(yaml-ts-mode-hook))
@@ -243,12 +242,6 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package eglot
   :straight nil)
-
-(use-package exec-path-from-shell
-  :functions exec-path-from-shell-initialize
-  :if window-system
-  :config
-  (exec-path-from-shell-initialize))
 
 (use-package fixed-pitch
   :straight (:type git :host github :repo "cstby/fixed-pitch-mode"))

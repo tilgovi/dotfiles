@@ -9,4 +9,11 @@
 
 (setq package-enable-at-startup nil)
 
+(when (eq system-type 'darwin)
+  (setenv "PATH"
+          (concat "/opt/homebrew/bin" path-separator
+                  "/opt/homebrew/sbin" path-separator
+                  (getenv "PATH")))
+  (setq exec-path (split-string (getenv "PATH") path-separator)))
+
 ;;; early-init.el ends here
