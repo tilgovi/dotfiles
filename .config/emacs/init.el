@@ -122,12 +122,6 @@
 
 (setq-default auto-fill-function 'do-auto-fill)
 
-;; Install use-package
-(when (functionp 'straight-use-package) (straight-use-package 'use-package))
-(eval-when-compile
-  (add-to-list 'load-path (expand-file-name "straight/repos/use-package" user-emacs-directory))
-  (require 'use-package))
-
 ;; Set the fonts to use for symbols
 (set-fontset-font t 'unicode "Symbols Nerd Font Mono" nil 'prepend)
 (set-fontset-font t 'symbol "Apple Color Emoji" nil 'append)
