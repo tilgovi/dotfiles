@@ -22,6 +22,7 @@ plugins=(
     rust
     starship
     terraform
+    vault
     yarn
     z
     zsh-autosuggestions
