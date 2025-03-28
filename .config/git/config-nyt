@@ -1,3 +1,5 @@
 # vim: ft=gitconfig
+[url "git@github.com:nytimes"]
+	insteadOf = https://github.com/nytimes
 [user]
 	email = randall.leeds@nytimes.com

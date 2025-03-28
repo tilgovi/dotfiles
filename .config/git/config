@@ -11,8 +11,6 @@
 	autoSetupRemote = true
 [rebase]
 	abbreviateCommands = true
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [user]
 	name = Randall Leeds
 	email = randall@bleeds.info
