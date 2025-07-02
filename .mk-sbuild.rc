@@ -1,0 +1,1 @@
+ZFS_PARENT_DATASET=rpool/var/lib/schroot
