@@ -3,4 +3,4 @@ if [[ -z "$MISE_DATA_DIR" ]]; then
 fi
 
 export MISE_NODE_COREPACK=true
-export MISE_NODE_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME:-${HOME}/.config}/default-npm-packages"
+export MISE_NODE_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME:-${HOME}/.config}/mise/default-npm-packages"
