@@ -80,7 +80,6 @@
  '(replace-char-fold t)
  '(require-final-newline t)
  '(ring-bell-function 'ignore)
- '(rust-format-on-save t)
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scroll-preserve-screen-position t)
