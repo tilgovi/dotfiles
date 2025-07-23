@@ -47,6 +47,7 @@
  '(flycheck-checker-error-threshold 1000)
  '(flycheck-clang-language-standard "c++2a")
  '(flycheck-disabled-checkers '(javascript-jshint))
+ '(flycheck-display-errors-function nil)
  '(flycheck-indication-mode nil)
  '(gc-cons-threshold 100000000)
  '(global-auto-revert-mode t)
@@ -56,6 +57,7 @@
  '(global-hl-line-mode nil)
  '(global-mise-mode t)
  '(global-prettier-mode t)
+ '(global-sideline-mode t nil (sideline))
  '(global-subword-mode t)
  '(global-whitespace-cleanup-mode t)
  '(indent-tabs-mode nil)
@@ -319,6 +321,24 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package rect
   :straight nil)
+
+(use-package sideline
+  :defines sideline-backends-right
+  :init
+  (setq sideline-backends-right '(sideline-flycheck
+                                  sideline-flymake)))
+
+(use-package sideline-eglot)
+
+(use-package sideline-flycheck
+  :hook (flycheck-mode . sideline-flycheck-setup))
+
+(use-package sideline-flymake
+  :functions flymake-eldoc-function
+  :hook (eglot-managed-mode-hook
+         . (lambda ()
+             (setq eldoc-documentation-functions
+                   (remove #'flymake-eldoc-function eldoc-documentation-functions)))))
 
 (use-package super-save
   :functions super-save-mode
