@@ -41,6 +41,7 @@
    '((font . "Iosevka Etoile-14") (fullscreen . fullboth) (line-spacing . 0.25)))
  '(editorconfig-mode t)
  '(eglot-events-buffer-size 0)
+ '(eldoc-box-max-pixel-height 200)
  '(fill-column 80)
  '(fixed-pitch-use-extended-default t)
  '(fixed-pitch-whitelist-hooks '(yaml-ts-mode-hook))
@@ -237,6 +238,9 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package eglot
   :straight nil)
+
+(use-package eldoc-box
+  :hook (eglot-managed-mode-hook . eldoc-box-hover-at-point-mode))
 
 (use-package fixed-pitch
   :straight (:type git :host github :repo "cstby/fixed-pitch-mode"))
