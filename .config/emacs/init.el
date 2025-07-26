@@ -38,7 +38,7 @@
  '(css-indent-offset 2)
  '(cursor-type 'bar)
  '(default-frame-alist
-   '((font . "Iosevka Etoile-14") (fullscreen . fullboth) (line-spacing . 0.25)))
+   '((font . "Iosevka Etoile-14") (fullscreen . maximized) (line-spacing . 0.25)))
  '(editorconfig-mode t)
  '(eglot-events-buffer-size 0)
  '(eldoc-box-max-pixel-height 200)
@@ -110,6 +110,8 @@
  '(web-mode-markup-indent-offset 2)
  '(web-mode-script-padding 2)
  '(web-mode-style-padding 2)
+ '(window-system-default-frame-alist
+   '((ns . ((fullscreen . fullboth)))))
  '(winner-mode t)
  '(yas-global-mode t))
 
