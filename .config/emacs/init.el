@@ -188,8 +188,9 @@ recursively balance the sizes of all child windows of that window."
          (typescript-ts-mode . add-node-modules-path)))
 
 (use-package apheleia
-  :defines apheleia-formatters
+  :defines (apheleia-formatters apheleia-mode-alist)
   :config
+  (push '(biome . ("npx" "@biomejs/biome" "format" "--stdin-file-path" filepath "-")) apheleia-formatters)
   (setf (alist-get 'google-java-format apheleia-formatters)
         '("google-java-format" "--skip-sorting-imports" "-")))
 
