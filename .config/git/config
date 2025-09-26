@@ -18,5 +18,3 @@
 	path = config-apache
 [includeIf "gitdir:~/src/newpublic/"]
 	path = config-newpublic
-[includeIf "gitdir:~/src/nytimes/"]
-	path = config-nyt
