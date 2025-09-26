@@ -16,5 +16,7 @@
 	email = randall@bleeds.info
 [includeIf "gitdir:~/src/apache/"]
 	path = config-apache
+[includeIf "gitdir:~/src/newpublic/"]
+	path = config-newpublic
 [includeIf "gitdir:~/src/nytimes/"]
 	path = config-nyt
