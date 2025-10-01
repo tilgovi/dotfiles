@@ -83,13 +83,6 @@
  '(replace-char-fold t)
  '(require-final-newline t)
  '(ring-bell-function 'ignore)
- '(safe-local-variable-values
-   '((eval progn (make-local-variable 'apheleia-mode-alist)
-           (setf (alist-get 'js-mode apheleia-mode-alist) '(biome)
-                 (alist-get 'js-ts-mode apheleia-mode-alist) '(biome)
-                 (alist-get 'tsx-ts-mode apheleia-mode-alist) '(biome)
-                 (alist-get 'typescript-mode apheleia-mode-alist) '(biome)
-                 (alist-get 'typescript-ts-mode apheleia-mode-alist) '(biome)))))
  '(save-place-mode t nil (saveplace))
  '(scroll-bar-mode nil)
  '(scroll-preserve-screen-position t)
