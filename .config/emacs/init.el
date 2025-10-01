@@ -1,4 +1,4 @@
-;;; init.el -- Emacs initialization file for @tilgovi
+;;; init.el -- Emacs initialization file for @tilgovi -*- lexical-binding: t -*-
 
 ;;; Commentary:
 
