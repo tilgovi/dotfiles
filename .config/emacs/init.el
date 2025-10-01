@@ -404,4 +404,9 @@ recursively balance the sizes of all child windows of that window."
 
 (use-package whitespace-cleanup-mode)
 
+;; Load site configuration
+(let ((site-config (expand-file-name "site.el" user-emacs-directory)))
+  (when (file-exists-p site-config)
+    (load site-config)))
+
 ;;; init.el ends here
